@@ -1,0 +1,708 @@
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-12-03 16:37:53.746090', '2023-12-03 16:37:53.746093') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20231203163408)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_USE" varchar, "APE_USE" varchar, "COR_USE" varchar, "SEC_USE_digest" varchar, "CAR_USE" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231203163408') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTecnicos (20231203163422)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "tecnicos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_TEC" varchar, "APE_TEC" varchar, "FEC_NAC_TEC" varchar, "FEC_ING_TEC" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231203163422') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFloors (20231203163455)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "floors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_PIS" varchar, "DES_PIS" varchar, "IMG_PIS" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231203163455') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRooms (20231203163545)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar, "TIP_HAB" varchar, "CAP_HAB" integer, "DIS_HAB" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5e6917ca28"
+FOREIGN KEY ("Floor_id")
+  REFERENCES "Floors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231203163545') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20231203163606)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar, "HOR_INI_RES" datetime(6), "HOR_FIN_RES" datetime(6), "EST_RES" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+, CONSTRAINT "fk_rails_76677d607a"
+FOREIGN KEY ("Tecnico_id")
+  REFERENCES "Tecnicos" ("id")
+, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231203163606') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (13.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar, "HOR_INI_RES" datetime(6), "HOR_FIN_RES" datetime(6), "EST_RES" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "floors"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "floors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_PIS" varchar, "DES_PIS" varchar, "IMG_PIS" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar, "TIP_HAB" varchar, "CAP_HAB" integer, "DIS_HAB" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_USE" varchar, "APE_USE" varchar, "COR_USE" varchar, "SEC_USE_digest" varchar, "CAR_USE" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "tecnicos"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "tecnicos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_TEC" varchar, "APE_TEC" varchar, "FEC_NAC_TEC" varchar, "FEC_ING_TEC" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+, CONSTRAINT "fk_rails_76677d607a"
+FOREIGN KEY ("Tecnico_id")
+  REFERENCES "Tecnicos" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar DEFAULT NULL, "TIP_HAB" varchar DEFAULT NULL, "CAP_HAB" integer DEFAULT NULL, "DIS_HAB" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_arooms_on_Floor_id" ON "arooms" ("Floor_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "arooms" ("id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at")
+                     SELECT "id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at" FROM "rooms"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "rooms"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar DEFAULT NULL, "TIP_HAB" varchar DEFAULT NULL, "CAP_HAB" integer DEFAULT NULL, "DIS_HAB" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5e6917ca28"
+FOREIGN KEY ("Floor_id")
+  REFERENCES "Floors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "rooms" ("id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at")
+                     SELECT "id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at" FROM "arooms"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arooms"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231203163606)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231203163545),
+(20231203163455),
+(20231203163422),
+(20231203163408);[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-12-03 22:35:46.131233', '2023-12-03 22:35:46.131237') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '30dbc1826056f857bb0e0f38371d743385e8d846', '2023-12-03 22:35:46.140071', '2023-12-03 22:35:46.140074') RETURNING "key"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar, "HOR_INI_RES" datetime(6), "HOR_FIN_RES" datetime(6), "EST_RES" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "floors"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "floors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_PIS" varchar, "DES_PIS" varchar, "IMG_PIS" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar, "TIP_HAB" varchar, "CAP_HAB" integer, "DIS_HAB" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_USE" varchar, "APE_USE" varchar, "COR_USE" varchar, "SEC_USE_digest" varchar, "CAR_USE" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "tecnicos"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "tecnicos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_TEC" varchar, "APE_TEC" varchar, "FEC_NAC_TEC" varchar, "FEC_ING_TEC" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+, CONSTRAINT "fk_rails_76677d607a"
+FOREIGN KEY ("Tecnico_id")
+  REFERENCES "Tecnicos" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar DEFAULT NULL, "TIP_HAB" varchar DEFAULT NULL, "CAP_HAB" integer DEFAULT NULL, "DIS_HAB" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_arooms_on_Floor_id" ON "arooms" ("Floor_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "arooms" ("id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at")
+                     SELECT "id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at" FROM "rooms"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "rooms"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar DEFAULT NULL, "TIP_HAB" varchar DEFAULT NULL, "CAP_HAB" integer DEFAULT NULL, "DIS_HAB" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5e6917ca28"
+FOREIGN KEY ("Floor_id")
+  REFERENCES "Floors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "rooms" ("id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at")
+                     SELECT "id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at" FROM "arooms"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arooms"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231203163606)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231203163545),
+(20231203163455),
+(20231203163422),
+(20231203163408);[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-12-03 22:35:46.357384', '2023-12-03 22:35:46.357386') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-12-03 22:35:46.363752' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '30dbc1826056f857bb0e0f38371d743385e8d846', '2023-12-03 22:35:46.368376', '2023-12-03 22:35:46.368378') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students" for ::1 at 2023-12-03 17:36:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (2.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 43.9ms | Allocations: 1619)
+  Rendered layout layouts/application.html.erb (Duration: 2848.0ms | Allocations: 103285)
+Completed 200 OK in 3686ms (Views: 2899.9ms | ActiveRecord: 49.6ms | Allocations: 120107)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/tecnicos" for ::1 at 2023-12-03 17:47:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TecnicosController#index as */*
+  [1m[36mTecnico Load (4.4ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos"[0m
+  ↳ app/controllers/tecnicos_controller.rb:8:in `index'
+Completed 200 OK in 347ms (Views: -19.1ms | ActiveRecord: 65.1ms | Allocations: 7915)
+
+
+Started GET "/students" for ::1 at 2023-12-03 17:48:56 -0500
+Processing by StudentsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (2.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 280.9ms | Allocations: 3888)
+  Rendered layout layouts/application.html.erb (Duration: 2097.9ms | Allocations: 39209)
+Completed 200 OK in 2397ms (Views: 2164.8ms | ActiveRecord: 1.9ms | Allocations: 42955)
+
+
+Started GET "/students" for ::1 at 2023-12-03 17:50:35 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (2.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 531)
+  Rendered layout layouts/application.html.erb (Duration: 121.3ms | Allocations: 2465)
+Completed 200 OK in 149ms (Views: 122.3ms | ActiveRecord: 2.4ms | Allocations: 2734)
+
+
+Started GET "/students/new" for ::1 at 2023-12-03 17:50:38 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (Duration: 131.2ms | Allocations: 3514)
+  Rendered students/new.html.erb within layouts/application (Duration: 151.5ms | Allocations: 3835)
+  Rendered layout layouts/application.html.erb (Duration: 245.4ms | Allocations: 5766)
+Completed 200 OK in 358ms (Views: 247.3ms | ActiveRecord: 4.3ms | Allocations: 23690)
+
+
+Started POST "/students" for ::1 at 2023-12-03 17:51:32 -0500
+Processing by StudentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"NOM_USE"=>"Kenneth", "APE_USE"=>"Paredes", "COR_USE"=>"kparedes9203uta.edu.ec", "SEC_USE_digest"=>"123", "CAR_USE"=>""}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mStudent Create (5.8ms)[0m  [1m[32mINSERT INTO "students" ("NOM_USE", "APE_USE", "COR_USE", "SEC_USE_digest", "CAR_USE", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_USE", "Kenneth"], ["APE_USE", "Paredes"], ["COR_USE", "kparedes9203uta.edu.ec"], ["SEC_USE_digest", "123"], ["CAR_USE", nil], ["created_at", "2023-12-03 22:51:32.558567"], ["updated_at", "2023-12-03 22:51:32.558567"]]
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/students/1
+Completed 302 Found in 47ms (ActiveRecord: 19.8ms | Allocations: 3509)
+
+
+Started GET "/students/1" for ::1 at 2023-12-03 17:51:32 -0500
+Processing by StudentsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (2.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/_student.html.erb (Duration: 7.9ms | Allocations: 257)
+  Rendered students/show.html.erb within layouts/application (Duration: 63.7ms | Allocations: 1335)
+  Rendered layout layouts/application.html.erb (Duration: 148.1ms | Allocations: 3253)
+Completed 200 OK in 231ms (Views: 151.7ms | ActiveRecord: 2.2ms | Allocations: 6246)
+
+
+Started GET "/students/1/edit" for ::1 at 2023-12-03 17:51:36 -0500
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (Duration: 1.9ms | Allocations: 1328)
+  Rendered students/edit.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1583)
+  Rendered layout layouts/application.html.erb (Duration: 80.7ms | Allocations: 3501)
+Completed 200 OK in 113ms (Views: 82.7ms | ActiveRecord: 0.4ms | Allocations: 4179)
+
+
+Started PATCH "/students/1" for ::1 at 2023-12-03 17:51:38 -0500
+Processing by StudentsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"NOM_USE"=>"Kenneth", "APE_USE"=>"Paredes", "COR_USE"=>"kparedes9203uta.edu.ec", "SEC_USE_digest"=>"123", "CAR_USE"=>"2023-12-07"}, "commit"=>"Update Student", "id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:40:in `block in update'
+  [1m[36mStudent Update (2.7ms)[0m  [1m[33mUPDATE "students" SET "CAR_USE" = ?, "updated_at" = ? WHERE "students"."id" = ?[0m  [["CAR_USE", "2023-12-07"], ["updated_at", "2023-12-03 22:51:39.081376"], ["id", 1]]
+  ↳ app/controllers/students_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/students/1
+Completed 302 Found in 31ms (ActiveRecord: 3.8ms | Allocations: 2725)
+
+
+Started GET "/students/1" for ::1 at 2023-12-03 17:51:39 -0500
+Processing by StudentsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/_student.html.erb (Duration: 0.2ms | Allocations: 34)
+  Rendered students/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 501)
+  Rendered layout layouts/application.html.erb (Duration: 94.5ms | Allocations: 2419)
+Completed 200 OK in 120ms (Views: 96.6ms | ActiveRecord: 1.1ms | Allocations: 3039)
+
+
+Started GET "/students" for ::1 at 2023-12-03 17:51:59 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/_student.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered students/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 810)
+  Rendered layout layouts/application.html.erb (Duration: 113.1ms | Allocations: 2784)
+Completed 200 OK in 144ms (Views: 115.2ms | ActiveRecord: 0.8ms | Allocations: 3045)
+
+
+Started GET "/students" for ::1 at 2023-12-03 17:52:08 -0500
+Processing by StudentsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/_student.html.erb (Duration: 0.3ms | Allocations: 32)
+  Rendered students/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 788)
+  Rendered layout layouts/application.html.erb (Duration: 126.9ms | Allocations: 2730)
+Completed 200 OK in 165ms (Views: 128.7ms | ActiveRecord: 1.0ms | Allocations: 3007)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students" for ::1 at 2023-12-03 17:53:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (5.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/_student.html.erb (Duration: 8.9ms | Allocations: 321)
+  Rendered students/index.html.erb within layouts/application (Duration: 235.1ms | Allocations: 18080)
+  Rendered layout layouts/application.html.erb (Duration: 237.7ms | Allocations: 18197)
+Completed 500 Internal Server Error in 597ms (ActiveRecord: 70.0ms | Allocations: 28178)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_student_path' for #<ActionView::Base:0x0000000000b388>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New student", new_student_path %>
+  
+app/views/students/index.html.erb:14
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students" for ::1 at 2023-12-03 18:02:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as */*
+  [1m[36mStudent Load (2.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:7:in `index'
+Completed 200 OK in 244ms (Views: 26.0ms | ActiveRecord: 48.3ms | Allocations: 20647)
+
+
+Started GET "/floors" for ::1 at 2023-12-03 18:02:57 -0500
+Processing by FloorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering floors/index.html.erb within layouts/application
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/views/floors/index.html.erb:6
+  Rendered floors/index.html.erb within layouts/application (Duration: 60.6ms | Allocations: 3456)
+  Rendered layout layouts/application.html.erb (Duration: 62.3ms | Allocations: 3581)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.8ms | Allocations: 7208)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_floor_path' for #<ActionView::Base:0x0000000000b450>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New floor", new_floor_path %>
+  
+app/views/floors/index.html.erb:14
+Started GET "/floor" for ::1 at 2023-12-03 18:03:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/floor"):
+  
+Started GET "/Floors" for ::1 at 2023-12-03 18:03:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Floors"):
+  
+Started GET "/Floor" for ::1 at 2023-12-03 18:03:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Floor"):
+  
+Started GET "/Floor" for ::1 at 2023-12-03 18:03:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/Floor"):
+  
+Started GET "/floors" for ::1 at 2023-12-03 18:04:03 -0500
+Processing by FloorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering floors/index.html.erb within layouts/application
+  [1m[36mFloor Load (3.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/views/floors/index.html.erb:6
+  Rendered floors/index.html.erb within layouts/application (Duration: 40.0ms | Allocations: 1470)
+  Rendered layout layouts/application.html.erb (Duration: 998.6ms | Allocations: 36752)
+Completed 200 OK in 1167ms (Views: 968.7ms | ActiveRecord: 45.0ms | Allocations: 44391)
+
+
+Started GET "/floors/new" for ::1 at 2023-12-03 18:04:06 -0500
+Processing by FloorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering floors/new.html.erb within layouts/application
+  Rendered floors/_form.html.erb (Duration: 18.4ms | Allocations: 2083)
+  Rendered floors/new.html.erb within layouts/application (Duration: 32.9ms | Allocations: 2367)
+  Rendered layout layouts/application.html.erb (Duration: 102.6ms | Allocations: 4291)
+Completed 200 OK in 156ms (Views: 104.3ms | ActiveRecord: 2.7ms | Allocations: 14608)
+
+
+Started POST "/floors" for ::1 at 2023-12-03 18:04:45 -0500
+Processing by FloorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "floor"=>{"NOM_PIS"=>"PISO 1", "DES_PIS"=>"Primer piso donde se ubican principalmente secretaria y las aulas de profesores, laboratorios CTT y laboratorio de Redes", "IMG_PIS"=>"https://i.ibb.co/bv0RVMb/Captura-de-pantalla-2023-11-22-230109.png"}, "commit"=>"Create Floor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/floors_controller.rb:27:in `block in create'
+  [1m[36mFloor Create (3.1ms)[0m  [1m[32mINSERT INTO "floors" ("NOM_PIS", "DES_PIS", "IMG_PIS", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_PIS", "PISO 1"], ["DES_PIS", "Primer piso donde se ubican principalmente secretaria y las aulas de profesores, laboratorios CTT y laboratorio de Redes"], ["IMG_PIS", "https://i.ibb.co/bv0RVMb/Captura-de-pantalla-2023-11-22-230109.png"], ["created_at", "2023-12-03 23:04:45.775858"], ["updated_at", "2023-12-03 23:04:45.775858"]]
+  ↳ app/controllers/floors_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/floors_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/floors/1
+Completed 302 Found in 29ms (ActiveRecord: 7.5ms | Allocations: 3465)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-03 18:04:45 -0500
+Processing by FloorsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.9ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:63:in `set_floor'
+  Rendering layout layouts/application.html.erb
+  Rendering floors/show.html.erb within layouts/application
+  Rendered floors/_floor.html.erb (Duration: 6.6ms | Allocations: 210)
+  Rendered floors/show.html.erb within layouts/application (Duration: 36.9ms | Allocations: 1183)
+  Rendered layout layouts/application.html.erb (Duration: 107.5ms | Allocations: 3101)
+Completed 200 OK in 149ms (Views: 109.1ms | ActiveRecord: 1.9ms | Allocations: 5678)
+
+
+Started GET "/floors" for ::1 at 2023-12-03 18:05:04 -0500
+Processing by FloorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering floors/index.html.erb within layouts/application
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/views/floors/index.html.erb:6
+  Rendered floors/_floor.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered floors/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 774)
+  Rendered layout layouts/application.html.erb (Duration: 70.5ms | Allocations: 2697)
+Completed 200 OK in 90ms (Views: 71.9ms | ActiveRecord: 0.3ms | Allocations: 2962)
+
+
+Started GET "/floors" for ::1 at 2023-12-03 18:21:25 -0500
+Processing by FloorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering floors/index.html.erb within layouts/application
+  [1m[36mFloor Load (30.9ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/views/floors/index.html.erb:6
+  Rendered floors/_floor.html.erb (Duration: 10.9ms | Allocations: 206)
+  Rendered floors/index.html.erb within layouts/application (Duration: 80.8ms | Allocations: 4964)
+  Rendered layout layouts/application.html.erb (Duration: 82.7ms | Allocations: 5056)
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 51.5ms | Allocations: 6605)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_floor_path' for #<ActionView::Base:0x00000000010018>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New floor", new_floor_path %>
+  
+app/views/floors/index.html.erb:14
+Started GET "/floors" for ::1 at 2023-12-03 18:32:23 -0500
+Processing by FloorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering floors/index.html.erb within layouts/application
+  [1m[36mFloor Load (35.2ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/views/floors/index.html.erb:6
+  Rendered floors/_floor.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered floors/index.html.erb within layouts/application (Duration: 43.2ms | Allocations: 2015)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 2106)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 58.0ms | Allocations: 2343)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_floor_path' for #<ActionView::Base:0x000000000103b0>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New floor", new_floor_path %>
+  
+app/views/floors/index.html.erb:14
+Started GET "/students" for ::1 at 2023-12-03 18:33:49 -0500
+Processing by StudentsController#index as */*
+  [1m[36mStudent Load (2.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:7:in `index'
+Completed 200 OK in 106ms (Views: 34.0ms | ActiveRecord: 7.8ms | Allocations: 9265)
+
+
+Started GET "/floors" for ::1 at 2023-12-03 18:33:56 -0500
+Processing by FloorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering floors/index.html.erb within layouts/application
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/views/floors/index.html.erb:6
+  Rendered floors/_floor.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered floors/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 1818)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.8ms | Allocations: 2091)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_floor_path' for #<ActionView::Base:0x00000000010720>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New floor", new_floor_path %>
+  
+app/views/floors/index.html.erb:14
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/floors" for ::1 at 2023-12-03 18:38:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FloorsController#index as */*
+  [1m[36mFloor Load (3.0ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/controllers/floors_controller.rb:7:in `index'
+Completed 200 OK in 215ms (Views: 15.4ms | ActiveRecord: 46.7ms | Allocations: 18148)
+
+
+Started GET "/floors" for ::1 at 2023-12-04 12:48:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FloorsController#index as */*
+  [1m[36mFloor Load (2.0ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/controllers/floors_controller.rb:7:in `index'
+Completed 200 OK in 420ms (Views: 28.4ms | ActiveRecord: 39.2ms | Allocations: 21531)
+
+
+Started GET "/floors/all" for ::1 at 2023-12-04 12:49:03 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"all"}
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 404 Not Found in 74ms (ActiveRecord: 0.7ms | Allocations: 7501)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Floor with 'id'=all):
+  
+app/controllers/floors_controller.rb:53:in `set_floor'
+Started GET "/floors" for ::1 at 2023-12-04 12:49:12 -0500
+Processing by FloorsController#index as */*
+  [1m[36mFloor Load (1.0ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/controllers/floors_controller.rb:7:in `index'
+Completed 200 OK in 29ms (Views: 2.7ms | ActiveRecord: 1.0ms | Allocations: 681)
+
+

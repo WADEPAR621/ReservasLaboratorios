@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Floor: one
+  NOM_HAB: MyString
+  TIP_HAB: MyString
+  CAP_HAB: 1
+  DIS_HAB: false
+
+two:
+  Floor: two
+  NOM_HAB: MyString
+  TIP_HAB: MyString
+  CAP_HAB: 1
+  DIS_HAB: false
