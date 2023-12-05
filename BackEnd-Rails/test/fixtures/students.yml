@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  NOM_USE: MyString
+  APE_USE: MyString
+  COR_USE: MyString
+  SEC_USE_digest: MyString
+  CAR_USE: 2023-12-03
+
+two:
+  NOM_USE: MyString
+  APE_USE: MyString
+  COR_USE: MyString
+  SEC_USE_digest: MyString
+  CAR_USE: 2023-12-03

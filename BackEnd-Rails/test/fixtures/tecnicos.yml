@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  NOM_TEC: MyString
+  APE_TEC: MyString
+  FEC_NAC_TEC: MyString
+  FEC_ING_TEC: 2023-12-03
+
+two:
+  NOM_TEC: MyString
+  APE_TEC: MyString
+  FEC_NAC_TEC: MyString
+  FEC_ING_TEC: 2023-12-03

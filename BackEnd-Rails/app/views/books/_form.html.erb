@@ -1,0 +1,52 @@
+<%= form_with(model: book) do |form| %>
+  <% if book.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Student_id, style: "display: block" %>
+    <%= form.text_field :Student_id %>
+  </div>
+
+  <div>
+    <%= form.label :Tecnico_id, style: "display: block" %>
+    <%= form.text_field :Tecnico_id %>
+  </div>
+
+  <div>
+    <%= form.label :Room_id, style: "display: block" %>
+    <%= form.text_field :Room_id %>
+  </div>
+
+  <div>
+    <%= form.label :RAZ_RES, style: "display: block" %>
+    <%= form.text_field :RAZ_RES %>
+  </div>
+
+  <div>
+    <%= form.label :HOR_INI_RES, style: "display: block" %>
+    <%= form.datetime_field :HOR_INI_RES %>
+  </div>
+
+  <div>
+    <%= form.label :HOR_FIN_RES, style: "display: block" %>
+    <%= form.datetime_field :HOR_FIN_RES %>
+  </div>
+
+  <div>
+    <%= form.label :EST_RES, style: "display: block" %>
+    <%= form.check_box :EST_RES %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
