@@ -1,21 +1,51 @@
 import { useEffect, useState } from "react";
+import { Link, redirect } from "react-router-dom"
+import '../styles/Login.css';
 
 const Login = () => {
 
 
 
 
-return(
-<>
+    return (
+        <>
+            <html>
+                <head>
+                    <meta charset="UTF-8" />
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+                </head>
+                <body>
 
-<div>
-    <h1>Hola Mundo</h1>
-    <h1>aaaaa</h1>
+                    <div class="containerPrincipal">
+                        <img src="" alt="" className="imagenDerecha" />
+                    </div>
 
-</div>
+                    <div class="form-group__LOGIN">
+                        <h1>INICIAR SESION</h1>
+                        <div class="inputbox">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <input type="text" />
+                            <label for="" >Email</label>
+                        </div>
+
+                        <div class="inputbox">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            <input class="inputbox__input" type="password" required value= "" />
+                            <label class="inputbox__label" for="">Contraseña</label>
+
+                         
+                        </div>
+                    </div>
 
 
-</>
-);    
-} 
+
+                </body>
+            </html>
+
+
+
+        </>
+    );
+}
 export default Login;
