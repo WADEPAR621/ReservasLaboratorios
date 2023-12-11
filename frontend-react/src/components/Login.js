@@ -25,8 +25,8 @@ const Login = () => {
                         <h1>INICIAR SESION</h1>
                         <div class="inputbox">
                             <ion-icon name="mail-outline"></ion-icon>
-                            <input type="text" />
-                            <label for="" >Email</label>
+                            <input class= "inputbox__input" type="text" />
+                            <label class= "inputbox__label" for="" >Email</label>
                         </div>
 
                         <div class="inputbox">
@@ -36,6 +36,7 @@ const Login = () => {
 
                          
                         </div>
+                        <button id="boton" class="boton" onclick="login()" onClick="">INCIAR SESION</button>
                     </div>
 
 
