@@ -16,16 +16,16 @@ const NavBar = () => {
         setNavlinksVisible(!navlinksVisible);
     };
     return (
-        <nav class="navbar">
+        <nav className="navbar">
 
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Escudo_de_la_Universidad_T%C3%A9cnica_de_Ambato.png"
-                class="navbar_img"></img>
-            <div class="navbar_text">
+                className="navbar_img"></img>
+            <div className="navbar_text">
                 <h1>UTA</h1>
                 <h2>UNIVERSIDAD TECNICA DE AMBATO</h2>
             </div>
 
-            <div class="MENU_RESPONSIVE" id="container__icons" onClick={toggleNavLinks}>
+            <div className="MENU_RESPONSIVE" id="container__icons" onClick={toggleNavLinks}>
                 <img src={menuHamburguesa} />
             </div>
             <div className={`nav_links ${navlinksVisible ? 'nav_links--show' : ''}`}>

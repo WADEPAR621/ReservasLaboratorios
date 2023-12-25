@@ -54,7 +54,6 @@ export default App;
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import MapaPisos from './components/MapaPisos.js';
 
 

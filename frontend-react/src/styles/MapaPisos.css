@@ -45,6 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 .Plano_imagen {
   position: absolute;
