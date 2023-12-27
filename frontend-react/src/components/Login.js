@@ -18,20 +18,21 @@ const Login = () => {
                 <body>
 
                     <div class="containerPrincipal">
-                        <img src="" alt="" className="imagenDerecha" />
+                        <img src="..." alt="" className="imagenDerecha" />
                     </div>
 
                     <div class="form-group__LOGIN">
-                        <h1>INICIAR SESION</h1>
+                        
+                        <h1>Inicia sesión en tu cuenta</h1>
                         <div class="inputbox">
                             <ion-icon name="mail-outline"></ion-icon>
-                            <input class= "inputbox__input" type="text" />
+                            <input class= "inputbox__input" type="text"  />
                             <label class= "inputbox__label" for="" >Email</label>
                         </div>
 
                         <div class="inputbox">
                             <ion-icon name="lock-closed-outline"></ion-icon>
-                            <input class="inputbox__input" type="password" required value= "" />
+                            <input class="inputbox__input" type="password"  />
                             <label class="inputbox__label" for="">Contraseña</label>
 
                          
