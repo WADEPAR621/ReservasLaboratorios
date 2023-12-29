@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  NOM_ADM: MyString
+  APE_ADM: MyString
+  COR_USE: MyString
+  SEC_USE: MyString
+
+two:
+  NOM_ADM: MyString
+  APE_ADM: MyString
+  COR_USE: MyString
+  SEC_USE: MyString

@@ -4,9 +4,8 @@
     display: flex;
   }
   .navbar_text {
-    font-size: larger;
     color: rgb(255, 255, 255);
-    width: 160vh;
+    width: 150vh;
     line-height: 15px;
   }
   .navbar_img {
@@ -21,7 +20,7 @@
   .MENU_RESPONSIVE img{
     position: relative;
     color: aliceblue;
-    width: 85%;
+    width: 75%;
     height: 85%;
     z-index: 80;
   }

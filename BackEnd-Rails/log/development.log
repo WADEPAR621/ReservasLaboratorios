@@ -1598,3 +1598,1475 @@ Processing by FloorsController#show as */*
 Completed 200 OK in 224ms (Views: 0.5ms | ActiveRecord: 45.0ms | Allocations: 19806)
 
 
+Started GET "/floors/2" for ::1 at 2023-12-29 14:47:37 -0500
+Started GET "/floors/1" for ::1 at 2023-12-29 14:47:37 -0500
+  
+ActiveRecord::DuplicateMigrationNameError (
+
+Multiple migrations have the name CreateStudents.
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:1552:in `validate'
+activerecord (7.1.2) lib/active_record/migration.rb:1422:in `initialize'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `new'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `open'
+activerecord (7.1.2) lib/active_record/migration.rb:774:in `block (2 levels) in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.2) lib/active_record/migration.rb:773:in `block in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `each'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:751:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  
+ActiveRecord::DuplicateMigrationNameError (
+
+Multiple migrations have the name CreateStudents.
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:1552:in `validate'
+activerecord (7.1.2) lib/active_record/migration.rb:1422:in `initialize'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `new'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `open'
+activerecord (7.1.2) lib/active_record/migration.rb:774:in `block (2 levels) in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.2) lib/active_record/migration.rb:773:in `block in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `each'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:751:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/rooms" for ::1 at 2023-12-29 14:48:26 -0500
+  
+ActiveRecord::DuplicateMigrationNameError (
+
+Multiple migrations have the name CreateStudents.
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:1552:in `validate'
+activerecord (7.1.2) lib/active_record/migration.rb:1422:in `initialize'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `new'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `open'
+activerecord (7.1.2) lib/active_record/migration.rb:774:in `block (2 levels) in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.2) lib/active_record/migration.rb:773:in `block in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `each'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:751:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/floors/1" for ::1 at 2023-12-29 14:48:56 -0500
+  
+ActiveRecord::DuplicateMigrationNameError (
+
+Multiple migrations have the name CreateStudents.
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:1552:in `validate'
+activerecord (7.1.2) lib/active_record/migration.rb:1422:in `initialize'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `new'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `open'
+activerecord (7.1.2) lib/active_record/migration.rb:774:in `block (2 levels) in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.2) lib/active_record/migration.rb:773:in `block in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `each'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:751:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/floors/1" for ::1 at 2023-12-29 14:48:56 -0500
+  
+ActiveRecord::DuplicateMigrationNameError (
+
+Multiple migrations have the name CreateStudents.
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:1552:in `validate'
+activerecord (7.1.2) lib/active_record/migration.rb:1422:in `initialize'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `new'
+activerecord (7.1.2) lib/active_record/migration.rb:1291:in `open'
+activerecord (7.1.2) lib/active_record/migration.rb:774:in `block (2 levels) in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.2) lib/active_record/migration.rb:773:in `block in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `each'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:751:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (5.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20231203163408)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_USE" varchar, "APE_USE" varchar, "COR_USE" varchar, "SEC_USE_digest" varchar, "CAR_USE" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (12.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar, "HOR_INI_RES" datetime(6), "HOR_FIN_RES" datetime(6), "EST_RES" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "floors"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "floors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_PIS" varchar, "DES_PIS" varchar, "IMG_PIS" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar, "TIP_HAB" varchar, "CAP_HAB" integer, "DIS_HAB" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_USE" varchar, "APE_USE" varchar, "COR_USE" varchar, "SEC_USE_digest" varchar, "CAR_USE" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tecnicos"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "tecnicos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_TEC" varchar, "APE_TEC" varchar, "FEC_NAC_TEC" varchar, "FEC_ING_TEC" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+, CONSTRAINT "fk_rails_76677d607a"
+FOREIGN KEY ("Tecnico_id")
+  REFERENCES "Tecnicos" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar DEFAULT NULL, "TIP_HAB" varchar DEFAULT NULL, "CAP_HAB" integer DEFAULT NULL, "DIS_HAB" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_arooms_on_Floor_id" ON "arooms" ("Floor_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "arooms" ("id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at")
+                     SELECT "id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at" FROM "rooms"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "rooms"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar DEFAULT NULL, "TIP_HAB" varchar DEFAULT NULL, "CAP_HAB" integer DEFAULT NULL, "DIS_HAB" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5e6917ca28"
+FOREIGN KEY ("Floor_id")
+  REFERENCES "Floors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "rooms" ("id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at")
+                     SELECT "id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at" FROM "arooms"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "arooms"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231203163606)[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231203163545),
+(20231203163455),
+(20231203163422),
+(20231203163408);[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-12-29 19:53:36.033639', '2023-12-29 19:53:36.033642') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '30dbc1826056f857bb0e0f38371d743385e8d846', '2023-12-29 19:53:36.043465', '2023-12-29 19:53:36.043468') RETURNING "key"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar, "HOR_INI_RES" datetime(6), "HOR_FIN_RES" datetime(6), "EST_RES" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "floors"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "floors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_PIS" varchar, "DES_PIS" varchar, "IMG_PIS" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar, "TIP_HAB" varchar, "CAP_HAB" integer, "DIS_HAB" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_USE" varchar, "APE_USE" varchar, "COR_USE" varchar, "SEC_USE_digest" varchar, "CAR_USE" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "tecnicos"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "tecnicos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "NOM_TEC" varchar, "APE_TEC" varchar, "FEC_NAC_TEC" varchar, "FEC_ING_TEC" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Tecnico_id" ON "abooks" ("Tecnico_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Student_id" ON "abooks" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abooks_on_Room_id" ON "abooks" ("Room_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "books"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Student_id" integer NOT NULL, "Tecnico_id" integer NOT NULL, "Room_id" integer NOT NULL, "RAZ_RES" varchar DEFAULT NULL, "HOR_INI_RES" datetime(6) DEFAULT NULL, "HOR_FIN_RES" datetime(6) DEFAULT NULL, "EST_RES" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_41c649ee01"
+FOREIGN KEY ("Student_id")
+  REFERENCES "Students" ("id")
+, CONSTRAINT "fk_rails_5f86ca3680"
+FOREIGN KEY ("Room_id")
+  REFERENCES "Rooms" ("id")
+, CONSTRAINT "fk_rails_76677d607a"
+FOREIGN KEY ("Tecnico_id")
+  REFERENCES "Tecnicos" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Room_id" ON "books" ("Room_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Student_id" ON "books" ("Student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_books_on_Tecnico_id" ON "books" ("Tecnico_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at")
+                     SELECT "id","Student_id","Tecnico_id","Room_id","RAZ_RES","HOR_INI_RES","HOR_FIN_RES","EST_RES","created_at","updated_at" FROM "abooks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar DEFAULT NULL, "TIP_HAB" varchar DEFAULT NULL, "CAP_HAB" integer DEFAULT NULL, "DIS_HAB" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_arooms_on_Floor_id" ON "arooms" ("Floor_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "arooms" ("id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at")
+                     SELECT "id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at" FROM "rooms"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "rooms"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Floor_id" integer NOT NULL, "NOM_HAB" varchar DEFAULT NULL, "TIP_HAB" varchar DEFAULT NULL, "CAP_HAB" integer DEFAULT NULL, "DIS_HAB" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5e6917ca28"
+FOREIGN KEY ("Floor_id")
+  REFERENCES "Floors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_Floor_id" ON "rooms" ("Floor_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "rooms" ("id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at")
+                     SELECT "id","Floor_id","NOM_HAB","TIP_HAB","CAP_HAB","DIS_HAB","created_at","updated_at" FROM "arooms"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arooms"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231203163606)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231203163545),
+(20231203163455),
+(20231203163422),
+(20231203163408);[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-12-29 19:53:36.283130', '2023-12-29 19:53:36.283133') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-12-29 19:53:36.289178' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '30dbc1826056f857bb0e0f38371d743385e8d846', '2023-12-29 19:53:36.292794', '2023-12-29 19:53:36.292796') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFloor Load (2.2ms)[0m  [1m[34mSELECT "floors".* FROM "floors" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (2.1ms)[0m  [1m[32mINSERT INTO "floors" ("NOM_PIS", "DES_PIS", "IMG_PIS", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_PIS", "PISO 1"], ["DES_PIS", "Primer piso donde se ubican principalmente las aulas de clases adicionales, oficinas administrativas, etc."], ["IMG_PIS", "https://i.ibb.co/gzSxjWv/imagen-2023-12-29-023846609.png"], ["created_at", "2023-12-29 19:54:44.197549"], ["updated_at", "2023-12-29 19:54:44.197549"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (2.7ms)[0m  [1m[32mINSERT INTO "floors" ("NOM_PIS", "DES_PIS", "IMG_PIS", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_PIS", "PISO 2"], ["DES_PIS", "Segundo piso donde se ubican la gran mayoria de laboratorios y el aula de administracion de las mismas"], ["IMG_PIS", "https://i.ibb.co/pZfxCVr/imagen-2023-12-29-122437848.png"], ["created_at", "2023-12-29 19:54:47.760300"], ["updated_at", "2023-12-29 19:54:47.760300"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (2.2ms)[0m  [1m[32mINSERT INTO "floors" ("NOM_PIS", "DES_PIS", "IMG_PIS", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_PIS", "PISO 3"], ["DES_PIS", "Tercer Piso donde se encuentran Aulas de algunos profesores y mas laboratorios"], ["IMG_PIS", "https://i.ibb.co/2jXXHq7/imagen-2023-12-29-123457328.png"], ["created_at", "2023-12-29 19:54:54.390134"], ["updated_at", "2023-12-29 19:54:54.390134"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFloor Load (0.9ms)[0m  [1m[34mSELECT "floors".* FROM "floors" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/floors/1" for ::1 at 2023-12-29 14:55:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 154ms (Views: 0.6ms | ActiveRecord: 13.5ms | Allocations: 19793)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 14:55:06 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 520)
+
+
+Started GET "/floors/2" for ::1 at 2023-12-29 15:23:01 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (10.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 33ms (Views: 0.5ms | ActiveRecord: 16.8ms | Allocations: 806)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 15:23:05 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 531)
+
+
+Started GET "/rooms" for ::1 at 2023-12-29 15:25:58 -0500
+Processing by RoomsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:6
+  Rendered rooms/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 2349)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 2474)
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 1.1ms | Allocations: 6859)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_room_path' for #<ActionView::Base:0x0000000000b540>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New room", new_room_path %>
+  
+app/views/rooms/index.html.erb:14
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/rooms/1" for ::1 at 2023-12-29 15:27:04 -0500
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:63:in `set_room'
+Completed 404 Not Found in 25ms (ActiveRecord: 2.5ms | Allocations: 2019)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=1):
+  
+app/controllers/rooms_controller.rb:63:in `set_room'
+Started GET "/rooms" for ::1 at 2023-12-29 15:27:17 -0500
+Processing by RoomsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:6
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1447)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1538)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.5ms | Allocations: 1800)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_room_path' for #<ActionView::Base:0x0000000000bc98>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New room", new_room_path %>
+  
+app/views/rooms/index.html.erb:14
+Started GET "/floors/1" for ::1 at 2023-12-29 16:35:46 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (9.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 32ms (Views: 0.6ms | ActiveRecord: 14.5ms | Allocations: 797)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:35:47 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:36:00 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:36:00 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:36:09 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:36:09 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:36:24 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:36:24 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:37:53 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 519)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:37:53 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:38:16 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:38:16 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:38:28 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:38:28 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:38:45 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:38:45 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:39:52 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 23ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:39:53 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:40:38 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:40:39 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:40:45 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:40:45 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:41:25 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:41:25 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:41:50 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:41:50 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:41:56 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:41:57 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 519)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:42:02 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:42:03 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:42:30 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 519)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:42:30 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:42:43 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:42:43 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 519)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:42:55 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:42:55 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:43:02 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:43:02 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:43:20 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:43:21 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:43:47 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:43:47 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.1ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:43:54 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:43:55 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/3" for ::1 at 2023-12-29 16:44:04 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 518)
+
+
+Started GET "/floors/2" for ::1 at 2023-12-29 16:44:06 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:44:11 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 518)
+
+
+Started GET "/floors/2" for ::1 at 2023-12-29 16:44:12 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/3" for ::1 at 2023-12-29 16:44:13 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:44:15 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 519)
+
+
+Started GET "/room" for ::1 at 2023-12-29 16:46:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/room"):
+  
+Started GET "/rooms" for ::1 at 2023-12-29 16:47:31 -0500
+Processing by RoomsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:6
+  Rendered rooms/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1475)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 1566)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.0ms | Allocations: 1820)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_room_path' for #<ActionView::Base:0x0000000000cbc0>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New room", new_room_path %>
+  
+app/views/rooms/index.html.erb:14
+Started GET "/floors/3" for ::1 at 2023-12-29 16:48:05 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 517)
+
+
+Started GET "/floors/2" for ::1 at 2023-12-29 16:48:07 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:48:09 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 517)
+
+
+Started GET "/floors/3" for ::1 at 2023-12-29 16:48:13 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:48:14 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 517)
+
+
+Started GET "/floors/3" for ::1 at 2023-12-29 16:48:15 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 517)
+
+
+Started GET "/students" for ::1 at 2023-12-29 16:51:45 -0500
+Processing by StudentsController#index as */*
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:7:in `index'
+Completed 200 OK in 60ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 1173)
+
+
+Started GET "/tecnicos" for ::1 at 2023-12-29 16:51:57 -0500
+Processing by TecnicosController#index as */*
+  [1m[36mTecnico Load (0.6ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos"[0m
+  ↳ app/controllers/tecnicos_controller.rb:8:in `index'
+Completed 200 OK in 57ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 1165)
+
+
+Started GET "/books" for ::1 at 2023-12-29 16:52:35 -0500
+Processing by BooksController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1712)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 1803)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.8ms | Allocations: 3717)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_book_path' for #<ActionView::Base:0x0000000000d160>):
+    11:   <% end %>
+    12: </div>
+    13: 
+    14: <%= link_to "New book", new_book_path %>
+  
+app/views/books/index.html.erb:14
+Started GET "/floors/2" for ::1 at 2023-12-29 16:58:42 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (28.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 48.0ms | Allocations: 794)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:59:15 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 16:59:15 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:01:18 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:01:19 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.9ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 28ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 517)
+
+
+Started GET "/floors/3" for ::1 at 2023-12-29 17:01:22 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:02:42 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 26ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:02:42 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.1ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:02:52 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.0ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:02:53 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (2.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 49ms (Views: 0.6ms | ActiveRecord: 2.4ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:03:24 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 27ms (Views: 0.7ms | ActiveRecord: 1.2ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:03:24 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:03:28 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.0ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:03:28 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.1ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:03:40 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:03:41 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 33ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:15 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.1ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:15 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.0ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:28 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.1ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 30ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:29 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.9ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 517)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:38 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 519)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:38 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.1ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:49 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:50 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.0ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 31ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:58 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 519)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:04:58 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 519)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:05:24 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:05:24 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:06:36 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:06:37 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.9ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 518)
+
+
+Started GET "/floors/2" for ::1 at 2023-12-29 17:06:38 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (1.2ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 518)
+
+
+Started GET "/floors/3" for ::1 at 2023-12-29 17:06:39 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (1.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:06:48 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.8ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 518)
+
+
+Started GET "/floors/1" for ::1 at 2023-12-29 17:06:49 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 518)
+
+
