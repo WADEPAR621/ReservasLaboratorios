@@ -121,3 +121,11 @@ margin-left: 4.5%;
     }.display_entrada .round{
         text-decoration: none;
     }
+    .Imagen1{
+        display: flex;
+        width: 950px;
+        height: 747px;
+        float: right;
+        object-fit: cover;
+        flex: 1;
+    }
