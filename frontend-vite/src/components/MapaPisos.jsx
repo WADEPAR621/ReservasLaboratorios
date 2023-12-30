@@ -10,29 +10,46 @@ const MapaPisos = () => {
 
     useEffect(() => {
         fetchPisos(1);
+        fetchHabitaciones(1);
     }, []);
-
-    //Metodo para obtener todas las reservas dependiendo del usuario
 
     const [pisos, setPisos] = useState([])
     const fetchPisos = async (id) => {
-        
+
         try {
-            console.log(pisos);
             const response = await fetch(`http://localhost:3000/floors/${id}`, {
                 method: "GET"
             });
             if (!response.ok) {
                 throw new Error('Fallo al conectar a la base de datos');
             }
-            const data = await response.json();
-            setPisos(data);
-            console.log(pisos);
+            const date = await response.json();
+            setPisos(date);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
-
+    //Consulta de SELECT * FROM ROOMS WHERE Floor_id : (piso seleccionado)
+    const [habitaciones, setHabitaciones] = useState([])
+    const fetchHabitaciones = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:3000/rooms/rooms/by_floor/${id}`, {
+                method: "GET"
+            });
+            if (!response.ok) {
+                throw new Error('Fallo al conectar a la base de datos');
+            }
+            const data = await response.json();
+            console.log("DATA");
+            console.log(data)
+            setHabitaciones(data);
+            setHabitaciones(data);
+            console.log("HABITACIONES");
+            console.log(habitaciones);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
     // Manejador de eventos para cambiar la selección
     const [selectedOption, setSelectedOption] = useState('');
@@ -42,6 +59,7 @@ const MapaPisos = () => {
         console.log(event.target.value);
         const id = event.target.value;
         fetchPisos(id);
+        fetchHabitaciones(id);
     };
 
     //Comienzo del HTML en React
@@ -58,9 +76,14 @@ const MapaPisos = () => {
                     </select>
                     <h3>DESCRIPCION:</h3>
                     <p>{pisos?.DES_PIS}</p>
-                    <h3>MAS INFORMACION:</h3>
+                    <h3>HABITACIONES EN EL PISO:</h3>
                     <div className="Habitaciones">
-                        <p>{pisos?.DES_PIS}</p>
+                        {Object.keys(habitaciones).map((habitacionId) => (
+                            <div key={habitacionId}>
+                                <p>NOMBRE: {habitaciones[habitacionId].NOM_HAB}</p>
+                                <p> </p>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className="container_image">

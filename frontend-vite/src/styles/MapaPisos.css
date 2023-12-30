@@ -14,11 +14,11 @@ body {
   background-color: rgb(214, 214, 214);
   width: 30%;
   padding-left: 35px;
-  color: rgb(#e0e0e0)
+  color: rgb(#090808)
 }
 .container_info h3 {
   font-size: 200%;
-  margin: 20px 0px;
+  margin: 8px 0px;
   padding-right: 15%;
 }
 #comboBox {
@@ -35,13 +35,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .Habitaciones {
   margin-right: 50px;
   height: 40%;
   overflow: auto;
+  background-color: rgb(255, 255, 255);
+}
+.Habitaciones p {
+  display: block;
+  text-align: left;
+  line-height: 0.5;
 }
 .container_image {
   width: 65%;
@@ -56,4 +62,3 @@ body {
   width: 45%;
   right: 15%;
 }
-
