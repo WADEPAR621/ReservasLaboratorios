@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-import { Link } from "react-router-dom";
 import '../styles/Sing_up.css';
 import imagenes1 from '../images/loginimagen.png';
 import irlogin from "../components/Login";

@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import '../styles/Login.css';
 import imagenes1 from '../images/loginimagen.png';
-import { useHistory } from "react-router-dom";
+import { createBrowserHistory } from 'history';
+import { Link } from 'react-router-dom';
 
-
+const history = createBrowserHistory();
 const Login = () => {
 
-    const history = useHistory();
+
 
     const [cuenta, setcuenta] = useState([]);
     const [showEntrada, setShowEntrada] = useState(false);
@@ -44,6 +45,10 @@ const Login = () => {
         }
         return alert("Usuario No detectado");
     };
+    const handleContinueClick = () => {
+        history.push("/Sing_up");
+    };
+
 
     return (
         <>
@@ -88,17 +93,22 @@ const Login = () => {
                         INCIAR SESION
                     </button>
                     <br />
-                    <button id="boton2" className="boton2" onClick={() => history.push("/Principal")}>
-                        Continue with Microsoft 365
-                    </button>
+
+                   
+                        <button id="boton2" className="boton2" onClick={handleContinueClick}>
+                            Continue with Microsoft 365
+                        </button>
+                  
+
                     <br />
                     <p>
-                        ¿No tienes una cuenta?Registrate
+                        ¿No tienes una cuenta? <Link to="/Sing_up">Regístrate</Link>
                     </p>
                 </div>
                 <div className="">
                     <img src={imagenes1} className="Imagen1" alt="loginimagen" />
                 </div>
+
             </body>
         </>
     );

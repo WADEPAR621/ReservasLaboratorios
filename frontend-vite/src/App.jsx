@@ -16,7 +16,7 @@ const ProtectedRoute = ({ element, ...props }) => {
   return isAuthenticated ? (
     element
   ) : (
-    <Navigate to="/Login" replace state={{ from: props.location }} />
+    <Navigate to="/" replace state={{ from: props.location }} />
   );
 };
 
