@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import MapaPisos from './components/MapaPisos';
-import MisReservas from './components/MisReservas';
+import MapaPisos from './components/pages/MapaPisos';
+import MisReservas from './components/pages/MisReservas';
 
 
 const ProtectedRoute = ({ element, ...props }) => {
