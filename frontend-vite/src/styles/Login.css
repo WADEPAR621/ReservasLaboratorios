@@ -59,7 +59,7 @@ h1.titulo1{
 .form-group__LOGIN .inputbox__input:focus ~ .inputbox__label,
 .inputbox__input:valid ~ .inputbox__label,
 .inputbox__input:not(:placeholder-shown) ~ .inputbox__label {
-    top: calc(10% - 7px); /* Ajusta el valor para centrar el texto en la esquina superior izquierda */
+    top: calc(10% - 7px);
     font-size: 12px;
     opacity: 1;
 }

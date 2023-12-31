@@ -1,2 +1,7 @@
 # Ignorar la carpeta node_modules en Frontend-react
+<<<<<<< HEAD
 /Frontend-react/node_modules
+=======
+/Frontend-react/node_modules
+node_modules
+>>>>>>> 0180454e44b368dacbb403faebc9f9008b4be32e
