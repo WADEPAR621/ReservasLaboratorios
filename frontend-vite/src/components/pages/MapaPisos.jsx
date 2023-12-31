@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 
-import '../styles/MapaPisos.css';
-import NavBar from "./NavbarMenu";
+import '../../styles/MapaPisos.css';
+import NavBar from "../NavbarMenu";
 
 
 const MapaPisos = () => {
