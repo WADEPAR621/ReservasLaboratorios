@@ -1,6 +1,6 @@
-import {Route,Routes} from "react-router"
+import { Route, Routes } from "react-router"
 import './App.css';
-import SignUp from './components/SignUp';
+import SignUp from './components/Sing_up';
 import Principal from './components/Principal';
 import Inicio from './components/Inicio';
 import Cuentas from './components/Cuentas';
@@ -19,37 +19,32 @@ import Divisas from "./components/Divisas";
 import PlanAhorro from "./components/PlanAhorro";
 
 
-function Usuario({usuario}) {
-    const [editParticion, setEditParticion] = useState([]);
-    const handleEditParticion = (particion) => {
-      setEditParticion(particion);
-    }
-    return (
-      <Router>
-        <Routes>
-          {/*
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute
-                element={<MapaPisos />}
-              />
-            }
-          />
-          */}
-          <Route
-            path={`/MapaPisos`}
-            element={<MapaPisos/>}
-          />
-  
-          <Route
-            path="/MisReservas"
-            element={<MisReservas />}
-          />
-        </Routes>
-      </Router>
-    );
+function Usuario({ usuario }) {
+  const [editParticion, setEditParticion] = useState([]);
+  const handleEditParticion = (particion) => {
+    setEditParticion(particion);
   }
-  
-  export default Usuario;
+  return (
+    <Routes>
+      {                                                       }
+      <Route path="/SignUp" element={<SignUp />} />
+      <Route path="/Principal" element={<Principal />} />
+      <Route path="/Inicio" element={<Inicio />} />
+      <Route path="/Cuentas" element={<Cuentas />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/EstadoCuenta" element={<EstadoCuenta />} />
+      <Route path="/SobreNosotros" element={<SobreNosotros />} />
+      <Route path="/Blogs" element={<Blogs />} />
+      <Route path="/PlanActivo" element={<PlanActivo />} />
+
+      {/* Páginas relacionadas con useState */}
+      <Route path="/Blog1" element={<Blog1 />} />
+      <Route path="/BlogInversion" element={<BlogInversion />} />
+      <Route path="/BlogAdulto" element={<BlogAdulto />} />
+      <Route path="/Divisas" element={<Divisas />} />
+      <Route path="/PlanAhorro" element={<PlanAhorro />} />
+    </Routes>
+  );
+}
+
+export default Usuario;

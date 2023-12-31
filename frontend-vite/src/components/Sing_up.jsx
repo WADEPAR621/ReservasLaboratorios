@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IonIcon } from "@ionic/react";
+
 import { Link } from "react-router-dom";
 import '../styles/Sing_up.css';
 import imagenes1 from '../images/loginimagen.png';
@@ -54,19 +54,24 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="">
-        <img src={imagenes1} className="Imagen1" alt="loginimagen" />
-      </div>
+    <head>
+    <meta charSet="UTF-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    </head>
+
+<body>
+      
+
       <div className="form-group__LOGIN">
         <h1 className="titulo1">Cree su Cuenta</h1>
-
         <div className="inputbox">
           <input
             className="inputbox__input"
             type="text"
             required
-            value={newCuenta.usuario}
-            onChange={(e) => setNewCuenta({ ...newCuenta, usuario: e.target.value })}
+            value={newStudent.usuario}
+            onChange={(e) => setNewStudent({ ...newStudent, usuario: e.target.value })}
           />
           <label className="inputbox__label" htmlFor="">
             Nombre
@@ -78,8 +83,8 @@ const SignUp = () => {
             className="inputbox__input"
             type="text"
             required
-            value={newCuenta.correoElectronico}
-            onChange={(e) => setNewCuenta({ ...newCuenta, correoElectronico: e.target.value })}
+            value={newStudent.correoElectronico}
+            onChange={(e) => setNewStudent({ ...newStudent, correoElectronico: e.target.value })}
           />
           <label className="inputbox__label" htmlFor="">
             Correo Electrónico
@@ -91,8 +96,8 @@ const SignUp = () => {
             className="inputbox__input"
             type="password"
             required
-            value={newCuenta.contrasena}
-            onChange={(e) => setNewCuenta({ ...newCuenta, contrasena: e.target.value })}
+            value={newStudent.contrasena}
+            onChange={(e) => setNewStudent({ ...newStudent, contrasena: e.target.value })}
           />
           <label className="inputbox__label" htmlFor="">
             Contraseña
@@ -104,7 +109,7 @@ const SignUp = () => {
           Crear Cuenta
         </button>
         <br />
-        <button id="boton2" className="boton2" onClick={handleAddCuenta}>
+        <button id="boton2" className="boton2" onClick={handleAddEstudiante}>
           Continue with Microsoft 365
         </button>
         <br />
@@ -112,6 +117,11 @@ const SignUp = () => {
           ¿Ya tienes una cuenta? <button onClick={irlogin}>Inicia sesión</button>
         </p>
       </div>
+
+      <div className="Imagen1">
+        <img src={imagenes1} className="Imagen1" alt="loginimagen" />
+      </div>
+      </body>
     </>
   );
 };
