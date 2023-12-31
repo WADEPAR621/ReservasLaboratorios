@@ -3,10 +3,6 @@ import { Link, redirect } from "react-router-dom"
 import '../styles/Login.css';
 
 const Login = () => {
-
-
-
-
     return (
         <>
             <html>
