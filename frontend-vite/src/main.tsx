@@ -9,6 +9,6 @@ import SingUp from './components/Sing_up.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <SingUp/>
+    <Login2/>
   </React.StrictMode>,
 )
