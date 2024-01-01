@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import MapaPisos from './components/pages/MapaPisos';
 import MisReservas from './components/pages/MisReservas';
+import NuevaReserva from './components/pages/NuevaReserva'
 
 
 const ProtectedRoute = ({ element, ...props }) => {
@@ -40,6 +41,11 @@ const App = () => {
         <Route
           path="/MisReservas"
           element={<MisReservas />}
+        />
+
+        <Route
+          path="/NuevaReserva"
+          element={<NuevaReserva />}
         />
       </Routes>
     </Router>
