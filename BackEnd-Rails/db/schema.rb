@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_01_231420) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_02_021102) do
   create_table "books", force: :cascade do |t|
     t.integer "Student_id", null: false
     t.integer "Tecnico_id", null: false
@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_01_231420) do
     t.boolean "EST_RES"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "EST_TIM_RES"
     t.index ["Room_id"], name: "index_books_on_Room_id"
     t.index ["Student_id"], name: "index_books_on_Student_id"
     t.index ["Tecnico_id"], name: "index_books_on_Tecnico_id"
@@ -50,7 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_01_231420) do
     t.string "APE_USE"
     t.string "COR_USE"
     t.string "SEC_USE_digest"
-    t.date "CAR_USE"
+    t.string "CAR_USE"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

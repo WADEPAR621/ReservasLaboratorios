@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   
   
 
-  resources :students, only: [:index, :show, :destroy, :create]
-  resources :books, only: [:index, :show, :destroy, :create]
+  resources :students, only: [:index, :show, :destroy, :create] 
+  resources :books, only: [:index, :show, :destroy, :create] do
+    collection do
+      get 'by_user/:student_id', to: 'books#by_user', as: 'by_user'
+    end
+  end
   resources :floors, only: [:index, :show, :destroy]
   resources :tecnicos, only: [:index, :show, :destroy, :create]
   

@@ -11,7 +11,12 @@ class BooksController < ApplicationController
   def show
     render json: @book
   end
-
+  
+  def by_user
+    @books = Book.where(Student_id: params[:student_id])
+    render json: @books
+  end
+  
   # GET /books/new
   def new
     @book = Book.new
@@ -62,6 +67,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:Student_id, :Tecnico_id, :Room_id, :RAZ_RES, :HOR_INI_RES, :HOR_FIN_RES, :EST_RES)
+      params.require(:book).permit(:Student_id, :Tecnico_id, :Room_id, :RAZ_RES, :HOR_INI_RES, :HOR_FIN_RES, :EST_RES, :EST_TIM_RES)
     end
 end

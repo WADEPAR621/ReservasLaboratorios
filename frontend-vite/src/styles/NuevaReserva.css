@@ -37,12 +37,13 @@ body{
     height: 50px;
     margin: 0 8px;
     font-size: larger;
+    padding: 7px 1.5px;
 }
 .containerNew_form textarea{
     border-radius: 8px;
     border: 5px solid var(--colorsecundario);
     width: 90%;
-    height: 27%;
+    height: 37%;
     margin: 8px 8px;
     font-size: larger;
     text-align: left;
@@ -55,7 +56,7 @@ body{
     padding: 4% 0;
     font-size: 25px
 }
-#messageDisplay {
+#messageDisplay, #errorMessage {
     display: none; /* El mensaje estará oculto inicialmente */
     position: fixed; /* Posición fija para que permanezca en la mitad de la pantalla */
     top: 50%; /* Centrado verticalmente */

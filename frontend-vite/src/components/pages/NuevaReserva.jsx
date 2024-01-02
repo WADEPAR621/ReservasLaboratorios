@@ -5,6 +5,12 @@ import '../../styles/NuevaReserva.css';
 import NavBar from "../NavbarMenu";
 const NuevaReserva = () => {
     //CODIGO JAVASCRIPT
+    const validarCampos = () => {
+        if (selectedOption === "DefaultRoom" || selectedOptionTime === "DefaultTime" || !razonReserva.trim()) {
+            return false; // Uno o más campos están vacíos
+        }
+        return true; // Todos los campos tienen datos
+    };
 
     //USEEFFECT
     useEffect(() => {
@@ -63,12 +69,8 @@ const NuevaReserva = () => {
                 throw new Error('Fallo al conectar a la base de datos');
             }
             const dati = await response.json();
-            console.log("DATA");
-            console.log(dati)
             setRooms(dati);
             setRooms(dati);
-            console.log("HABITACIONES");
-            console.log(rooms);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -76,8 +78,14 @@ const NuevaReserva = () => {
 
     //ENVIAR DATOS A LA BASE DE DATOS CON LA UNFO QUE SE OBTUVO EN EL FORMULARIO
     const enviarSolicitud = async () => {
+        if (!validarCampos()) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.innerText = 'Parametros en Blanco no son permitidos';
+            errorMessage.style.display = 'block';
 
-
+            setTimeout(() => {errorMessage.style.display = 'none';}, 2500);
+            return;
+        }
         try {
             // Realiza la solicitud a la API para crear un nuevo libro (o reserva)
             const response = await fetch('http://localhost:3000/books', {
@@ -86,7 +94,7 @@ const NuevaReserva = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    Student_id: 1,
+                    Student_id: 2,
                     Tecnico_id: 1, // Reemplaza con el ID del técnico seleccionado
                     Room_id: selectedOption, // Reemplaza con el ID de la habitación seleccionada
                     RAZ_RES: razonReserva, // Reemplaza con el valor del cuadro de texto
@@ -160,9 +168,8 @@ const NuevaReserva = () => {
                     <button onClick={enviarSolicitud}>
                         ENVIAR SOLICITUD
                     </button>
-                    <div id="messageDisplay">
-                        Mensaje aquí
-                    </div>
+                    <div id="messageDisplay"></div>
+                    <div id="errorMessage"></div>
                 </div>
             </div>
         </div>

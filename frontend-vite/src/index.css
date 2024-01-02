@@ -7,6 +7,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --colorprimario: rgb(255, 255, 255);
+  --colorsecundario: rgb(6, 0, 94);
+  --colorterceario: rgba(6, 0, 94, 0.354);
+  --colorbotonesmenuhamburguesa: rgba(89, 0, 0, 1);
+  --colorwhite: rgb(255, 255, 255);
+  --colorblack: rgb(51, 51, 51);
 }
 
 a {
@@ -40,6 +46,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: var(--colorprimario);
 }
 button:hover {
   border-color: #646cff;
