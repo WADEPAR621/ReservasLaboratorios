@@ -55,3 +55,17 @@ body{
     padding: 4% 0;
     font-size: 25px
 }
+#messageDisplay {
+    display: none; /* El mensaje estará oculto inicialmente */
+    position: fixed; /* Posición fija para que permanezca en la mitad de la pantalla */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Centrar el contenido */
+    background-color: #ffffff; /* Fondo blanco para el mensaje */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #960000; /* Borde del mensaje */
+    border-radius: 5px; /* Bordes redondeados para un aspecto más suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+    font-size: 18px; /* Tamaño de fuente del mensaje */
+    z-index: 1000; /* Asegura que el mensaje esté por encima de otros elementos */
+}

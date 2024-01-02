@@ -86,9 +86,9 @@ const NuevaReserva = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    StudentId: 1,
-                    TecnicoId: 1, // Reemplaza con el ID del técnico seleccionado
-                    RoomId: selectedOption, // Reemplaza con el ID de la habitación seleccionada
+                    Student_id: 1,
+                    Tecnico_id: 1, // Reemplaza con el ID del técnico seleccionado
+                    Room_id: selectedOption, // Reemplaza con el ID de la habitación seleccionada
                     RAZ_RES: razonReserva, // Reemplaza con el valor del cuadro de texto
                     HOR_INI_RES: horaInicioDate, // Reemplaza con el valor seleccionado
                     HOR_FIN_RES: horaFinDate, // Reemplaza con el valor seleccionado
@@ -100,8 +100,16 @@ const NuevaReserva = () => {
                 throw new Error('Error al enviar la solicitud');
             }
 
-            // Aquí puedes manejar el éxito, por ejemplo, redirigir a otra página
-            console.log('Solicitud enviada con éxito');
+            // Mostrar el mensaje en la mitad de la pantalla
+            const messageDisplay = document.getElementById('messageDisplay');
+            messageDisplay.innerText = 'Solicitud enviada con éxito';
+            messageDisplay.style.display = 'block';
+
+            // Ocultar el mensaje después de unos segundos (opcional)
+            setTimeout(() => {
+                messageDisplay.style.display = 'none';
+            }, 3000);
+
         } catch (error) {
             console.error('Error al enviar la solicitud:', error);
         }
@@ -144,14 +152,17 @@ const NuevaReserva = () => {
                         <option value="19-20">19H00pm - 20H00pm</option>
                     </select>
                     <h1>RAZON:</h1>
-                    <textarea 
-                        placeholder="Explique en breves palabras que desea hacer en esta reserva" 
+                    <textarea
+                        placeholder="Explique en breves palabras que desea hacer en esta reserva"
                         value={razonReserva}
                         onChange={handleRazonReservaChange}
                     />
                     <button onClick={enviarSolicitud}>
                         ENVIAR SOLICITUD
                     </button>
+                    <div id="messageDisplay">
+                        Mensaje aquí
+                    </div>
                 </div>
             </div>
         </div>

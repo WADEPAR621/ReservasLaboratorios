@@ -5451,3 +5451,1367 @@ puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
 puma (6.4.0) lib/puma/server.rb:443:in `process_client'
 puma (6.4.0) lib/puma/server.rb:241:in `block in run'
 puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (3.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 18:07:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (2.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 246ms (Views: 40.2ms | ActiveRecord: 44.7ms | Allocations: 22765)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 18:07:37 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 25ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 1159)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 18:07:39 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 27ms (Views: 6.0ms | ActiveRecord: 1.0ms | Allocations: 1170)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 18:07:39 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 31ms (Views: 5.5ms | ActiveRecord: 0.9ms | Allocations: 1158)
+
+
+Started POST "/books" for ::1 at 2024-01-01 18:07:45 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 1.4ms | Allocations: 548)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:293:in `handle_unverified_request'
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:388:in `handle_unverified_request'
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:377:in `verify_authenticity_token'
+activesupport (7.1.2) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.2) lib/active_support/callbacks.rb:202:in `block (2 levels) in halting'
+actionpack (7.1.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.2) lib/active_support/callbacks.rb:203:in `block in halting'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.2) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (7.1.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 18:10:57 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 26ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 1162)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 18:10:57 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 23ms (Views: 3.7ms | ActiveRecord: 0.8ms | Allocations: 1158)
+
+
+Started POST "/books" for ::1 at 2024-01-01 18:11:01 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 458)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:293:in `handle_unverified_request'
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:388:in `handle_unverified_request'
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:377:in `verify_authenticity_token'
+activesupport (7.1.2) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.2) lib/active_support/callbacks.rb:202:in `block (2 levels) in halting'
+actionpack (7.1.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.2) lib/active_support/callbacks.rb:203:in `block in halting'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.2) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (7.1.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/books" for ::1 at 2024-01-01 18:11:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 36.5ms | Allocations: 664)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:293:in `handle_unverified_request'
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:388:in `handle_unverified_request'
+actionpack (7.1.2) lib/action_controller/metal/request_forgery_protection.rb:377:in `verify_authenticity_token'
+activesupport (7.1.2) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.2) lib/active_support/callbacks.rb:202:in `block (2 levels) in halting'
+actionpack (7.1.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.2) lib/active_support/callbacks.rb:203:in `block in halting'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.2) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.2) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (7.1.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240101231420)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240101231420') RETURNING "version"[0m
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/books" for ::1 at 2024-01-01 18:35:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 32.6ms | Allocations: 15680)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<BooksController:0x0000000000cf30>):
+  
+app/controllers/books_controller.rb:26:in `create'
+Started POST "/books" for ::1 at 2024-01-01 18:37:10 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mStudent Load (2.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  Rendering books/new.html.erb
+  Rendered books/_form.html.erb (Duration: 99.5ms | Allocations: 4516)
+  Rendered books/new.html.erb (Duration: 121.7ms | Allocations: 4832)
+Completed 200 OK in 405ms (Views: 138.1ms | ActiveRecord: 45.3ms | Allocations: 32222)
+
+
+Started GET "/tecnicos" for ::1 at 2024-01-01 18:37:29 -0500
+Processing by TecnicosController#index as */*
+  [1m[36mTecnico Load (0.7ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos"[0m
+  ↳ app/controllers/tecnicos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 762)
+
+
+Started GET "/floors" for ::1 at 2024-01-01 18:37:38 -0500
+Processing by FloorsController#index as */*
+  [1m[36mFloor Load (0.9ms)[0m  [1m[34mSELECT "floors".* FROM "floors"[0m
+  ↳ app/controllers/floors_controller.rb:7:in `index'
+Completed 200 OK in 74ms (Views: 14.8ms | ActiveRecord: 5.1ms | Allocations: 7369)
+
+
+  [1m[36mTecnico Load (0.7ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTecnico Create (1.5ms)[0m  [1m[32mINSERT INTO "tecnicos" ("NOM_TEC", "APE_TEC", "FEC_NAC_TEC", "FEC_ING_TEC", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_TEC", "Henry"], ["APE_TEC", "Cortez"], ["FEC_NAC_TEC", "2024-01-01T12:51:17.362Z"], ["FEC_ING_TEC", "2024-01-01"], ["created_at", "2024-01-01 23:38:05.901978"], ["updated_at", "2024-01-01 23:38:05.901978"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (1.8ms)[0m  [1m[32mINSERT INTO "students" ("NOM_USE", "APE_USE", "COR_USE", "SEC_USE_digest", "CAR_USE", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_USE", "Juan"], ["APE_USE", "Pérez"], ["COR_USE", "juan.perez@email.com"], ["SEC_USE_digest", "1234"], ["CAR_USE", nil], ["created_at", "2024-01-01 23:38:16.453630"], ["updated_at", "2024-01-01 23:38:16.453630"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (2.3ms)[0m  [1m[32mINSERT INTO "students" ("NOM_USE", "APE_USE", "COR_USE", "SEC_USE_digest", "CAR_USE", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_USE", "Jhon"], ["APE_USE", "Sanchez"], ["COR_USE", "jhon.sanchez@email.com"], ["SEC_USE_digest", "1234"], ["CAR_USE", nil], ["created_at", "2024-01-01 23:38:20.034760"], ["updated_at", "2024-01-01 23:38:20.034760"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/tecnicos" for ::1 at 2024-01-01 18:38:36 -0500
+Processing by TecnicosController#index as */*
+  [1m[36mTecnico Load (1.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos"[0m
+  ↳ app/controllers/tecnicos_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 1.0ms | Allocations: 6781)
+
+
+Started POST "/books" for ::1 at 2024-01-01 18:38:53 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mStudent Load (3.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", ""], ["HOR_INI_RES", "2024-01-01 16:51:17.362000"], ["HOR_FIN_RES", "2024-01-01 17:51:17.362000"], ["EST_RES", 0], ["created_at", "2024-01-01 23:38:54.345972"], ["updated_at", "2024-01-01 23:38:54.345972"]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 43ms (ActiveRecord: 9.4ms | Allocations: 12485)
+
+
+Started GET "/books/1" for ::1 at 2024-01-01 18:38:54 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:58:in `set_book'
+  Rendering books/show.html.erb
+  Rendered books/show.html.erb (Duration: 8.7ms | Allocations: 1106)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.7ms | Allocations: 2544)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notice' for #<ActionView::Base:0x000000000127a0>):
+    1: <p style="color: green"><%= notice %></p>
+    2: 
+    3: <%= render @book %>
+    4: 
+  
+app/views/books/show.html.erb:1
+Started POST "/books" for ::1 at 2024-01-01 18:40:38 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mStudent Load (2.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", ""], ["HOR_INI_RES", "2024-01-01 16:51:17.362000"], ["HOR_FIN_RES", "2024-01-01 17:51:17.362000"], ["EST_RES", 0], ["created_at", "2024-01-01 23:40:39.851093"], ["updated_at", "2024-01-01 23:40:39.851093"]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 124ms (ActiveRecord: 50.4ms | Allocations: 23948)
+
+
+Started GET "/books/2" for ::1 at 2024-01-01 18:40:39 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:58:in `set_book'
+  Rendering books/show.html.erb
+  Rendered books/show.html.erb (Duration: 7.3ms | Allocations: 1088)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.9ms | Allocations: 2930)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notice' for #<ActionView::Base:0x00000000017c50>):
+    1: <p style="color: green"><%= notice %></p>
+    2: 
+    3: <%= render @book %>
+    4: 
+  
+app/views/books/show.html.erb:1
+Started POST "/books" for ::1 at 2024-01-01 18:42:06 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mStudent Load (2.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", ""], ["HOR_INI_RES", "2024-01-01 16:51:17.362000"], ["HOR_FIN_RES", "2024-01-01 17:51:17.362000"], ["EST_RES", 0], ["created_at", "2024-01-01 23:42:08.011217"], ["updated_at", "2024-01-01 23:42:08.011217"]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 135ms (ActiveRecord: 59.6ms | Allocations: 23918)
+
+
+Started GET "/books/3" for ::1 at 2024-01-01 18:42:08 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:58:in `set_book'
+  Rendering books/show.html.erb
+  Rendered books/show.html.erb (Duration: 8.0ms | Allocations: 1127)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.3ms | Allocations: 2966)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notice' for #<ActionView::Base:0x0000000001d150>):
+    1: <p style="color: green"><%= notice %></p>
+    2: <% if flash[:notice] %>
+    3:   <p style="color: green"><%= flash[:notice] %></p>
+    4: <% end %>
+  
+app/views/books/show.html.erb:1
+Started POST "/books" for ::1 at 2024-01-01 18:42:19 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mStudent Load (2.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mBook Create (0.9ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", ""], ["HOR_INI_RES", "2024-01-01 16:51:17.362000"], ["HOR_FIN_RES", "2024-01-01 17:51:17.362000"], ["EST_RES", 0], ["created_at", "2024-01-01 23:42:20.747235"], ["updated_at", "2024-01-01 23:42:20.747235"]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+Redirected to http://localhost:3000/books/4
+Completed 302 Found in 114ms (ActiveRecord: 48.6ms | Allocations: 23959)
+
+
+Started GET "/books/4" for ::1 at 2024-01-01 18:42:20 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:58:in `set_book'
+  Rendering books/show.html.erb
+  Rendered books/show.html.erb (Duration: 8.9ms | Allocations: 1118)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.9ms | Allocations: 2958)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<BooksController:0x00000000022678>):
+    1: <% if flash[:notice] %>
+    2:   <p style="color: green"><%= flash[:notice] %></p>
+    3: <% end %>
+    4: <%= render @book %>
+  
+app/views/books/show.html.erb:1
+Started POST "/books" for ::1 at 2024-01-01 18:42:29 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mStudent Load (1.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", ""], ["HOR_INI_RES", "2024-01-01 16:51:17.362000"], ["HOR_FIN_RES", "2024-01-01 17:51:17.362000"], ["EST_RES", 0], ["created_at", "2024-01-01 23:42:30.028405"], ["updated_at", "2024-01-01 23:42:30.028405"]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+Redirected to http://localhost:3000/books/5
+Completed 302 Found in 131ms (ActiveRecord: 60.5ms | Allocations: 23961)
+
+
+Started GET "/books/5" for ::1 at 2024-01-01 18:42:30 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:58:in `set_book'
+  Rendering books/show.html.erb
+  Rendered books/show.html.erb (Duration: 7.4ms | Allocations: 1084)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.4ms | Allocations: 2921)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notice' for #<ActionView::Base:0x00000000027ba0>):
+    1: <p style="color: green"><%= notice %></p>
+    2: 
+    3: <%= render @book %>
+    4: 
+  
+app/views/books/show.html.erb:1
+Started POST "/books" for ::1 at 2024-01-01 18:44:34 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mStudent Load (2.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", ""], ["HOR_INI_RES", "2024-01-01 16:51:17.362000"], ["HOR_FIN_RES", "2024-01-01 17:51:17.362000"], ["EST_RES", 0], ["created_at", "2024-01-01 23:44:35.245031"], ["updated_at", "2024-01-01 23:44:35.245031"]]
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+Redirected to http://localhost:3000/books/6
+Completed 302 Found in 119ms (ActiveRecord: 46.1ms | Allocations: 23918)
+
+
+Started GET "/books/6" for ::1 at 2024-01-01 18:44:35 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:58:in `set_book'
+  Rendering books/show.html.erb
+  Rendered books/show.html.erb (Duration: 5.6ms | Allocations: 1129)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.4ms | Allocations: 2966)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<BooksController:0x0000000002d140>):
+    1: 
+    2: <% if flash[:notice] %>
+    3:   <p style="color: green"><%= flash[:notice] %></p>
+    4: <% end %>
+    5: 
+  
+app/views/books/show.html.erb:2
+Started POST "/books" for ::1 at 2024-01-01 18:45:59 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mStudent Load (2.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", ""], ["HOR_INI_RES", "2024-01-01 16:51:17.362000"], ["HOR_FIN_RES", "2024-01-01 17:51:17.362000"], ["EST_RES", 0], ["created_at", "2024-01-01 23:46:00.980506"], ["updated_at", "2024-01-01 23:46:00.980506"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/books/7
+Completed 302 Found in 123ms (ActiveRecord: 49.1ms | Allocations: 23937)
+
+
+Started GET "/books/7" for ::1 at 2024-01-01 18:46:01 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:60:in `set_book'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 2.1ms | Allocations: 1293)
+
+
+Started POST "/books" for ::1 at 2024-01-01 18:50:15 -0500
+Processing by BooksController#create as */*
+  Parameters: {"StudentId"=>1, "TecnicoId"=>1, "RoomId"=>"14", "RAZ_RES"=>"ESTAR PROTEGIDO", "HOR_INI_RES"=>"2024-01-01T23:50:11.417Z", "HOR_FIN_RES"=>"2024-01-01T23:50:11.417Z", "EST_RES"=>false, "book"=>{"RAZ_RES"=>"ESTAR PROTEGIDO", "HOR_INI_RES"=>"2024-01-01T23:50:11.417Z", "HOR_FIN_RES"=>"2024-01-01T23:50:11.417Z", "EST_RES"=>false}}
+  Rendering books/new.html.erb
+  Rendered books/_form.html.erb (Duration: 8.6ms | Allocations: 3005)
+  Rendered books/new.html.erb (Duration: 24.4ms | Allocations: 3303)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.0ms | Allocations: 4723)
+
+
+Started GET "/books" for ::1 at 2024-01-01 18:50:21 -0500
+Processing by BooksController#index as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 1318)
+
+
+Started POST "/books" for ::1 at 2024-01-01 18:51:33 -0500
+Processing by BooksController#create as */*
+  Parameters: {"StudentId"=>1, "TecnicoId"=>1, "RoomId"=>"8", "RAZ_RES"=>"ESTAR PROTEGIDO", "HOR_INI_RES"=>"2024-01-01T23:51:31.537Z", "HOR_FIN_RES"=>"2024-01-01T23:51:31.537Z", "EST_RES"=>false, "book"=>{"RAZ_RES"=>"ESTAR PROTEGIDO", "HOR_INI_RES"=>"2024-01-01T23:51:31.537Z", "HOR_FIN_RES"=>"2024-01-01T23:51:31.537Z", "EST_RES"=>false}}
+  Rendering books/new.html.erb
+  Rendered books/_form.html.erb (Duration: 2.7ms | Allocations: 2295)
+  Rendered books/new.html.erb (Duration: 4.5ms | Allocations: 2374)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3308)
+
+
+Started GET "/books" for ::1 at 2024-01-01 18:53:40 -0500
+Processing by BooksController#index as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>8, "RAZ_RES"=>"", "HOR_INI_RES"=>"2024-01-01T16:51:17.362Z", "HOR_FIN_RES"=>"2024-01-01T17:51:17.362Z", "EST_RES"=>false}}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1247)
+
+
+Started GET "/books" for ::1 at 2024-01-01 18:53:54 -0500
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1258)
+
+
+Started GET "/books" for ::1 at 2024-01-01 18:54:05 -0500
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1247)
+
+
+Started GET "/books" for ::1 at 2024-01-01 18:55:00 -0500
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 1247)
+
+
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 18:56:12 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 1325)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 18:56:13 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1113)
+
+
+Started POST "/books" for ::1 at 2024-01-01 18:56:31 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"5", "RAZ_RES"=>"ESTUDIAR", "HOR_INI_RES"=>"2024-01-01T23:56:30.302Z", "HOR_FIN_RES"=>"2024-01-01T23:56:30.302Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"5", "RAZ_RES"=>"ESTUDIAR", "HOR_INI_RES"=>"2024-01-01T23:56:30.302Z", "HOR_FIN_RES"=>"2024-01-01T23:56:30.302Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mStudent Load (2.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 5], ["RAZ_RES", "ESTUDIAR"], ["HOR_INI_RES", "2024-01-01 23:56:30.302000"], ["HOR_FIN_RES", "2024-01-01 23:56:30.302000"], ["EST_RES", 0], ["created_at", "2024-01-01 23:56:31.445517"], ["updated_at", "2024-01-01 23:56:31.445517"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/books/8
+Completed 302 Found in 19ms (ActiveRecord: 5.5ms | Allocations: 4188)
+
+
+Started GET "/books/8" for ::1 at 2024-01-01 18:56:31 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"8", "book"=>{}}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:60:in `set_book'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 507)
+
+
+Started GET "/books" for ::1 at 2024-01-01 18:56:49 -0500
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 1345)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:03:58 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (8.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 12.2ms | Allocations: 1396)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:03:58 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1113)
+
+
+Started POST "/books" for ::1 at 2024-01-01 19:04:09 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"8", "RAZ_RES"=>"TERMINAR UN PROYECTO EN GRUPO", "HOR_INI_RES"=>"2024-01-02T00:04:08.181Z", "HOR_FIN_RES"=>"2024-01-02T00:04:08.181Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"8", "RAZ_RES"=>"TERMINAR UN PROYECTO EN GRUPO", "HOR_INI_RES"=>"2024-01-02T00:04:08.181Z", "HOR_FIN_RES"=>"2024-01-02T00:04:08.181Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mStudent Load (1.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", "TERMINAR UN PROYECTO EN GRUPO"], ["HOR_INI_RES", "2024-01-02 00:04:08.181000"], ["HOR_FIN_RES", "2024-01-02 00:04:08.181000"], ["EST_RES", 0], ["created_at", "2024-01-02 00:04:09.384165"], ["updated_at", "2024-01-02 00:04:09.384165"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/books/9
+Completed 302 Found in 18ms (ActiveRecord: 4.7ms | Allocations: 4288)
+
+
+Started GET "/books/9" for ::1 at 2024-01-01 19:04:09 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"9", "book"=>{}}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:60:in `set_book'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 551)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:04:41 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 1114)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:04:41 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1113)
+
+
+Started POST "/books" for ::1 at 2024-01-01 19:04:54 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"18", "RAZ_RES"=>"FERMENTAR VINO", "HOR_INI_RES"=>"2024-01-02T00:04:54.196Z", "HOR_FIN_RES"=>"2024-01-02T00:04:54.196Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"18", "RAZ_RES"=>"FERMENTAR VINO", "HOR_INI_RES"=>"2024-01-02T00:04:54.196Z", "HOR_FIN_RES"=>"2024-01-02T00:04:54.196Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mStudent Load (1.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 18], ["RAZ_RES", "FERMENTAR VINO"], ["HOR_INI_RES", "2024-01-02 00:04:54.196000"], ["HOR_FIN_RES", "2024-01-02 00:04:54.196000"], ["EST_RES", 0], ["created_at", "2024-01-02 00:04:54.961869"], ["updated_at", "2024-01-02 00:04:54.961869"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/books/10
+Completed 302 Found in 16ms (ActiveRecord: 4.6ms | Allocations: 4187)
+
+
+Started GET "/books/10" for ::1 at 2024-01-01 19:04:54 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"10", "book"=>{}}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:60:in `set_book'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 507)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:05:29 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1114)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:05:29 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1113)
+
+
+Started POST "/books" for ::1 at 2024-01-01 19:05:31 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"8", "RAZ_RES"=>"awd", "HOR_INI_RES"=>"2024-01-02T00:05:31.402Z", "HOR_FIN_RES"=>"2024-01-02T00:05:31.402Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"8", "RAZ_RES"=>"awd", "HOR_INI_RES"=>"2024-01-02T00:05:31.402Z", "HOR_FIN_RES"=>"2024-01-02T00:05:31.402Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mStudent Load (5.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 8], ["RAZ_RES", "awd"], ["HOR_INI_RES", "2024-01-02 00:05:31.402000"], ["HOR_FIN_RES", "2024-01-02 00:05:31.402000"], ["EST_RES", 0], ["created_at", "2024-01-02 00:05:31.980874"], ["updated_at", "2024-01-02 00:05:31.980874"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/books/11
+Completed 302 Found in 37ms (ActiveRecord: 10.2ms | Allocations: 4183)
+
+
+Started GET "/books/11" for ::1 at 2024-01-01 19:05:32 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"11", "book"=>{}}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:60:in `set_book'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 506)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:06:27 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.4ms | Allocations: 1113)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:06:27 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.6ms | Allocations: 1113)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:08:31 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1114)
+
+
+Started GET "/rooms/by_disponible" for ::1 at 2024-01-01 19:08:32 -0500
+Processing by RoomsController#by_disponible as */*
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."DIS_HAB" = ?[0m  [["DIS_HAB", 1]]
+  ↳ app/controllers/rooms_controller.rb:24:in `by_disponible'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 1114)
+
+
+Started POST "/books" for ::1 at 2024-01-01 19:08:39 -0500
+Processing by BooksController#create as */*
+  Parameters: {"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"5", "RAZ_RES"=>"adawda", "HOR_INI_RES"=>"2024-01-02T00:08:38.611Z", "HOR_FIN_RES"=>"2024-01-02T00:08:38.611Z", "EST_RES"=>false, "book"=>{"Student_id"=>1, "Tecnico_id"=>1, "Room_id"=>"5", "RAZ_RES"=>"adawda", "HOR_INI_RES"=>"2024-01-02T00:08:38.611Z", "HOR_FIN_RES"=>"2024-01-02T00:08:38.611Z", "EST_RES"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mStudent Load (1.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTecnico Load (0.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("Student_id", "Tecnico_id", "Room_id", "RAZ_RES", "HOR_INI_RES", "HOR_FIN_RES", "EST_RES", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["Student_id", 1], ["Tecnico_id", 1], ["Room_id", 5], ["RAZ_RES", "adawda"], ["HOR_INI_RES", "2024-01-02 00:08:38.611000"], ["HOR_FIN_RES", "2024-01-02 00:08:38.611000"], ["EST_RES", 0], ["created_at", "2024-01-02 00:08:39.289060"], ["updated_at", "2024-01-02 00:08:39.289060"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/books/12
+Completed 302 Found in 20ms (ActiveRecord: 5.0ms | Allocations: 4183)
+
+
+Started GET "/books/12" for ::1 at 2024-01-01 19:08:39 -0500
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"12", "book"=>{}}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:60:in `set_book'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 506)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:08:49 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:08:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 31ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 7857)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:08:50 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:08:50 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 480)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/floors/1" for ::1 at 2024-01-01 19:10:19 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:10:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 4798)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:10:20 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:10:20 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 480)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/floors/1" for ::1 at 2024-01-01 19:11:08 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:11:08 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 480)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:11:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:11:09 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 474)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/floors/1" for ::1 at 2024-01-01 19:11:36 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:11:36 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 480)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:11:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:11:36 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 474)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/floors/1" for ::1 at 2024-01-01 19:11:43 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:11:43 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 480)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:11:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:11:43 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 474)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/floors/1" for ::1 at 2024-01-01 19:12:34 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:12:34 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 480)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:12:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:12:34 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 474)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/floors/1" for ::1 at 2024-01-01 19:12:40 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:12:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 5863)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:12:41 -0500
+Started GET "/rooms/rooms/by_floor/1" for ::1 at 2024-01-01 19:12:41 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 481)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/1"):
+  
+Started GET "/floors/2" for ::1 at 2024-01-01 19:12:42 -0500
+Started GET "/rooms/rooms/by_floor/2" for ::1 at 2024-01-01 19:12:42 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 480)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/2"):
+  
+Started GET "/floors/3" for ::1 at 2024-01-01 19:12:45 -0500
+Started GET "/rooms/rooms/by_floor/3" for ::1 at 2024-01-01 19:12:45 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (0.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 480)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/rooms/by_floor/3"):
+  
+Started GET "/floors/1" for ::1 at 2024-01-01 19:13:13 -0500
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:13:13 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_number"=>"1"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" IS NULL[0m
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 641)
+
+
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:13:13 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 486)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:13:13 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_number"=>"1"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" IS NULL[0m
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 594)
+
+
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.3ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 473)
+
+
+Started GET "/rooms/by_floor/2" for ::1 at 2024-01-01 19:13:20 -0500
+Started GET "/floors/2" for ::1 at 2024-01-01 19:13:20 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 481)
+
+
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_number"=>"2"}
+  [1m[36mRoom Load (1.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" IS NULL[0m
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 1.2ms | Allocations: 586)
+
+
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/floors/1" for ::1 at 2024-01-01 19:14:12 -0500
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:14:12 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_number"=>"1"}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" IS NULL[0m
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 594)
+
+
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:14:12 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.9ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 476)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:14:12 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_number"=>"1"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" IS NULL[0m
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 594)
+
+
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 473)
+
+
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:14:39 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_number"=>"1"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" IS NULL[0m
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 586)
+
+
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/floors/1" for ::1 at 2024-01-01 19:17:52 -0500
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:17:52 -0500
+Processing by FloorsController#show as */*
+Processing by RoomsController#by_floor as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"floor_id"=>"1"}
+  [1m[36mFloor Load (2.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (1.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 93ms (Views: 0.4ms | ActiveRecord: 37.3ms | Allocations: 7935)
+
+
+Completed 200 OK in 96ms (Views: 11.3ms | ActiveRecord: 18.6ms | Allocations: 11530)
+
+
+Started GET "/floors/3" for ::1 at 2024-01-01 19:17:54 -0500
+Started GET "/floors/1" for ::1 at 2024-01-01 19:17:54 -0500
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:17:54 -0500
+Started GET "/rooms/by_floor/3" for ::1 at 2024-01-01 19:17:54 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_id"=>"1"}
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 1]]
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.8ms | Allocations: 1337)
+
+
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mFloor Load (1.2ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 510)
+
+
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.1ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 475)
+
+
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_id"=>"3"}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 3]]
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 599)
+
+
+Started GET "/floors/2" for ::1 at 2024-01-01 19:17:56 -0500
+Started GET "/rooms/by_floor/2" for ::1 at 2024-01-01 19:17:56 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_id"=>"2"}
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 2]]
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.9ms | Allocations: 1061)
+
+
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFloor Load (2.1ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.1ms | Allocations: 473)
+
+
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:17:57 -0500
+Started GET "/floors/1" for ::1 at 2024-01-01 19:17:57 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.6ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 481)
+
+
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_id"=>"1"}
+  [1m[36mRoom Load (1.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 1]]
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.2ms | Allocations: 1306)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:18:54 -0500
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:18:54 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.4ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 14ms (Views: 0.9ms | ActiveRecord: 1.4ms | Allocations: 484)
+
+
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_id"=>"1"}
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 1]]
+Started GET "/floors/1" for ::1 at 2024-01-01 19:18:54 -0500
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.7ms | Allocations: 1627)
+
+
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:18:54 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_id"=>"1"}
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 1]]
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 1314)
+
+
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (1.5ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 473)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:18:58 -0500
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:18:58 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 481)
+
+
+Started GET "/floors/1" for ::1 at 2024-01-01 19:18:58 -0500
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_id"=>"1"}
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 1]]
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 1309)
+
+
+Started GET "/rooms/by_floor/1" for ::1 at 2024-01-01 19:18:58 -0500
+Processing by FloorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFloor Load (0.7ms)[0m  [1m[34mSELECT "floors".* FROM "floors" WHERE "floors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/floors_controller.rb:53:in `set_floor'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 481)
+
+
+Processing by RoomsController#by_floor as */*
+  Parameters: {"floor_id"=>"1"}
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."Floor_id" = ?[0m  [["Floor_id", 1]]
+  ↳ app/controllers/rooms_controller.rb:18:in `by_floor'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.8ms | Allocations: 1306)
+
+
