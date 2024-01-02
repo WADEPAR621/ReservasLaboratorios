@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p style="color: green"><%= notice %></p>
 
 <%= render @book %>
@@ -8,3 +9,18 @@
 
   <%= button_to "Destroy this book", @book, method: :delete %>
 </div>
+=======
+
+<% if flash[:notice] %>
+  <p style="color: green"><%= flash[:notice] %></p>
+<% end %>
+
+<%= render @book %>
+
+<div>
+  <%= link_to "Edit this book", edit_book_path(@book) %> |
+  <%= link_to "Back to books", books_path %>
+
+  <%= button_to "Destroy this book", @book, method: :delete %>
+</div>
+>>>>>>> 1cdc86cbf24890ed9479e0d38229b2d89531aec4

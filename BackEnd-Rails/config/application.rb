@@ -23,5 +23,16 @@ module BackEndRails
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+<<<<<<< HEAD
+=======
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'http://127.0.0.1:5173' # O cualquier otro dominio de origen que necesites
+        resource '*',
+          headers: :any,
+          methods: [:get, :post, :put, :delete, :options]
+      end
+    end
+>>>>>>> 1cdc86cbf24890ed9479e0d38229b2d89531aec4
   end
 end

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from 'react-router-dom'
 import menuHamburguesa from '../images/menuHamburguesa.png';
 import '../styles/Navbar.css'
 const NavBar = () => {
@@ -29,9 +29,9 @@ const NavBar = () => {
                 <img src={menuHamburguesa} />
             </div>
             <div className={`nav_links ${navlinksVisible ? 'nav_links--show' : ''}`}>
-                <a href="#">AGREGAR RESERVA</a>
-                <a href="#">VER INFORMACION SOBRE LAS RESERVAS</a>
-                <a href="#">VER MIS RESERVAS</a>
+                <a href="#"><Link to="/NuevaReserva">AGREGAR RESERVA</Link></a>
+                <a href="#"><Link to="/MapaPisos">MAPA DE PISOS</Link></a>
+                <a href="#"><Link to="/MisReservas">MIS RESERVAS</Link></a>
                 <a href="#" className="perfil">MI PERFIL</a>
             </div>
         </nav>

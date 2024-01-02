@@ -33,6 +33,13 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
+<<<<<<< HEAD
+=======
+# Adjust binfiles to be executable on Linux
+RUN sed -i "s/\r$//g" bin/* && \
+    sed -i 's/ruby\r$/ruby/' bin/*
+
+>>>>>>> 1cdc86cbf24890ed9479e0d38229b2d89531aec4
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 

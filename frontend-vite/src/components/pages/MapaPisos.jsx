@@ -33,7 +33,8 @@ const MapaPisos = () => {
     const [habitaciones, setHabitaciones] = useState([])
     const fetchHabitaciones = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3000/rooms/rooms/by_floor/${id}`, {
+            console.log(id);
+            const response = await fetch(`http://localhost:3000/rooms/by_floor/${id}`, {
                 method: "GET"
             });
             if (!response.ok) {

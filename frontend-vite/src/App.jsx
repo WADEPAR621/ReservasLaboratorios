@@ -6,6 +6,8 @@ import Login from './components/Login';
 import SignUp from './components/Sing_up';
 import Inicio from './components/pages/Inicio';
 import SobreNosotros from './components/pages/SobreNosotros';
+import NuevaReserva from './components/pages/NuevaReserva'
+
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS

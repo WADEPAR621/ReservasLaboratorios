@@ -1,9 +1,6 @@
-body{
-    width: 100%;
-    height: 100% !important;
-}
-#root{
-    height: 100%;
+
+.principal{
+    overflow: hidden;
 }
 .containerEst{
     position: relative;
@@ -12,23 +9,22 @@ body{
     display: flex;
     flex-direction: row;
     margin: 0;
-    background-color: aqua;
     .container_imgEst{
-        width: 20%;
+        width: 30%;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100%;
-        background-color: rgb(50, 50,50);
+        background-color: rgb(207, 207, 207);
         .imagenEst{
             width: 60%;
-            margin: 15% 0;
+            margin: 19% 0;
         }
     }
     .container_table{
-        width: 80%;
+        width: 70%;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -41,9 +37,9 @@ body{
 }
 .container_list{
     border-radius: 8px;
-    border: 5px solid var(--colorsecundario);
+    border: 5px solid rgb(00,0,0);
     width: 90%;
-    height: 100%;
+    height: 50%;
     margin: 8px 8px;
     font-size: larger;
     text-align: left;
@@ -57,7 +53,8 @@ body{
     align-items: center;
     margin: 0 28%;
     padding: 4% 0;
-    font-size: 25px
+    font-size: 25px;
+    color: rgb(255,255,255);
 }
 .container_list .reserva{
     display: flex;
@@ -67,7 +64,4 @@ body{
     align-items: center;
     margin: 18px 8px;
     border-bottom: 2px solid var(--colorblack);
-}
-.reserva i, .reserva text{
-    color: var(--colorblack);
 }
