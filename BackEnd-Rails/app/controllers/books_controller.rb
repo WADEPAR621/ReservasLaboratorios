@@ -12,11 +12,30 @@ class BooksController < ApplicationController
     render json: @book
   end
   
+  #GET /books/by_user/1
   def by_user
     @books = Book.where(Student_id: params[:student_id])
     render json: @books
   end
-  
+
+  #GET /books/by_technician/1
+  def by_technician
+    @books = Book.where(Tecnico_id: params[:tecnico_id], EST_RES: false)
+    render json: @books
+  end
+
+  #GET /books/updateEST_TES/1
+  def update_est_res_to_true
+    @book = Book.find(params[:id])  # Encuentra el libro por su ID
+    if @book.update(EST_RES: true)  # Intenta actualizar el atributo EST_RES a true
+      render json: { message: 'EST_RES actualizado correctamente a true' }, status: :ok
+    else
+      render json: { error: 'No se pudo actualizar EST_RES' }, status: :unprocessable_entity
+    end
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { error: 'Libro no encontrado' }, status: :not_found
+  end
+
   # GET /books/new
   def new
     @book = Book.new
@@ -38,14 +57,10 @@ class BooksController < ApplicationController
 
   # PATCH/PUT /books/1 or /books/1.json
   def update
-    respond_to do |format|
-      if @book.update(book_params)
-        format.html { redirect_to book_url(@book), notice: "Book was successfully updated." }
-        format.json { render :show, status: :ok, location: @book }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
+    if @book.update(book_params)
+      render json: { message: 'Book was successfully updated.', book: @book }, status: :ok
+    else
+      render json: { errors: @book.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

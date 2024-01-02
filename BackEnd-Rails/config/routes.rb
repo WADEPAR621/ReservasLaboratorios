@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   
 
   resources :students, only: [:index, :show, :destroy, :create] 
-  resources :books, only: [:index, :show, :destroy, :create] do
+  resources :books, only: [:index, :show, :destroy, :create, :update] do
     collection do
       get 'by_user/:student_id', to: 'books#by_user', as: 'by_user'
+      get 'by_technician/:tecnico_id', to: 'books#by_technician', as: 'by_technician'
+      put 'update_est_res_to_true/:id', to: 'books#update_est_res_to_true'
     end
   end
   resources :floors, only: [:index, :show, :destroy]

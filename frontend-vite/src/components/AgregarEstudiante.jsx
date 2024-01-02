@@ -1,12 +1,11 @@
 // components/AgregarEstudianteForm.js
 import React, { useState } from "react";
 
-const AgregarEstudianteForm = ({ onAgregarEstudiante }) => {
+const AgregarEstudianteForm = () => {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [correo, setCorreo] = useState("");
-  const [seccion, setSeccion] = useState("");
-  const [carrera, setCarrera] = useState("");
+  const [Contrasena, setContrasena] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,23 +18,17 @@ const AgregarEstudianteForm = ({ onAgregarEstudiante }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          nombre,
-          apellido,
-          correo,
-          seccion,
-          carrera,
+          NOM_USE: nombre,
+          APE_USE: apellido,
+          COR_USE: correo,
+          SEC_USE_digest: Contrasena,
+          CAR_USE: "Estudiante",
         }),
       });
 
       if (!response.ok) {
         throw new Error('Error al agregar el estudiante');
       }
-
-      // Obtener la respuesta del servidor (puede contener el nuevo estudiante con ID, etc.)
-      const data = await response.json();
-
-      // Llamar a la función proporcionada para agregar estudiante
-      onAgregarEstudiante(data);
 
       // Limpiar los campos del formulario
       setNombre("");
@@ -50,7 +43,7 @@ const AgregarEstudianteForm = ({ onAgregarEstudiante }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="formNewStudent">
       <label>
         Nombre:
         <input
@@ -76,22 +69,14 @@ const AgregarEstudianteForm = ({ onAgregarEstudiante }) => {
         />
       </label>
       <label>
-        Sección:
+        Contraseña:
         <input
           type="text"
-          value={seccion}
-          onChange={(e) => setSeccion(e.target.value)}
+          value={Contrasena}
+          onChange={(e) => setContrasena(e.target.value)}
         />
       </label>
-      <label>
-        Carrera:
-        <input
-          type="text"
-          value={carrera}
-          onChange={(e) => setCarrera(e.target.value)}
-        />
-      </label>
-      <button type="submit">Agregar Estudiante</button>
+      <button onClick={handleSubmit}>Agregar Estudiante</button>
     </form>
   );
 };

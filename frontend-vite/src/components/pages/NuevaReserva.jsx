@@ -95,7 +95,7 @@ const NuevaReserva = () => {
                 },
                 body: JSON.stringify({
                     Student_id: 2,
-                    Tecnico_id: 1, // Reemplaza con el ID del técnico seleccionado
+                    Tecnico_id: 2, // Reemplaza con el ID del técnico seleccionado
                     Room_id: selectedOption, // Reemplaza con el ID de la habitación seleccionada
                     RAZ_RES: razonReserva, // Reemplaza con el valor del cuadro de texto
                     HOR_INI_RES: horaInicioDate, // Reemplaza con el valor seleccionado

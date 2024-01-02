@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import MapaPisos from './components/pages/MapaPisos';
 import MisReservas from './components/pages/MisReservas';
 import NuevaReserva from './components/pages/NuevaReserva'
-
+import Admin from './components/pages/AdminCRUD'
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -35,7 +35,7 @@ const App = () => {
         */}
         <Route
           path={`/MapaPisos`}
-          element={<MapaPisos/>}
+          element={<MapaPisos />}
         />
 
         <Route
@@ -46,6 +46,11 @@ const App = () => {
         <Route
           path="/NuevaReserva"
           element={<NuevaReserva />}
+        />
+
+        <Route
+          path="/admin"
+          element={<Admin />}
         />
       </Routes>
     </Router>
