@@ -27,12 +27,9 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem 'rack-cors'
-<<<<<<< HEAD
-=======
 gem 'devise'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
->>>>>>> 1cdc86cbf24890ed9479e0d38229b2d89531aec4
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
