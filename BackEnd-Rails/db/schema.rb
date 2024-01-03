@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_02_021102) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_03_092628) do
   create_table "books", force: :cascade do |t|
     t.integer "Student_id", null: false
     t.integer "Tecnico_id", null: false
@@ -63,6 +63,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_02_021102) do
     t.date "FEC_ING_TEC"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "NOM_USER_TEC"
+    t.string "CON_TEC"
   end
 
   create_table "users", force: :cascade do |t|

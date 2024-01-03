@@ -3,21 +3,17 @@ class Book < ApplicationRecord
   belongs_to :Tecnico
   belongs_to :Room
 
-  def self.update_estados
-    all.each do |book|
-      estado = book.estado_actual
-      book.update(EST_TIM_RES: estado)
-    end
-  end
-  
-  def estado_actual
-    current_time = Time.now
-    if current_time < self.FEC_INI_RES
-      return "POR EMPEZAR"
-    elsif current_time >= self.FEC_INI_RES && current_time <= self.FEC_FIN_RES
-      return "EN CURSO"
+  # Callback que se ejecuta antes de guardar una instancia de Book
+  before_save :actualizar_estado
+
+  def actualizar_estado
+    current_time_with_zone = Time.zone.now
+    if current_time_with_zone < self.HOR_INI_RES
+      self.HOR_TIM_RES = "POR EMPEZAR"
+    elsif current_time_with_zone.between?(self.HOR_INI_RES, self.HOR_FIN_RES)
+      self.EST_TIM_RES = "EN CURSO"
     else
-      return "TERMINADO"
+      self.EST_TIM_RES = "TERMINADO"
     end
   end
   
