@@ -7,7 +7,7 @@ import SignUp from './components/Sing_up';
 import Inicio from './components/pages/Inicio';
 import SobreNosotros from './components/pages/SobreNosotros';
 import NuevaReserva from './components/pages/NuevaReserva'
-
+import Admin from './components/pages/AdminCRUD'
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -44,6 +44,10 @@ const App = () => {
           element={<Login/>}
         />
         
+        <Route
+          path="/admin"
+          element={<Admin />}
+        />
       </Routes>
     </Router>
   );
