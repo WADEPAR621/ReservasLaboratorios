@@ -4,10 +4,24 @@ class RoomsController < ApplicationController
   # GET /rooms or /rooms.json
   def index
     @rooms = Room.all
+    render json: @rooms
   end
 
   # GET /rooms/1 or /rooms/1.json
   def show
+    render json: @room
+  end
+
+  # get /rooms/by_floor/1
+  def by_floor
+    @rooms = Room.where(Floor_id: params[:floor_id])
+    render json: @rooms
+  end
+
+  #get /rooms/by_disponible/1
+  def by_disponible
+    @rooms = Room.where(DIS_HAB: true)
+    render json: @rooms
   end
 
   # GET /rooms/new

@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+.containerNew{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    .containerNew_img{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .imagen{
+            width: 40%;
+        }
+    }
+    .containerNew_form{
+        width: 50%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.containerNew_form h1{
+    line-height: 20px;
+    color: var(--colorsecundario);
+    align-items: flex-start;
+}
+.containerNew_form select{
+    border-radius: 8px;
+    border: 5px solid var(--colorsecundario);
+    width: 90%;
+    height: 50px;
+    margin: 0 8px;
+    font-size: larger;
+    padding: 7px 1.5px;
+}
+.containerNew_form textarea{
+    border-radius: 8px;
+    border: 5px solid var(--colorsecundario);
+    width: 90%;
+    height: 37%;
+    margin: 8px 8px;
+    font-size: larger;
+    text-align: left;
+    vertical-align: top;
+    line-height: 25px;
+    padding: 0 12px;
+}.containerNew_form button{
+    align-items: center;
+    margin: 0 28%;
+    padding: 4% 0;
+    font-size: 25px
+}
+#messageDisplay, #errorMessage {
+    display: none; /* El mensaje estará oculto inicialmente */
+    position: fixed; /* Posición fija para que permanezca en la mitad de la pantalla */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Centrar el contenido */
+    background-color: #ffffff; /* Fondo blanco para el mensaje */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #960000; /* Borde del mensaje */
+    border-radius: 5px; /* Bordes redondeados para un aspecto más suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+    font-size: 18px; /* Tamaño de fuente del mensaje */
+    z-index: 1000; /* Asegura que el mensaje esté por encima de otros elementos */
+}

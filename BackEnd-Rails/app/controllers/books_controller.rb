@@ -4,10 +4,36 @@ class BooksController < ApplicationController
   # GET /books or /books.json
   def index
     @books = Book.all
+    render json: @books
   end
 
   # GET /books/1 or /books/1.json
   def show
+    render json: @book
+  end
+  
+  #GET /books/by_user/1
+  def by_user
+    @books = Book.where(Student_id: params[:student_id])
+    render json: @books
+  end
+
+  #GET /books/by_technician/1
+  def by_technician
+    @books = Book.where(Tecnico_id: params[:tecnico_id], EST_RES: false)
+    render json: @books
+  end
+
+  #GET /books/updateEST_TES/1
+  def update_est_res_to_true
+    @book = Book.find(params[:id])  # Encuentra el libro por su ID
+    if @book.update(EST_RES: true)  # Intenta actualizar el atributo EST_RES a true
+      render json: { message: 'EST_RES actualizado correctamente a true' }, status: :ok
+    else
+      render json: { error: 'No se pudo actualizar EST_RES' }, status: :unprocessable_entity
+    end
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { error: 'Libro no encontrado' }, status: :not_found
   end
 
   # GET /books/new
@@ -22,28 +48,19 @@ class BooksController < ApplicationController
   # POST /books or /books.json
   def create
     @book = Book.new(book_params)
-
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
-        format.json { render :show, status: :created, location: @book }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
+    if @book.save
+      redirect_to @book, notice: 'Book was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /books/1 or /books/1.json
   def update
-    respond_to do |format|
-      if @book.update(book_params)
-        format.html { redirect_to book_url(@book), notice: "Book was successfully updated." }
-        format.json { render :show, status: :ok, location: @book }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
+    if @book.update(book_params)
+      render json: { message: 'Book was successfully updated.', book: @book }, status: :ok
+    else
+      render json: { errors: @book.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -65,6 +82,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:Student_id, :Tecnico_id, :Room_id, :RAZ_RES, :HOR_INI_RES, :HOR_FIN_RES, :EST_RES)
+      params.require(:book).permit(:Student_id, :Tecnico_id, :Room_id, :RAZ_RES, :HOR_INI_RES, :HOR_FIN_RES, :EST_RES, :EST_TIM_RES)
     end
 end

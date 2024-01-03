@@ -1,0 +1,67 @@
+
+.principal{
+    overflow: hidden;
+}
+.containerEst{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    .container_imgEst{
+        width: 30%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-color: rgb(207, 207, 207);
+        .imagenEst{
+            width: 60%;
+            margin: 19% 0;
+        }
+    }
+    .container_table{
+        width: 70%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.container_table h1{
+    line-height: 20px;
+    color: var(--colorsecundario);
+    align-items: flex-start;
+}
+.container_list{
+    border-radius: 8px;
+    border: 5px solid rgb(00,0,0);
+    width: 90%;
+    height: 50%;
+    margin: 8px 8px;
+    font-size: larger;
+    text-align: left;
+    vertical-align: top;
+    line-height: 25px;
+    padding: 0 12px;
+    overflow: auto;
+    
+}
+.container_table button{
+    align-items: center;
+    margin: 0 28%;
+    padding: 4% 0;
+    font-size: 25px;
+    color: rgb(255,255,255);
+}
+.container_list .reserva{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: 15px;
+    align-items: center;
+    margin: 18px 8px;
+    border-bottom: 2px solid var(--colorblack);
+}

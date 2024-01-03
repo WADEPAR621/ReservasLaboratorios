@@ -1,0 +1,63 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+.container {
+  position: relative;
+  display: flex;
+  height: 85vh;
+  overflow: hidden;
+}
+.container_info {
+  background-color: rgb(214, 214, 214);
+  width: 30%;
+  padding-left: 35px;
+}
+.container_info h3 {
+  font-size: 200%;
+  margin: 8px 0px;
+  padding-right: 15%;
+}
+#comboBox {
+  width: 85%;
+  height: 40px;
+  font-size: 100%;
+  border-radius: 15px;
+  background-color: rgb(#ffffff);
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(#000000);
+}
+.container_info p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.Habitaciones {
+  margin-right: 50px;
+  height: 40%;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+}
+.Habitaciones p {
+  display: block;
+  text-align: left;
+  line-height: 0.5;
+}
+.container_image {
+  width: 65%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.Plano_imagen {
+  position: absolute;
+  width: 45%;
+  right: 15%;
+}
