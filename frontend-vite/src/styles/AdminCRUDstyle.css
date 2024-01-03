@@ -10,7 +10,7 @@
     flex-direction: row;
     margin: 0;
     .container_imgCRUD{
-        width: 30%;
+        width: 20%;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -20,7 +20,7 @@
         background-color: rgb(207, 207, 207);
     }
     .container_table{
-        width: 70%;
+        width: 80%;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -31,11 +31,11 @@
     color: var(--colorsecundario);
     align-items: flex-start;
 }
-.container_list{
+.container_list_Admin{
     border-radius: 8px;
     border: 5px solid rgb(00,0,0);
     width: 90%;
-    height: 50%;
+    height: 70%;
     margin: 8px 8px;
     font-size: larger;
     text-align: left;
@@ -52,7 +52,7 @@
     font-size: 25px;
     color: rgb(255,255,255);
 }
-.container_list .reserva{
+.container_list_Admin .reserva{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -68,4 +68,6 @@
 }
 .Aprobar{
     margin: 0% !important;
+}.Agregar_estudiante{
+    margin: 2em 0em;
 }

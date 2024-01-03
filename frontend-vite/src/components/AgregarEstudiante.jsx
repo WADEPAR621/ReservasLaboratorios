@@ -76,7 +76,7 @@ const AgregarEstudianteForm = () => {
           onChange={(e) => setContrasena(e.target.value)}
         />
       </label>
-      <button onClick={handleSubmit}>Agregar Estudiante</button>
+      <button onClick={handleSubmit} className="Agregar_estudiante">Confirmar Estudiante</button>
     </form>
   );
 };

@@ -74,7 +74,7 @@ const Login = ({ usuarioLo, setUsuario }) => {
 
     const login = () => {
         const validation = validateTecnico();
-        if(!validation){
+        if (!validation) {
             validatestudent()
         }
     };
@@ -84,66 +84,53 @@ const Login = ({ usuarioLo, setUsuario }) => {
 
 
     return (
-        <>
-            <head>
-
-                <meta charSet="UTF-8" />
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-            </head>
-
-            <body>
-
-                <div className="form-group__LOGIN">
-                    <h1>Inicia sesión </h1>
-                    <div className="inputbox">
-
-                        <input
-                            className="inputbox__input"
-                            type="text"
-                            required
-                            value={usuarioLo.usuario}
-                            onChange={(e) => setUsuario({ ...usuarioLo, usuario: e.target.value })}
-                        />
-                        <label className="inputbox__label" htmlFor="">
-                            Nombre de Usuario
-                        </label>
-                    </div>
-                    <div className="inputbox">
-
-                        <input
-                            className="inputbox__input"
-                            type="password"
-                            required
-                            value={usuarioLo.contrasena}
-                            onChange={(e) => setUsuario({ ...usuarioLo, contrasena: e.target.value })}
-                        />
-                        <label className="inputbox__label" htmlFor="">
-                            Contraseña
-                        </label>
-                    </div>
-                    <button id="boton" className="boton" onClick={() => login()}>
-                        INCIAR SESION
-                    </button>
-                    <br />
-
-
-                    <button id="boton2" className="boton2" onClick={handleContinueClick}>
-                        Continue with Microsoft 365
-                    </button>
-
-
-                    <br />
-                    <p>
-                        ¿No tienes una cuenta? <Link to="/Sing_up">Regístrate</Link>
-                    </p>
+        <div className="principalLogin">
+            <div className="form-group__LOGIN">
+                <h1>Inicia sesión </h1>
+                <div className="inputbox">
+                    <input
+                        className="inputbox__input"
+                        type="text"
+                        required
+                        value={usuarioLo.usuario}
+                        onChange={(e) => setUsuario({ ...usuarioLo, usuario: e.target.value })}
+                    />
+                    <label className="inputbox__label_Login" htmlFor="">
+                        Nombre de Usuario
+                    </label>
                 </div>
-                <div className="">
-                    <img src={imagenes1} className="Imagen1" alt="loginimagen" />
+                <div className="inputbox">
+                    <input
+                        className="inputbox__input"
+                        type="password"
+                        required
+                        value={usuarioLo.contrasena}
+                        onChange={(e) => setUsuario({ ...usuarioLo, contrasena: e.target.value })}
+                    />
+                    <label className="inputbox__label_Login" htmlFor="">
+                        Contraseña
+                    </label>
                 </div>
+                <button id="boton" className="boton" onClick={() => login()}>
+                    INCIAR SESION
+                </button>
+                <br />
 
-            </body>
-        </>
+
+                <button id="boton2" className="boton2" onClick={handleContinueClick}>
+                    Continue with Microsoft 365
+                </button>
+
+
+                <br />
+                <p>
+                    ¿No tienes una cuenta? <Link to="/Sing_up">Regístrate</Link>
+                </p>
+            </div>
+            <div className="">
+                <img src={imagenes1} className="Imagen1" alt="loginimagen" />
+            </div>
+        </div>
     );
 };
 
