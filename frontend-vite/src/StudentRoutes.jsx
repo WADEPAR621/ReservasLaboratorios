@@ -3,8 +3,9 @@ import './App.css';
 import MapaPisos from "./components/pages/MapaPisos";
 import NuevaReserva from "./components/pages/NuevaReserva";
 import MisReservas from "./components/pages/MisReservas";
+import { Navigate } from "react-router-dom";
 
-function Usuario() {
+function StudentRoutes() {
   return (
     <Routes>
       <Route
@@ -28,4 +29,4 @@ function Usuario() {
   );
 }
 
-export default Usuario;
+export default StudentRoutes;

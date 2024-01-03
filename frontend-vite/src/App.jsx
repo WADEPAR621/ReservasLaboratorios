@@ -4,7 +4,8 @@ import Login from './components/pages/Login';
 import SignUp from './components/pages/Sing_up';
 import SobreNosotros from './components/pages/SobreNosotros';
 import AdminRoutes from './AdminRoutes';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import StudentRoutes from './StudentRoutes';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -19,23 +20,40 @@ const ProtectedRoute = ({ element, ...props }) => {
   );
 };
 
+const initState = {
+  usuario: "",
+  contrasena: "",
+  rol: "",
+  isAuth: false
+}
+
 const App = () => {
 
-  const [usuarioLo, setUsuario] = useState({
-    usuario: "",
-    contrasena: "",
-    rol: "",
-    isAuth: false
-  });
+  const [usuarioLo, setUsuario] = useState(sessionStorage.getItem("Login") || initState);
+  useEffect(() => {
+    if (usuarioLo.isAuth && !sessionStorage.getItem("Login")) {
+      sessionStorage.setItem("Login", usuarioLo);
+    }
+    console.log(usuarioLo);
+  }, [usuarioLo]);
 
   return (
     <Router>
       <Routes>
         {usuarioLo.isAuth ? (
-          <Route
-            path="/*"
-            element={<AdminRoutes />}
-          />
+          usuarioLo.rol == "admin" ?(
+              <Route
+                path="/*"
+                element={<AdminRoutes />}
+              />
+            )
+            :
+            (
+              <Route
+                path="/*"
+                element={<StudentRoutes />}
+              />
+            )
         ) : (
           <>
             <Route

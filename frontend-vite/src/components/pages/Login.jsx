@@ -4,12 +4,12 @@ import '../../styles/Login.css';
 import imagenes1 from '../../images/loginimagen.png';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Login = ({usuarioLo, setUsuario}) => {
+const Login = ({ usuarioLo, setUsuario }) => {
 
     const [students, setstudents] = useState([]);
     const [admin, setadmin] = useState([]);
 
-    
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -17,25 +17,38 @@ const Login = ({usuarioLo, setUsuario}) => {
         fetchTechnicians();
     }, []);
 
-    useEffect(() => {
-        console.log(usuarioLo);
-    }, [usuarioLo]);
+
 
     const validateTecnico = () => {
         const adminLogedo = admin.find((admin) => admin.NOM_USER_TEC === usuarioLo.usuario);
-        console.log(adminLogedo);
-        console.log(adminLogedo.CON_TEC)
-        console.log(usuarioLo.contrasena)
         if (adminLogedo) {
             if (adminLogedo.CON_TEC == usuarioLo.contrasena) {
-                setUsuario({...usuarioLo, isAuth:true, rol:"admin"});
+                setUsuario({ ...usuarioLo, isAuth: true, rol: "admin" });
                 navigate("/Admin");
-                return;
+                return true;
             }
-            return alert("Contraseña incorrecta");
+            alert("Contraseña o Usuario incorrectos")
+            return false;
         }
-        return alert("Usuario No detectado");
+        return false;
     }
+    //VALIDACION ESTUDIANTES
+    const validatestudent = () => {
+        const studentsLogedo = students.find((students) => students.COR_USE === usuarioLo.usuario);
+        console.log(studentsLogedo)
+        if (studentsLogedo) {
+            if (studentsLogedo.SEC_USE_digest == usuarioLo.contrasena) {
+                console.log("entro")
+                setUsuario({ ...usuarioLo, isAuth: true, rol: "students" });
+                navigate("/MapaPisos");
+                return true;
+            }
+            alert("Usuario o Contraseña incorrectos")
+            return false;
+        }
+        return false;
+    }
+
     const fetchStudents = async () => {
         try {
             const response = await fetch(`http://localhost:3000/students`, {
@@ -60,7 +73,10 @@ const Login = ({usuarioLo, setUsuario}) => {
     };
 
     const login = () => {
-        validateTecnico()
+        const validation = validateTecnico();
+        if(!validation){
+            validatestudent()
+        }
     };
     const handleContinueClick = () => {
         history.push("/Sing_up");
