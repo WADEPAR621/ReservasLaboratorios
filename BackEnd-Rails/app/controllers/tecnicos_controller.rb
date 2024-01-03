@@ -46,6 +46,6 @@ class TecnicosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tecnico_params
-      params.require(:tecnico).permit(:NOM_TEC, :APE_TEC, :FEC_NAC_TEC, :FEC_ING_TEC)
+      params.require(:tecnico).permit(:NOM_TEC, :APE_TEC,:NOM_USER_TEC, :FEC_NAC_TEC, :FEC_ING_TEC, :CON_TEC)
     end
 end

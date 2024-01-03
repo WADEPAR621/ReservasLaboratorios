@@ -1,13 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import MapaPisos from './components/pages/MapaPisos';
-import MisReservas from './components/pages/MisReservas';
-import Login from './components/Login';
-import SignUp from './components/Sing_up';
-import Inicio from './components/pages/Inicio';
+import Login from './components/pages/Login';
+import SignUp from './components/pages/Sing_up';
 import SobreNosotros from './components/pages/SobreNosotros';
-import NuevaReserva from './components/pages/NuevaReserva'
-import Admin from './components/pages/AdminCRUD'
+import AdminRoutes from './AdminRoutes';
+import { useState } from 'react';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -23,31 +20,42 @@ const ProtectedRoute = ({ element, ...props }) => {
 };
 
 const App = () => {
+
+  const [usuarioLo, setUsuario] = useState({
+    usuario: "",
+    contrasena: "",
+    rol: "",
+    isAuth: false
+  });
+
   return (
     <Router>
       <Routes>
-        {                                     }
-         <Route
-          path={`/SobreNosotros`}
-          element={<SobreNosotros/>}
-        />
+        {usuarioLo.isAuth ? (
           <Route
-          path={`/Inicio`}
-          element={<Inicio/>}
-        />
-         <Route
-          path={`/Sing_up`}
-          element={<SignUp/>}
-        />
-        <Route
-          path={`/`}
-          element={<Login/>}
-        />
-        
-        <Route
-          path="/admin"
-          element={<Admin />}
-        />
+            path="/*"
+            element={<AdminRoutes />}
+          />
+        ) : (
+          <>
+            <Route
+              path={`/SobreNosotros`}
+              element={<SobreNosotros />}
+            />
+            <Route
+              path={`/Sing_up`}
+              element={<SignUp />}
+            />
+            <Route
+              path={`/Login`}
+              element={<Login usuarioLo={usuarioLo} setUsuario={setUsuario} />}
+            />
+            <Route
+              path={`/*`}
+              element={<Navigate to={"/Login"} />}
+            />
+          </>
+        )}
       </Routes>
     </Router>
   );
