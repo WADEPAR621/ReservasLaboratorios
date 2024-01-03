@@ -125,11 +125,12 @@ const AdminCRUD = (administrador) => {
 
         <div className="container_table">
           <h1>HORARIOS EN CURSO:</h1>
-          <div className="container_list">
+          <div className="container_list_Admin">
             {Object.keys(reservas).map((reservaId) => (
               <div key={reservaId} className="reserva">
                 <i>{reservas[reservaId].NOM_HAB}</i>
                 <text>{reservas[reservaId].HOR_INI_RES} - {reservas[reservaId].HOR_FIN_RES}</text>
+                 <i>{reservas[reservaId].RAZ_RES}</i>
                 <button className="Aprobar" onClick={() => handleAprobarReserva(reservas[reservaId])}>Aprobar</button>
               </div>
             ))}

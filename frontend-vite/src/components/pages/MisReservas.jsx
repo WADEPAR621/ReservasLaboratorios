@@ -61,6 +61,7 @@ const MisReservas = () => {
                         {Object.keys(reservas).map((reservaId) => (
                             <div key={reservaId} className="reserva">
                                 <i>{reservas[reservaId].NOM_HAB}</i>
+                                reservas[reservaId].HOR_INI_RES;
                                 <text>{reservas[reservaId].HOR_INI_RES} - {reservas[reservaId].HOR_FIN_RES}</text>
                                 <i>{reservas[reservaId].EST_RES ? 'Aceptado' : 'En Revision'}</i>
                             </div>
