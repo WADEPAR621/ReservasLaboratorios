@@ -2,6 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import MapaPisos from './components/pages/MapaPisos';
 import MisReservas from './components/pages/MisReservas';
+import Login from './components/Login';
+import SignUp from './components/Sing_up';
+import Inicio from './components/pages/Inicio';
+import SobreNosotros from './components/pages/SobreNosotros';
 import NuevaReserva from './components/pages/NuevaReserva'
 import Admin from './components/pages/AdminCRUD'
 
@@ -14,7 +18,7 @@ const ProtectedRoute = ({ element, ...props }) => {
   return isAuthenticated ? (
     element
   ) : (
-    <Navigate to="/login" replace state={{ from: props.location }} />
+    <Navigate to="/" replace state={{ from: props.location }} />
   );
 };
 
@@ -22,32 +26,24 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/*
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute
-              element={<MapaPisos />}
-            />
-          }
+        {                                     }
+         <Route
+          path={`/SobreNosotros`}
+          element={<SobreNosotros/>}
         />
-        */}
-        <Route
-          path={`/MapaPisos`}
-          element={<MapaPisos />}
+          <Route
+          path={`/Inicio`}
+          element={<Inicio/>}
         />
-
-        <Route
-          path="/MisReservas"
-          element={<MisReservas />}
+         <Route
+          path={`/Sing_up`}
+          element={<SignUp/>}
         />
-
         <Route
-          path="/NuevaReserva"
-          element={<NuevaReserva />}
+          path={`/`}
+          element={<Login/>}
         />
-
+        
         <Route
           path="/admin"
           element={<Admin />}
