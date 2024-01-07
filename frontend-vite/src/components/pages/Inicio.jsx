@@ -5,15 +5,17 @@ import c1 from '../../assets/images/c1.jpg'
 import c2 from '../../assets/images/c2.jpg'
 import c3 from '../../assets/images/c3.jpg'
 import Footer from '../footer';
+import NavBar from '../Navbar';
 
 const Inicio = () => {
     // Definir los datos que quieres pasar al componente Card
 
     return (
+        <> <NavBar />
         <div class="inicio">
             <h2 className="title-lab">Reservas de laboratorios</h2>
 
-            <div class="container desc-carrousel">
+            <div class="Container desc-carrousel">
 
                 <p class="text-carrousel">Los laboratorios de la Universidad Técnica de Ambato se destacan por su excelencia y modernidad, brindando a los estudiantes un entorno propicio para el aprendizaje práctico y la investigación. Equipados con tecnología de punta, estos espacios de trabajo ofrecen una infraestructura avanzada que cumple con los estándares más exigentes.
 
@@ -23,7 +25,7 @@ La calidad de los laboratorios de la Universidad Técnica de Ambato se refleja e
             </div>
 
 
-            <div className="container">
+            <div className="Container">
                 <h2>Te ofrecemos: </h2>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6">
@@ -64,6 +66,7 @@ La calidad de los laboratorios de la Universidad Técnica de Ambato se refleja e
                 <Footer />
             </div>
         </div>
+        </>
     );
 }
 

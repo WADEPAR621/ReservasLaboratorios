@@ -4,15 +4,14 @@ import AgregarEstudianteForm from "../AgregarEstudiante";
 import '../../styles/AdminCRUDstyle.css';
 
 const AdministrarPeticiones = (administrador) => {
-  //CODIGO JAVASCRIPT
-
   useEffect(() => {
     fetchGetReservas(1);
   }, []);
 
-  //CONSULTAS GET A LA BASE DE DATOS
-  //CONSULTA DE RECOGER LAS RESERVAS DEL ESTUDIANTE
   const [reservas, setReservas] = useState([]);
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  const [mensajeEnVista, setMensajeEnVista] = useState('');
+
   const fetchGetReservas = async (id) => {
     try {
       const response = await fetch(`http://localhost:3000/books/by_technician/${id}`, {
@@ -40,12 +39,7 @@ const AdministrarPeticiones = (administrador) => {
     }
   };
 
-  // Estado para mostrar u ocultar el formulario
-  const [mostrarFormulario, setMostrarFormulario] = useState(false);
-
-  // Función para manejar la adición de estudiantes
   const handleAgregarEstudiante = async (nuevoEstudiante) => {
-
     try {
       const response = await fetch("http://localhost:3000/users", {
         method: "POST",
@@ -62,15 +56,14 @@ const AdministrarPeticiones = (administrador) => {
       const data = await response.json();
       setMostrarFormulario(false);
       console.log("Estudiante agregado:", data);
+      actualizarMensajeEnVista('Estudiante agregado exitosamente');
     } catch (error) {
       console.error("Error:", error);
+      actualizarMensajeEnVista('Error al agregar estudiante');
     }
   };
 
   const handleAprobarReserva = async (reservaId) => {
-
-    console.log("RAZON:", reservaId.RAZ_RES);
-    
     try {
       const response = await fetch(`http://localhost:3000/books/update_est_res_to_true/${reservaId.id}`, {
         method: "PUT",
@@ -85,19 +78,18 @@ const AdministrarPeticiones = (administrador) => {
       console.log(data);
       setMostrarFormulario(false);
       console.log("Reserva Aprobada con ID:", reservaId);
-      fetchGetReservas(1); //CAMBIAR A VALOR DE ADMIN
+      fetchGetReservas(1);
+      actualizarMensajeEnVista('Reserva aprobada exitosamente');
     } catch (error) {
       console.error("Error: Fallo al aprobar la solicitud: ", error);
+      actualizarMensajeEnVista('Error al aprobar reserva');
     }
   };
 
-  const handleDenegarReserva = (reserva) => {
-    // Lógica para denegar la reserva (puedes enviar una solicitud al servidor, etc.)
-    console.log("Reserva Denegada:", reserva);
+  const actualizarMensajeEnVista = (mensaje) => {
+    setMensajeEnVista(mensaje);
   };
 
-
-  //HTML QUE RETORNA
   return (
     <div className="principal">
       <NavBar />
@@ -115,14 +107,14 @@ const AdministrarPeticiones = (administrador) => {
           </button>
 
           <div>
-          {mostrarFormulario && (
-            <AgregarEstudianteForm
-              onAgregarEstudiante={handleAgregarEstudiante}
-            />
-          )}
+            {mostrarFormulario && (
+              <AgregarEstudianteForm
+                onAgregarEstudiante={handleAgregarEstudiante}
+              />
+            )}
           </div>
 
-          
+          {mensajeEnVista && <div className="mensaje">{mensajeEnVista}</div>}
 
           <button className="CerrarSesion">Cerrar Sesión</button>
         </div>
