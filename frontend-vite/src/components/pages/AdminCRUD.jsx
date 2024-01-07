@@ -1,89 +1,44 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './components/pages/Login';
-import SignUp from './components/pages/Sing_up';
-import SobreNosotros from './components/pages/SobreNosotros';
-import AdminRoutes from './AdminRoutes';
-import { useState, useEffect } from 'react';
-import StudentRoutes from './StudentRoutes';
+import React from "react";
+import { Link } from "react-router-dom";
+import Estudiante from "../../images/estudiante.png";
+import Laboratorio from "../../images/laboratorios.png";
+import Horario from "../../images/horario.png";
+import Peticion from "../../images/peticiones.png";
+import AdminRoutes from "../../AdminRoutes";
 
-const ProtectedRoute = ({ element, ...props }) => {
-  //CONSTANTES DE PARAMETROS
-  const [handlePiso, setEditPiso] = useState([]);
 
-  const { isAuthenticated } = useAuth();
-
-  return isAuthenticated ? (
-    element
-  ) : (
-    <Navigate to="/" replace state={{ from: props.location }} />
-  );
-};
-
-const initState = {
-  usuario: "",
-  contrasena: "",
-  rol: "",
-  isAuth: false
-}
-
-const App = () => {
-
-  const [usuarioLo, setUsuario] = useState(sessionStorage.getItem("Login") || initState);
-  useEffect(() => {
-    if (usuarioLo.isAuth && !sessionStorage.getItem("Login")) {
-      sessionStorage.setItem("Login", usuarioLo);
-    }
-    console.log(usuarioLo);
-  }, [usuarioLo]);
-
+const AdminCRUD = () => {
   return (
-    <Router>
-      <Routes>
-        {usuarioLo.isAuth ? (
-          usuarioLo.rol == "admin" ?(
-              <Route
-                path="/*"
-                element={<AdminRoutes />}
-              />
-            )
-            :
-            (
-              <Route
-                path="/*"
-                element={<StudentRoutes />}
-              />
-            )
-        ) : (
-          <>
-            <Route
-              path={`/SobreNosotros`}
-              element={<SobreNosotros />}
-            />
-            <Route
-              path={`/Sing_up`}
-              element={<SignUp />}
-            />
+    <div>
+      <h3 className="Bienvenido-h3">Bienvenido Administrador</h3>
+      <h4 className="Accion-h4">¿Qué acción deseas realizar?</h4>
+      <div className="Container elecciones-CRUD">
+        <div className="row ">
+          <div className="col-lg-3 cl1">
             
+              <img src={Estudiante} height="200" alt="" />
+              <h5>Agregar Estudiante</h5>
+           
+          </div>
 
-            <Route
-              path={`/Login`}
-              element={<Login usuarioLo={usuarioLo} setUsuario={setUsuario} />}
-            />
+          <div className="col-lg-3 cl2">
+            <img src={Laboratorio} height="200" alt="" />
+            <h5>Agregar Laboratorio</h5>
+          </div>
 
-            <Route
-              path={`/*`}
-              element={<Navigate to={"/Login"} />}
-            />
-          </>
+          <div className="col-lg-3 cl3">
+            <img src={Horario} height="200" alt="" />
+            <h5>Modificar Horario</h5>
+          </div>
 
-          
-
-          
-        )}
-      </Routes>
-    </Router>
+          <div className="col-lg-3 cl4">
+            <img src={Peticion} height="200" alt="" />
+            <h5>Administrar Peticiones</h5>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default App;
+export default AdminCRUD;

@@ -10,8 +10,7 @@ const App = () => {
   return (
     
       
-      <AdminCRUD />
-    
+      <AgregarEstudianteForm />
   );
 };
 
