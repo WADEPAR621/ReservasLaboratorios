@@ -6,6 +6,7 @@ import SobreNosotros from './components/pages/SobreNosotros';
 import AdminRoutes from './AdminRoutes';
 import { useState, useEffect } from 'react';
 import StudentRoutes from './StudentRoutes';
+import Inicio from './components/pages/Inicio';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -41,12 +42,12 @@ const App = () => {
     <Router>
       <Routes>
         {usuarioLo.isAuth ? (
-          usuarioLo.rol == "admin" ?(
-              <Route
-                path="/*"
-                element={<AdminRoutes />}
-              />
-            )
+          usuarioLo.rol == "admin" ? (
+            <Route
+              path="/*"
+              element={<AdminRoutes />}
+            />
+          )
             :
             (
               <Route
@@ -69,8 +70,13 @@ const App = () => {
               element={<Login usuarioLo={usuarioLo} setUsuario={setUsuario} />}
             />
             <Route
+              path={`/Inicio`}
+              element={<Inicio />}
+            />
+
+            <Route
               path={`/*`}
-              element={<Navigate to={"/Login"} />}
+              element={<Navigate to={"/Inicio"} />}
             />
           </>
         )}
