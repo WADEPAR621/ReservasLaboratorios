@@ -29,16 +29,24 @@ const initState = {
 }
 
 const App = () => {
+  
+  const [usuarioLo, setUsuario] = useState(sessionStorage.getItem("Login") || initState);
+  useEffect(() => {
+    if (usuarioLo.isAuth && !sessionStorage.getItem("Login")) {
+      sessionStorage.setItem("Login", usuarioLo);
+    }
+    console.log(usuarioLo);
+  }, [usuarioLo]);
   return (
     <Router>
       <Routes>
         {usuarioLo.isAuth ? (
-          usuarioLo.rol == "admin" ?(
-              <Route
-                path="/*"
-                element={<AdminRoutes />}
-              />
-            )
+          usuarioLo.rol == "admin" ? (
+            <Route
+              path="/*"
+              element={<AdminRoutes />}
+            />
+          )
             :
             (
               <Route
@@ -61,8 +69,13 @@ const App = () => {
               element={<Login usuarioLo={usuarioLo} setUsuario={setUsuario} />}
             />
             <Route
+              path={`/Inicio`}
+              element={<Inicio />}
+            />
+
+            <Route
               path={`/*`}
-              element={<Navigate to={"/Login"} />}
+              element={<Navigate to={"/Inicio"} />}
             />
           </>
         )}
