@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 
 const AgregarEstudianteForm = () => {
 
@@ -151,6 +152,9 @@ const AgregarEstudianteForm = () => {
           <div className="Agregarbtn">
             <button type="submit" className="btn btn-light" onClick={enviarSolicitud}>
               Agregar Estudiante
+            </button>
+            <button  className="btn btn-light">
+              <Link to="/Admin">Regresar</Link>
             </button>
             <div id="messageDisplay"></div>
           </div>

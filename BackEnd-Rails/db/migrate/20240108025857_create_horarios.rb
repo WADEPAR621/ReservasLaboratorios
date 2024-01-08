@@ -7,7 +7,7 @@ class CreateHorarios < ActiveRecord::Migration[7.1]
       t.string :Miercoles
       t.string :Jueves
       t.string :Viernes
-      t.references :room, null: false, foreign_key: true
+      t.references :Room, null: false, foreign_key: true
 
       t.timestamps
     end

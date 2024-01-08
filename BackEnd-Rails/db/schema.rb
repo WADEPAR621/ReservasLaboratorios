@@ -69,9 +69,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_030418) do
     t.boolean "DIS_HAB"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "edificio_id"
+    t.integer "Edificio_id"
+    t.index ["Edificio_id"], name: "index_rooms_on_Edificio_id"
     t.index ["Floor_id"], name: "index_rooms_on_Floor_id"
-    t.index ["edificio_id"], name: "index_rooms_on_edificio_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -112,6 +112,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_030418) do
   add_foreign_key "books", "Tecnicos"
   add_foreign_key "horarios", "horas"
   add_foreign_key "horarios", "rooms"
+  add_foreign_key "rooms", "Edificios"
   add_foreign_key "rooms", "Floors"
-  add_foreign_key "rooms", "edificios"
 end

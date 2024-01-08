@@ -1,13 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/pages/Login';
-import SignUp from './components/pages/Sing_up';
 import SobreNosotros from './components/pages/SobreNosotros';
 import AdminRoutes from './AdminRoutes';
 import { useState, useEffect } from 'react';
 import StudentRoutes from './StudentRoutes';
 import Inicio from './components/pages/Inicio';
-import Agregar from './components/pages/AgregarLaboratorios';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -62,10 +60,6 @@ const App = () => {
               element={<SobreNosotros />}
             />
             <Route
-              path={`/Sing_up`}
-              element={<SignUp />}
-            />
-            <Route
               path={`/Login`}
               element={<Login usuarioLo={usuarioLo} setUsuario={setUsuario} />}
             />
@@ -74,12 +68,8 @@ const App = () => {
               element={<Inicio />}
             />
             <Route
-              path={`/Agregar`}
-              element={<Agregar/>}
-            />
-            <Route
               path={`/*`}
-              element={<Navigate to={"/Agregar"} />}
+              element={<Navigate to={"/Inicio"} />}
             />
           </>
         )}

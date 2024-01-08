@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import '../../styles/AgregarLaboratorio.css'
+import '../../styles/AgregarLaboratorio.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AgregarLaboratorios = () => {
 
@@ -9,6 +10,7 @@ const AgregarLaboratorios = () => {
   const [message, setMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [progress, setProgress] = useState(100);
+  const [pisosOptions, setPisosOptions] = useState([]);
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -16,9 +18,25 @@ const AgregarLaboratorios = () => {
   };
 
   //VARIABLE TIPO OBJETO DEL NUEVO LABORATORIO
+  const primerEdificioMap = {
+    "Primer": 1,
+    "Segundo": 2,
+    "Tercer": 3
+  };
+  const segundoEdificioMap = {
+    "Piso A": 4,
+    "Piso B": 5,
+    "Piso C": 6,
+    "Piso D": 7,
+    "Piso E": 8,
+    "Piso F": 9,
+    "Piso G": 10,
+    "Piso H": 11,
+    "Piso I": 12,
+  };
   const [formData, setFormData] = useState({
     edificio: "",
-    piso: "",
+    piso: 0,
     nombre: "",
     capacidad: 0,
     tipo: ""
@@ -46,19 +64,37 @@ const AgregarLaboratorios = () => {
   //METODO DE AGREGAR LOS VALORES A LA VARIABLE TIPO OBJETO DEL NUEVO LABORATORIO
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    console.log(e.target.name, e.target.value); 
+    if (name == "edificio") {
+      // Aquí ajustas las opciones de piso según el edificio seleccionado
+      if (value === "1") {
+        setPisosOptions(Object.keys(primerEdificioMap));
+      } else if (value === "2") {
+        setPisosOptions(Object.keys(segundoEdificioMap));
+      }
+      setFormData({
+        ...formData,
+        edificio: e.target.value,
+      });
+    } else if (name == "piso") {
+      let pisoValue = 0;
+      if (formData.edificio === "1") {
+        pisoValue = primerEdificioMap[value];
+      } else if (formData.edificio === "2") {
+        pisoValue = segundoEdificioMap[value];
+      }
+      setFormData({
+        ...formData,
+        piso: pisoValue,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+    console.log(formData)
   };
-
-  ////CONTROL DEL SELECT, SI PONE BLOQUE 1 LE SALE PISO 1... Y BLOQUE 2 LE SALE PISO A,B,C...
-  let pisosOptions = [];
-  if (formData.edificio === "1") {
-    pisosOptions = ["Primer", "Segundo", "Tercer"];
-  } else if (formData.edificio === "2") {
-    pisosOptions = ["Piso A", "Piso B", "Piso C", "Piso D", "Piso E", "Piso F", "Piso G", "Piso H", "Piso I"];
-  }
 
   //ENVIAR A LA BASE DE DATOS
   const handleSubmit = async (e) => {
@@ -68,11 +104,6 @@ const AgregarLaboratorios = () => {
     if (!formData.edificio || !formData.piso || !formData.nombre || !formData.capacidad) {
       setMessage('No se aceptan valores nulos o vacíos.');
       setShowModal(true);
-
-      setTimeout(() => {
-        setMessage("");
-        setProgressBarVisible(false);
-      }, 5000); // Ocultar mensaje después de 5 segundos
       return;
     }
 
@@ -87,35 +118,21 @@ const AgregarLaboratorios = () => {
           NOM_HAB: formData.nombre,
           TIP_HAB: formData.tipo,
           CAP_HAB: formData.capacidad,
-          edificio_id : formData.edificio
+          Edificio_id: formData.edificio
         }),
       });
 
       if (response.ok) {
         setMessage("Laboratorio creado correctamente.");
-        setProgressBarVisible(true);
+        setShowModal(true);
 
-        setTimeout(() => {
-          setMessage("");
-          setProgressBarVisible(false);
-        }, 5000); // Ocultar mensaje después de 5 segundos
       } else {
         setMessage("Error al guardar los datos.");
-        setProgressBarVisible(true);
-
-        setTimeout(() => {
-          setMessage("");
-          setProgressBarVisible(false);
-        }, 5000); // Ocultar mensaje después de 5 segundos
+        setShowModal(true);
       }
     } catch (error) {
-      setMessage("Error al enviar la solicitud.");
-      setProgressBarVisible(true);
-
-      setTimeout(() => {
-        setMessage("");
-        setProgressBarVisible(false);
-      }, 5000); // Ocultar mensaje después de 5 segundos
+      setMessage("Error al enviar la solicitud." + error);
+      setShowModal(true);
     }
   };
 
@@ -142,7 +159,7 @@ const AgregarLaboratorios = () => {
             <label htmlFor="Tipo">Tipo</label>
             <select
               className="form-select"
-              name="ipo"
+              name="tipo"
               aria-label="Default select example"
               onChange={handleInputChange}
             >
@@ -197,6 +214,9 @@ const AgregarLaboratorios = () => {
           <div className="Agregarbtn">
             <button type="submit" className="btn btn-light">
               Agregar
+            </button>
+            <button  className="btn btn-light">
+              <Link to="/Admin">Regresar</Link>
             </button>
           </div>
         </form>

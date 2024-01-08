@@ -4,10 +4,12 @@ class EdificiosController < ApplicationController
   # GET /edificios or /edificios.json
   def index
     @edificios = Edificio.all
+    render json: @edificios
   end
 
   # GET /edificios/1 or /edificios/1.json
   def show
+    render json: @edificio
   end
 
   # GET /edificios/new
@@ -23,38 +25,25 @@ class EdificiosController < ApplicationController
   def create
     @edificio = Edificio.new(edificio_params)
 
-    respond_to do |format|
       if @edificio.save
-        format.html { redirect_to edificio_url(@edificio), notice: "Edificio was successfully created." }
-        format.json { render :show, status: :created, location: @edificio }
+        render json: @edificio, status: :created, location: @edificio
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @edificio.errors, status: :unprocessable_entity }
+        render json: @edificio.errors, status: :unprocessable_entity
       end
-    end
   end
 
   # PATCH/PUT /edificios/1 or /edificios/1.json
   def update
-    respond_to do |format|
       if @edificio.update(edificio_params)
-        format.html { redirect_to edificio_url(@edificio), notice: "Edificio was successfully updated." }
-        format.json { render :show, status: :ok, location: @edificio }
+        render json:@edificio, status: :ok, location: @edificio
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @edificio.errors, status: :unprocessable_entity }
+        render json: @edificio.errors, status: :unprocessable_entity
       end
-    end
   end
 
   # DELETE /edificios/1 or /edificios/1.json
   def destroy
     @edificio.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to edificios_url, notice: "Edificio was successfully destroyed." }
-      format.json { head :no_content }
-    end
   end
 
   private

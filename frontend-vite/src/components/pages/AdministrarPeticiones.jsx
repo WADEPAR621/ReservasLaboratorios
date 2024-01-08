@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../NavbarMenu";
-import AgregarEstudianteForm from "../AgregarEstudiante";
+import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/AdminCRUDstyle.css';
 
 const AdministrarPeticiones = (administrador) => {
@@ -70,7 +70,7 @@ const AdministrarPeticiones = (administrador) => {
   const handleAprobarReserva = async (reservaId) => {
 
     console.log("RAZON:", reservaId.RAZ_RES);
-    
+
     try {
       const response = await fetch(`http://localhost:3000/books/update_est_res_to_true/${reservaId.id}`, {
         method: "PUT",
@@ -96,7 +96,12 @@ const AdministrarPeticiones = (administrador) => {
     console.log("Reserva Denegada:", reserva);
   };
 
+  //BOTON DE CERRAR SESION
 
+  const navigate = useNavigate()
+  const CerrarSesion = () => {
+    navigate("/Inicio");
+  }
   //HTML QUE RETORNA
   return (
     <div className="principal">
@@ -104,27 +109,11 @@ const AdministrarPeticiones = (administrador) => {
       <div className="containerCRUD">
         <div className="container_imgCRUD">
           <h1>Bienvenido</h1>
-          <h1>administrador</h1>
+          <br />
+          <br />
           <i>¿Qué acciones desea realizar?</i>
           <i>Reserva Rápida</i>
-          <button
-            className="Agregar_estudiante"
-            onClick={() => setMostrarFormulario(true)}
-          >
-            Agregar Estudiante
-          </button>
-
-          <div>
-          {mostrarFormulario && (
-            <AgregarEstudianteForm
-              onAgregarEstudiante={handleAgregarEstudiante}
-            />
-          )}
-          </div>
-
-          
-
-          <button className="CerrarSesion">Cerrar Sesión</button>
+          <button className="CerrarSesion" onClick={CerrarSesion}>Cerrar Sesion</button>
         </div>
 
         <div className="container_table">
@@ -134,7 +123,7 @@ const AdministrarPeticiones = (administrador) => {
               <div key={reservaId} className="reserva">
                 <i>{reservas[reservaId].NOM_HAB}</i>
                 <text>{reservas[reservaId].HOR_INI_RES} - {reservas[reservaId].HOR_FIN_RES}</text>
-                 <i>{reservas[reservaId].RAZ_RES}</i>
+                <i>{reservas[reservaId].RAZ_RES}</i>
                 <button className="Aprobar" onClick={() => handleAprobarReserva(reservas[reservaId])}>Aprobar</button>
               </div>
             ))}
