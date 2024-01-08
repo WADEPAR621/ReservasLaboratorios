@@ -15,13 +15,13 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav mx-auto">
                         <li className="nav-item">
-                            <Link className="nav-link" to='/sobrenosotros'>Sobre Nosotros</Link>
+                            <Link className="nav-link" to='https://servicios.uta.edu.ec/SistemaIntegrado/Cuenta/Login'>Sistema Integrado</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to='/iniciarsesion'>Inicia Sesion</Link>
+                            <Link className="nav-link" to='/Login'>Inicia Sesion</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to='/registrarse'>Registrate</Link>
+                            <Link className="nav-link" to='https://www.uta.edu.ec/v4.0/?page=4'>UTA Oficial</Link>
                         </li>
                     </ul>
                 </div>

@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="footer-container">
             <div className="footer-content">
                 <p>&copy; 2023 Universidad Técnica de Ambato</p>
-                <p>Dirección: Calle Principal, Ciudad</p>
+                <p>Dirección: Av. los chásquis, Ambato 180207</p>
                 <p>Teléfono: (123) 456-7890</p>
                 <p>Email: info@uta.edu.ec</p>
             </div>

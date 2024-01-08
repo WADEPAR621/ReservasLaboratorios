@@ -11,9 +11,7 @@ const Card = ({ title, description, img, link }) => {
                 <p className="card-text text-secondary">
                     {description}
                 </p>
-                <a href={link} className="btn btn-outline-secondary rounded-0" target="_blank" rel="noreferrer">
-                    Ver más
-                </a>
+                
             </div>
         </div>
     )

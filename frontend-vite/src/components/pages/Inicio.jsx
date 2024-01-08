@@ -11,8 +11,10 @@ const Inicio = () => {
     // Definir los datos que quieres pasar al componente Card
 
     return (
-        <> <NavBar />
+        <><NavBar />
+        
         <div class="inicio">
+            
             <h2 className="title-lab">Reservas de laboratorios</h2>
 
             <div class="Container desc-carrousel">
