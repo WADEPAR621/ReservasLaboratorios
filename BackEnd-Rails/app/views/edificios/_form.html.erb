@@ -1,0 +1,22 @@
+<%= form_with(model: edificio) do |form| %>
+  <% if edificio.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(edificio.errors.count, "error") %> prohibited this edificio from being saved:</h2>
+
+      <ul>
+        <% edificio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :descripcion, style: "display: block" %>
+    <%= form.text_field :descripcion %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

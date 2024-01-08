@@ -7,6 +7,7 @@ import AdminRoutes from './AdminRoutes';
 import { useState, useEffect } from 'react';
 import StudentRoutes from './StudentRoutes';
 import Inicio from './components/pages/Inicio';
+import AgregarEstudiante from './components/pages/AgregarEstudiante';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -29,7 +30,7 @@ const initState = {
 }
 
 const App = () => {
-  
+
   const [usuarioLo, setUsuario] = useState(sessionStorage.getItem("Login") || initState);
   useEffect(() => {
     if (usuarioLo.isAuth && !sessionStorage.getItem("Login")) {
@@ -72,10 +73,13 @@ const App = () => {
               path={`/Inicio`}
               element={<Inicio />}
             />
-
+            <Route
+              path={`/Agregar-estudiante`}
+              element={<AgregarEstudiante/>}
+            />
             <Route
               path={`/*`}
-              element={<Navigate to={"/Inicio"} />}
+              element={<Navigate to={"/Agregar-estudiante"} />}
             />
           </>
         )}
