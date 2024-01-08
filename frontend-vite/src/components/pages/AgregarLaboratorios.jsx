@@ -87,7 +87,7 @@ const AgregarLaboratorios = () => {
           NOM_HAB: formData.nombre,
           TIP_HAB: formData.tipo,
           CAP_HAB: formData.capacidad,
-          DIS_HAB: false,
+          edificio_id : formData.edificio
         }),
       });
 

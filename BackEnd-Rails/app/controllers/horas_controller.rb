@@ -4,10 +4,12 @@ class HorasController < ApplicationController
   # GET /horas or /horas.json
   def index
     @horas = Hora.all
+    render json: @horas
   end
 
   # GET /horas/1 or /horas/1.json
   def show
+    render json: @hora
   end
 
   # GET /horas/new
@@ -22,39 +24,25 @@ class HorasController < ApplicationController
   # POST /horas or /horas.json
   def create
     @hora = Hora.new(hora_params)
-
-    respond_to do |format|
       if @hora.save
-        format.html { redirect_to hora_url(@hora), notice: "Hora was successfully created." }
-        format.json { render :show, status: :created, location: @hora }
+        render json:show, status: :created, location: @hora
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @hora.errors, status: :unprocessable_entity }
+        render json: @hora.errors, status: :unprocessable_entity
       end
-    end
   end
 
   # PATCH/PUT /horas/1 or /horas/1.json
   def update
-    respond_to do |format|
       if @hora.update(hora_params)
-        format.html { redirect_to hora_url(@hora), notice: "Hora was successfully updated." }
-        format.json { render :show, status: :ok, location: @hora }
+        render json :show, status: :ok, location: @hora
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @hora.errors, status: :unprocessable_entity }
+        render json: @hora.errors, status: :unprocessable_entity
       end
-    end
   end
 
   # DELETE /horas/1 or /horas/1.json
   def destroy
     @hora.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to horas_url, notice: "Hora was successfully destroyed." }
-      format.json { head :no_content }
-    end
   end
 
   private
