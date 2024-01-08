@@ -7,7 +7,7 @@ import AdminRoutes from './AdminRoutes';
 import { useState, useEffect } from 'react';
 import StudentRoutes from './StudentRoutes';
 import Inicio from './components/pages/Inicio';
-import AgregarEstudiante from './components/pages/AgregarEstudiante';
+import Agregar from './components/pages/AgregarLaboratorios';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -74,12 +74,12 @@ const App = () => {
               element={<Inicio />}
             />
             <Route
-              path={`/Agregar-estudiante`}
-              element={<AgregarEstudiante/>}
+              path={`/Agregar`}
+              element={<Agregar/>}
             />
             <Route
               path={`/*`}
-              element={<Navigate to={"/Agregar-estudiante"} />}
+              element={<Navigate to={"/Agregar"} />}
             />
           </>
         )}
