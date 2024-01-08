@@ -31,17 +31,16 @@ const AgregarEstudianteForm = () => {
     setContra(event.target.value);
     console.log(Contra)
   };
-////CONTRASENACONFIRM
-const [ContraConfir, setContraConfir] = useState('');
-const handleContraConfirChange = (event) => {
-  setContraConfir(event.target.value);
-  console.log(ContraConfir)
-};
+  ////CONTRASENACONFIRM
+  const [ContraConfir, setContraConfir] = useState('');
+  const handleContraConfirChange = (event) => {
+    setContraConfir(event.target.value);
+    console.log(ContraConfir)
+  };
 
   const validarCampos = () => {
 
-    if ( Contra != ContraConfir)
-    {
+    if (Contra != ContraConfir) {
       return false;
     }
     if (!Nombre.trim() || !Apellido.trim() || !Correo.trim() || !Contra.trim()) {
@@ -55,8 +54,7 @@ const handleContraConfirChange = (event) => {
       const errorMessage = document.getElementById('errorMessage');
       errorMessage.innerText = 'Parametros en Blanco no son permitidos';
       errorMessage.style.display = 'block';
-
-      setTimeout(() => { errorMessage.style.display = 'none'; }, 10500);
+      setTimeout(() => { errorMessage.style.display = 'none'; }, 5000);
       return;
     }
     try {
@@ -70,29 +68,22 @@ const handleContraConfirChange = (event) => {
           NOM_USE: Nombre,
           APE_USE: Apellido,
           COR_USE: Correo,
-          SEC_USE_digest: Contra, 
+          SEC_USE_digest: Contra,
         }),
       });
 
       if (!response.ok) {
         throw new Error('Error al enviar la solicitud');
       }
-
       // Mostrar el mensaje en la mitad de la pantalla
       const messageDisplay = document.getElementById('messageDisplay');
       messageDisplay.innerText = 'Solicitud enviada con éxito';
       messageDisplay.style.display = 'block';
-
-      // Ocultar el mensaje después de unos segundos (opcional)
-      setTimeout(() => {
-        messageDisplay.style.display = 'none';
-      }, 3000);
-
+      setTimeout(() => { messageDisplay.style.display = 'none' }, 5000);
     } catch (error) {
       console.error('Error al enviar la solicitud:', error);
     }
   };
-
 
   return (
     <div className="EstudianteForm">
@@ -161,8 +152,8 @@ const handleContraConfirChange = (event) => {
             <button type="submit" className="btn btn-light" onClick={enviarSolicitud}>
               Agregar Estudiante
             </button>
+            <div id="messageDisplay"></div>
           </div>
-          <div id="messageDisplay"></div>
           <div id="errorMessage"></div>
         </div>
       </form>

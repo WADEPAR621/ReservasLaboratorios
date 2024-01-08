@@ -31022,3 +31022,105 @@ Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 1.3ms | Allocations: 1181)
   [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
   ↳ config/initializers/schedule.rb:25:in `block in <main>'
   [1m[36mBook Load (2.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Started POST "/students" for ::1 at 2024-01-07 23:20:23 -0500
+Processing by StudentsController#create as */*
+  Parameters: {"NOM_USE"=>"Jean", "APE_USE"=>"Paredes", "COR_USE"=>"jparedes@gmail.com", "SEC_USE_digest"=>"123", "student"=>{"NOM_USE"=>"Jean", "APE_USE"=>"Paredes", "COR_USE"=>"jparedes@gmail.com", "SEC_USE_digest"=>"123"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:28:in `create'
+  [1m[36mStudent Create (14.5ms)[0m  [1m[32mINSERT INTO "students" ("NOM_USE", "APE_USE", "COR_USE", "SEC_USE_digest", "CAR_USE", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_USE", "Jean"], ["APE_USE", "Paredes"], ["COR_USE", "jparedes@gmail.com"], ["SEC_USE_digest", "123"], ["CAR_USE", nil], ["created_at", "2024-01-08 04:20:24.000975"], ["updated_at", "2024-01-08 04:20:24.000975"]]
+  ↳ app/controllers/students_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:28:in `create'
+Completed 201 Created in 28ms (Views: 1.1ms | ActiveRecord: 21.9ms | Allocations: 1969)
+
+
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Started POST "/students" for ::1 at 2024-01-07 23:22:04 -0500
+Processing by StudentsController#create as */*
+  Parameters: {"NOM_USE"=>"Jean", "APE_USE"=>"Paredes", "COR_USE"=>"jparedes@gmail.com", "SEC_USE_digest"=>"123", "student"=>{"NOM_USE"=>"Jean", "APE_USE"=>"Paredes", "COR_USE"=>"jparedes@gmail.com", "SEC_USE_digest"=>"123"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:28:in `create'
+  [1m[36mStudent Create (7.0ms)[0m  [1m[32mINSERT INTO "students" ("NOM_USE", "APE_USE", "COR_USE", "SEC_USE_digest", "CAR_USE", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["NOM_USE", "Jean"], ["APE_USE", "Paredes"], ["COR_USE", "jparedes@gmail.com"], ["SEC_USE_digest", "123"], ["CAR_USE", nil], ["created_at", "2024-01-08 04:22:04.709827"], ["updated_at", "2024-01-08 04:22:04.709827"]]
+  ↳ app/controllers/students_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:28:in `create'
+Completed 201 Created in 18ms (Views: 1.0ms | ActiveRecord: 8.7ms | Allocations: 1720)
+
+
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ config/initializers/schedule.rb:25:in `block in <main>'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
