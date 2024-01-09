@@ -5,6 +5,8 @@ import AgregarEstudianteForm from "./components/pages/AgregarEstudiante";
 import AgregarLaboratorios from "./components/pages/AgregarLaboratorios";
 import AgregarHorarios from "./components/pages/AgregarHorarios";
 import AdminCRUD from "./components/pages/AdminCRUD";
+import Laboratorios from "./components/pages/Laboratorios";
+
 
 function AdminRoutesC() {
   return (
@@ -26,7 +28,10 @@ function AdminRoutesC() {
         path={`/Agregar-Horarios`}
         element={<AgregarHorarios />}
       />
-
+      <Route
+        path={`/Laboratorios`}
+        element={<Laboratorios />}
+      />
       <Route
         path={`/Agregar-Laboratorios`}
         element={<AgregarLaboratorios />}

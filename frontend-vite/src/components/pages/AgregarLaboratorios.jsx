@@ -139,6 +139,7 @@ const AgregarLaboratorios = () => {
   //RETURN DE LA BASE DE DATOS
   return (
     <div className="FormLab">
+      <h3 className="Bienvenido-h3">Menu de Administrador</h3>
       <h3>Agregar Laboratorio</h3>
       <div className="AgregarLaboratorio containerNewLab">
         <form onSubmit={handleSubmit}>

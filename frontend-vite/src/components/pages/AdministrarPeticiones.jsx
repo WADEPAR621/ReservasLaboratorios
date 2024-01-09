@@ -105,7 +105,7 @@ const AdministrarPeticiones = (administrador) => {
   //HTML QUE RETORNA
   return (
     <div className="principal">
-      <NavBar />
+      <h3 className="Bienvenido-h3">Bienvenido Administrador</h3>
       <div className="containerCRUD">
         <div className="container_imgCRUD">
           <h1>Bienvenido</h1>

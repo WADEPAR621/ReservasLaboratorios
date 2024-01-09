@@ -6,6 +6,7 @@ import AdminRoutes from './AdminRoutes';
 import { useState, useEffect } from 'react';
 import StudentRoutes from './StudentRoutes';
 import Inicio from './components/pages/Inicio';
+import Laboratorios from './components/pages/Laboratorios';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -58,6 +59,10 @@ const App = () => {
             <Route
               path={`/SobreNosotros`}
               element={<SobreNosotros />}
+            />
+            <Route
+              path={`/Laboratorios`}
+              element={<Laboratorios />}
             />
             <Route
               path={`/Login`}
