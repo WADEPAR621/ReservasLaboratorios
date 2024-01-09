@@ -1,0 +1,49 @@
+.containerNewLab{
+    position: relative;
+    width: 100%;
+  }
+  
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .progress-bar {
+    height: 5px;
+    background-color: #007bff; /* Color de la barra de progreso */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .AgregarLaboratorio{
+    height: auto !important;
+  }
+  .form-group{
+    margin: 10px 30px 5px 30px !important;
+  }.form-group label{
+    font-size: larger;
+    font-weight: 500;
+    color: var(--colorwhite);
+  }

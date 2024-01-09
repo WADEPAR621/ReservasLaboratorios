@@ -1,0 +1,65 @@
+.navbarStudent {
+    background-color: var(--colorbotonesmenuhamburguesa);
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    width: 175em;
+  }
+  .navbar_text {
+    color: rgb(255, 255, 255);
+    width: 150vh;
+    line-height: 15px;
+    text-align: left;
+  }
+  .navbar_img {
+    height: 15vh;
+    padding: 5px;
+    right: 0;
+  }
+  .MENU_RESPONSIVE {
+    width: 20vh;
+    margin-right: 0;
+    cursor: pointer;
+  }
+  .MENU_RESPONSIVE img{
+    position: relative;
+    color: aliceblue;
+    width: 75%;
+    height: 85%;
+    z-index: 80;
+  }
+  .nav_links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(46, 46, 46);
+    right: 0;
+    top: 0;
+    z-index: 70;
+    padding: 100px 0px 0px 0px;
+    visibility: hidden;
+    --bs-navbar-padding-y: 0rem;
+  }.nav_links--show{
+      visibility: visible;
+  }
+  .nav_links a {
+    height: 10%;
+    background-color: rgb(89, 0, 0);
+    border-radius: 25px;
+    margin: 5%;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  .nav_links .perfil {
+    margin-top: 65%;
+  }
+  .navbar_text h1, .navbar_text h2{
+    margin-top: 0.82em;
+  }

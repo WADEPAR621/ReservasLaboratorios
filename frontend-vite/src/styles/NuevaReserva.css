@@ -29,6 +29,8 @@ body{
     line-height: 20px;
     color: var(--colorsecundario);
     align-items: flex-start;
+    margin: 1rem 0rem;
+    font-weight: 700;
 }
 .containerNew_form select{
     border-radius: 8px;

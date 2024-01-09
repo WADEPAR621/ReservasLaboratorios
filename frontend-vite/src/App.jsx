@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/pages/Login';
-import SignUp from './components/pages/Sing_up';
 import SobreNosotros from './components/pages/SobreNosotros';
 import AdminRoutes from './AdminRoutes';
 import { useState, useEffect } from 'react';
 import StudentRoutes from './StudentRoutes';
+import Inicio from './components/pages/Inicio';
+import Laboratorios from './components/pages/Laboratorios';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -36,17 +37,16 @@ const App = () => {
     }
     console.log(usuarioLo);
   }, [usuarioLo]);
-
   return (
     <Router>
       <Routes>
         {usuarioLo.isAuth ? (
-          usuarioLo.rol == "admin" ?(
-              <Route
-                path="/*"
-                element={<AdminRoutes />}
-              />
-            )
+          usuarioLo.rol == "admin" ? (
+            <Route
+              path="/*"
+              element={<AdminRoutes />}
+            />
+          )
             :
             (
               <Route
@@ -61,16 +61,20 @@ const App = () => {
               element={<SobreNosotros />}
             />
             <Route
-              path={`/Sing_up`}
-              element={<SignUp />}
+              path={`/Laboratorios`}
+              element={<Laboratorios />}
             />
             <Route
               path={`/Login`}
               element={<Login usuarioLo={usuarioLo} setUsuario={setUsuario} />}
             />
             <Route
+              path={`/Inicio`}
+              element={<Inicio />}
+            />
+            <Route
               path={`/*`}
-              element={<Navigate to={"/Login"} />}
+              element={<Navigate to={"/Inicio"} />}
             />
           </>
         )}

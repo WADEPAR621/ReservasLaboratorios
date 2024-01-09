@@ -67,7 +67,7 @@ const MapaPisos = () => {
     return (
         <div className="ReservasScreen">
             <NavBar />
-            <div className="container">
+            <div className="containerPisos">
                 <div className="container_info">
                     <h3>PISO:</h3>
                     <select id="comboBox" value={selectedOption} onChange={handleSelectChange}>
