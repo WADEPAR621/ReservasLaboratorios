@@ -112,7 +112,7 @@ const Login = ({ usuarioLo, setUsuario }) => {
                     </label>
                 </div>
                 <button id="boton" className="boton" onClick={() => login()}>
-                    INCIAR SESION
+                    INCIAR SESIÓN
                 </button>
                 <br />
 

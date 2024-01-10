@@ -33,7 +33,7 @@ La calidad de los laboratorios de la Universidad Técnica de Ambato se refleja e
                     <div class="col-lg-4 col-sm-6">
 
                         <Card
-                            title={"Innovacion para todos"}
+                            title={"Innovación para todos"}
                             description={"Los equipos y materiales de última generación disponibles en estos laboratorios permiten a los estudiantes realizar experimentos de vanguardia, investigaciones innovadoras y proyectos que contribuyen al avance de sus respectivas disciplinas. Además, el compromiso de la universidad con la seguridad y el cumplimiento de normativas garantiza un entorno de trabajo seguro y responsable para todos los usuarios."}
                             img={c1}
                             link={"https://www.uta.edu.ec/"}

@@ -6,6 +6,7 @@ import AgregarLaboratorios from "./components/pages/AgregarLaboratorios";
 import AgregarHorarios from "./components/pages/AgregarHorarios";
 import AdminCRUD from "./components/pages/AdminCRUD";
 import Laboratorios from "./components/pages/Laboratorios";
+import Estudiantes from "./components/pages/Estudiantes";
 
 
 function AdminRoutesC() {
@@ -35,6 +36,10 @@ function AdminRoutesC() {
       <Route
         path={`/Agregar-Laboratorios`}
         element={<AgregarLaboratorios />}
+      />
+      <Route
+        path={`/Estudiantes`}
+        element={<Estudiantes />}
       />
       <Route
         path={`/*`}

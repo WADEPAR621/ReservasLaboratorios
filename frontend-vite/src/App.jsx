@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import StudentRoutes from './StudentRoutes';
 import Inicio from './components/pages/Inicio';
 import Laboratorios from './components/pages/Laboratorios';
+import Estudiantes from './components/pages/Estudiantes';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -61,8 +62,8 @@ const App = () => {
               element={<SobreNosotros />}
             />
             <Route
-              path={`/Laboratorios`}
-              element={<Laboratorios />}
+              path={`/Estudiantes`}
+              element={<Estudiantes />}
             />
             <Route
               path={`/Login`}
@@ -71,6 +72,23 @@ const App = () => {
             <Route
               path={`/Inicio`}
               element={<Inicio />}
+            />
+              <Route
+              path={`/MisReservas`}
+              element={<MisReservas />}
+            />
+
+            <Route
+              path={`/MapaPisos`}
+              element={<MapaPisos/>}
+            />
+               <Route
+              path={`/NuevaReserva`}
+              element={<NuevaReserva/>}
+            />
+                 <Route
+              path={`/AdministrarPeticiones`}
+              element={<AdministrarPeticiones/>}
             />
             <Route
               path={`/*`}
