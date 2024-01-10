@@ -8,6 +8,7 @@ import StudentRoutes from './StudentRoutes';
 import Inicio from './components/pages/Inicio';
 import Laboratorios from './components/pages/Laboratorios';
 import Estudiantes from './components/pages/Estudiantes';
+import AgregarHorarios from './components/pages/AgregarHorarios';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -62,8 +63,8 @@ const App = () => {
               element={<SobreNosotros />}
             />
             <Route
-              path={`/Estudiantes`}
-              element={<Estudiantes />}
+              path={`/Agregar-Horario`}
+              element={<AgregarHorarios />}
             />
             <Route
               path={`/Login`}

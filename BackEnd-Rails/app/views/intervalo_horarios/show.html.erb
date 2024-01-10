@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @intervalo_horario %>
+
+<div>
+  <%= link_to "Edit this intervalo horario", edit_intervalo_horario_path(@intervalo_horario) %> |
+  <%= link_to "Back to intervalo horarios", intervalo_horarios_path %>
+
+  <%= button_to "Destroy this intervalo horario", @intervalo_horario, method: :delete %>
+</div>

@@ -79,7 +79,8 @@ const Login = ({ usuarioLo, setUsuario }) => {
         }
     };
     const handleContinueClick = () => {
-        history.push("/Sing_up");
+        setUsuario({ ...usuarioLo, isAuth: true, rol: "students" });
+        navigate("/Admin")
     };
 
 
@@ -117,7 +118,7 @@ const Login = ({ usuarioLo, setUsuario }) => {
                 <br />
 
 
-                <button id="boton2" className="boton2" onClick={handleContinueClick}>
+                <button id="boton2" className="boton2" onClick={()=>handleContinueClick()}>
                     Continue with Microsoft 365
                 </button>
 

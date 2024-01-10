@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @horario_academico %>
+
+<div>
+  <%= link_to "Edit this horario academico", edit_horario_academico_path(@horario_academico) %> |
+  <%= link_to "Back to horario academicos", horario_academicos_path %>
+
+  <%= button_to "Destroy this horario academico", @horario_academico, method: :delete %>
+</div>

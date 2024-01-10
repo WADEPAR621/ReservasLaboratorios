@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horario_academico: one
+  dia_semana: one
+  hora_inicio: 2024-01-10 10:29:08
+  hora_fin: 2024-01-10 10:29:08
+  descripcion: MyText
+
+two:
+  horario_academico: two
+  dia_semana: two
+  hora_inicio: 2024-01-10 10:29:08
+  hora_fin: 2024-01-10 10:29:08
+  descripcion: MyText

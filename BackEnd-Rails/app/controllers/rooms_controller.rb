@@ -52,6 +52,18 @@ class RoomsController < ApplicationController
     end
   end
 
+  # Método para obtener el horario de una sala específica
+  def horario
+    lab_id = params[:id] # ID del laboratorio
+    room = Room.find_by(id: params[:id]) # Encuentra la sala por ID
+    if room
+      horario = room.horario # Suponiendo que tienes una relación o método para obtener el horario
+      render json: horario # Devuelve el horario en formato JSON
+    else
+      render json: { error: 'Sala no encontrada' }, status: :not_found
+    end
+  end
+  
   # DELETE /rooms/1 or /rooms/1.json
   def destroy
     @room.destroy!
