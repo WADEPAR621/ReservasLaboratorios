@@ -46,7 +46,10 @@ const MisReservas = () => {
             <NavBar />
             <div className="containerEst">
                 <div className="container_imgEst">
-                    <h1>Perfil</h1>
+                    <br />
+                    
+                    <h2>Perfil</h2>
+                    <br />
                     <i>Pagina de la FISEI</i>
                     <i>Reserva Rapida</i>
                     <img className="imagenEst"
@@ -56,7 +59,9 @@ const MisReservas = () => {
                     </button>
                 </div>
                 <div className="container_table">
-                    <h1>     HORARIOS EN CURSO:</h1>
+                    <br />
+                    <h1>     RESERVACIONES EN CURSO:</h1>
+                    <br />
                     <div className="container_list">
                         {Object.keys(reservas).map((reservaId) => (
                             <div key={reservaId} className="reserva">
