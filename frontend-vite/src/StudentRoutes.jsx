@@ -4,7 +4,6 @@ import MapaPisos from "./components/pages/MapaPisos";
 import NuevaReserva from "./components/pages/NuevaReserva";
 import MisReservas from "./components/pages/MisReservas";
 import { Navigate } from "react-router-dom";
-import ManualUsuario from "./components/pages/ManualUsuario";
 
 function StudentRoutes() {
   return (
