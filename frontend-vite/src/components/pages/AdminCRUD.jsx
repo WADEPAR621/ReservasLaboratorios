@@ -42,7 +42,7 @@ const AdminCRUD = () => {
             </Link>
           </div>
           <div className="col-lg-3 cl4">
-            <Link to={"/Administrar-Peticiones"}>
+            <Link to={"/Estudiantes"}>
               <img src="https://prints.ultracoloringpages.com/ff748ba4371e977296575b11b72624a7.png" height="200" alt="" />
               <h5>Ver Estudiantes registrados</h5>
             </Link>

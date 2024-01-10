@@ -33,7 +33,7 @@ const MisReservas = () => {
                     NOM_HAB: roomData.NOM_HAB
                 };
             }));
-    
+
             setReservas(updatedReservas);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -66,11 +66,14 @@ const MisReservas = () => {
                         {Object.keys(reservas).map((reservaId) => (
                             <div key={reservaId} className="reserva">
                                 <i>{reservas[reservaId].NOM_HAB}</i>
-                                reservas[reservaId].HOR_INI_RES;
-                                <text>{reservas[reservaId].HOR_INI_RES} - {reservas[reservaId].HOR_FIN_RES}</text>
+                                <text>
+                                    {new Date(reservas[reservaId].HOR_INI_RES).toLocaleTimeString()} -
+                                    {new Date(reservas[reservaId].HOR_FIN_RES).toLocaleTimeString()}
+                                </text>
                                 <i>{reservas[reservaId].EST_RES ? 'Aceptado' : 'En Revision'}</i>
                             </div>
                         ))}
+
                     </div>
                     <button className="VolverButton">
                         Volver al Mapa
