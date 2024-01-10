@@ -12,7 +12,7 @@ const Estudiantes = () => {
 
   //CONSULTAS GET A LA BASE DE DATOS
   ////CONSULTA DE RECOGER LAS RESERVAS DEL ESTUDIANTE
-  const [laboratorios, setEstudiantes] = useState([]);
+  const [estudiantes, setEstudiantes] = useState([]);
   const fetchGetEstudiantes = async () => {
     try {
       const response = await fetch(`http://localhost:3000/rooms`, {
@@ -33,15 +33,15 @@ const Estudiantes = () => {
   ////CONSULTA DE EDITAR EL LABORATORIO
   const [mostrarModalEdicion, setMostrarModalEdicion] = useState(false);
 
-  const [laboratorioSeleccionado, setLaboratorioSeleccionado] = useState(null);
+  const [estudianteSeleccionado, setEstudianteSeleccionado] = useState(null);
 
-  const handleEditar = (laboratorio) => {
-    setLaboratorioSeleccionado(laboratorio);
+  const handleEditar = (estudiante) => {
+    setEstudianteSeleccionado(estudiante);
     setMostrarModalEdicion(true);
   };
   const handleInputChange = (campo, valor) => {
-    setLaboratorioSeleccionado((prevLaboratorio) => ({
-      ...prevLaboratorio,
+    setEstudianteSeleccionado((prevEstudiante) => ({
+      ...prevEstudiante,
       [campo]: valor,
     }));
   };
@@ -50,12 +50,12 @@ const Estudiantes = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:3000/rooms/${laboratorioSeleccionado.id}`, {
+      const response = await fetch(`http://localhost:3000/rooms/${estudianteSeleccionado.id}`, {
         method: "PUT", // Método para actualizar en lugar de eliminar
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(laboratorioSeleccionado),
+        body: JSON.stringify(estudianteSeleccionado),
       });
 
       if (!response.ok) {
@@ -74,9 +74,9 @@ const Estudiantes = () => {
   ////CONSULTA DE ELIMINACION PARA EL LABORATORIO
   const [mostrarAlerta, setMostrarAlerta] = useState(false);
 
-  const handleEliminar = (laboratorio) => {
+  const handleEliminar = (estudiante) => {
     setMostrarAlerta(true)
-    console.log(laboratorio);
+    console.log(estudiante);
   }
   const handleConfirmarEliminar = async (id) => {
     try {
@@ -113,18 +113,18 @@ const Estudiantes = () => {
               <button className="opciones">EDICION</button>
               <button className="opciones">ELIMINACION</button>
             </li>
-            {Object.keys(laboratorios).map((laboratorioId) => (
-              <li key={laboratorioId} className="container_list_li laboratorio">
-                <i>{laboratorios[laboratorioId].NOM_HAB}</i>
-                <i>{laboratorios[laboratorioId].TIP_HAB}</i>
-                <text>{laboratorios[laboratorioId].CAP_HAB}</text>
-                <button className="opciones" onClick={() => handleEditar(laboratorios[laboratorioId])}>Editar</button>
-                <button className="opciones" onClick={() => handleEliminar(laboratorios[laboratorioId])}>Eliminar</button>
+            {Object.keys(estudiantes).map((estudianteId) => (
+              <li key={estudianteId} className="container_list_li estudiante">
+                <i>{estudiantes[estudianteId].NOM_HAB}</i>
+                <i>{estudiantes[estudianteId].TIP_HAB}</i>
+                <text>{estudiantes[estudianteId].CAP_HAB}</text>
+                <button className="opciones" onClick={() => handleEditar(estudiantes[estudianteId])}>Editar</button>
+                <button className="opciones" onClick={() => handleEliminar(estudiantes[estudianteId])}>Eliminar</button>
                 {mostrarAlerta && (
                   <div className="alerta-container">
                     <div className="alerta">
-                      <p>¿Estás seguro de que quieres eliminar este laboratorio?</p>
-                      <button onClick={() => handleConfirmarEliminar(laboratorios[laboratorioId].id)}>Confirmar</button>
+                      <p>¿Estás seguro de que quieres eliminar este estudiante?</p>
+                      <button onClick={() => handleConfirmarEliminar(estudiantes[estudianteId].id)}>Confirmar</button>
                       <button onClick={() => setMostrarAlerta(false)}>Cancelar</button>
                     </div>
                   </div>
@@ -133,29 +133,29 @@ const Estudiantes = () => {
             ))}
           </ul>
         </div>
-        {mostrarModalEdicion && laboratorioSeleccionado && (
+        {mostrarModalEdicion && estudianteSeleccionado && (
           <div className="modal-overlay">
             <div className="modal-content">
-              <h2>Editar Laboratorio</h2>
+              <h2>Editar Estudiante</h2>
               <form className="modal_content-formEdicion" onSubmit={handleSubmitEdicion}>
                 <label>Nombre:</label>
                 <input
                   type="text"
-                  value={laboratorioSeleccionado.NOM_HAB}
+                  value={estudianteSeleccionado.NOM_HAB}
                   onChange={(e) => handleInputChange("NOM_HAB", e.target.value)}
                 />
                 <label>Tipo:</label>
                 <select
-                  value={laboratorioSeleccionado.TIP_HAB}
+                  value={estudianteSeleccionado.TIP_HAB}
                   onChange={(e) => handleInputChange("TIP_HAB", e.target.value)}
                 >
                   <option value="Administracion">Administracion</option>
-                  <option value="Laboratorio">Laboratorio</option>
+                  <option value="Estudiante">Estudiante</option>
                 </select>
                 <label>Capacidad:</label>
                 <input
                   type="number"
-                  value={laboratorioSeleccionado.CAP_HAB}
+                  value={estudianteSeleccionado.CAP_HAB}
                   min={0}
                   max={60}
                   onChange={(e) => handleInputChange("CAP_HAB", parseInt(e.target.value))}
