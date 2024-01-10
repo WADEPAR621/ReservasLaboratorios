@@ -73,6 +73,23 @@ const App = () => {
               path={`/Inicio`}
               element={<Inicio />}
             />
+              <Route
+              path={`/MisReservas`}
+              element={<MisReservas />}
+            />
+
+            <Route
+              path={`/MapaPisos`}
+              element={<MapaPisos/>}
+            />
+               <Route
+              path={`/NuevaReserva`}
+              element={<NuevaReserva/>}
+            />
+                 <Route
+              path={`/AdministrarPeticiones`}
+              element={<AdministrarPeticiones/>}
+            />
             <Route
               path={`/*`}
               element={<Navigate to={"/Inicio"} />}
