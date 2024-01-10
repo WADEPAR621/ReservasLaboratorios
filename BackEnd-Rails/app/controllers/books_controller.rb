@@ -58,9 +58,9 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1 or /books/1.json
   def update
     if @book.update(book_params)
-      render json: { message: 'Book was successfully updated.', book: @book }, status: :ok
+      render json: @book
     else
-      render json: { errors: @book.errors.full_messages }, status: :unprocessable_entity
+      render json: @room.errors, status: :unprocessable_entity
     end
   end
 

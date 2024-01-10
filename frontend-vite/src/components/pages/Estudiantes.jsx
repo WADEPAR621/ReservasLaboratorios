@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../NavbarMenu";
 import { Link } from "react-router-dom";
-import '../../styles/Laboratorios.css';
+import '../../styles/Estudiantes.css';
 
-const Laboratorios = () => {
+const Estudiantes = () => {
   //CODIGO JAVASCRIPT
 
   useEffect(() => {
-    fetchGetLaboratorios();
+    fetchGetEstudiantes();
   }, []);
 
   //CONSULTAS GET A LA BASE DE DATOS
   ////CONSULTA DE RECOGER LAS RESERVAS DEL ESTUDIANTE
-  const [laboratorios, setLaboratorios] = useState([]);
-  const fetchGetLaboratorios = async () => {
+  const [estudiantes, setEstudiantes] = useState([]);
+  const fetchGetEstudiantes = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/rooms`, {
+      const response = await fetch(`http://localhost:3000/students`, {
         method: "GET"
       });
       if (!response.ok) {
@@ -23,7 +23,7 @@ const Laboratorios = () => {
       }
       const data = await response.json();
       console.log(data);
-      setLaboratorios(data);
+      setEstudiantes(data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -33,42 +33,37 @@ const Laboratorios = () => {
   ////CONSULTA DE EDITAR EL LABORATORIO
   const [mostrarModalEdicion, setMostrarModalEdicion] = useState(false);
 
-  const [laboratorioSeleccionado, setLaboratorioSeleccionado] = useState(null);
+  const [estudianteSeleccionado, setEstudianteSeleccionado] = useState(null);
 
-  const handleEditar = (laboratorio) => {
-    setLaboratorioSeleccionado(laboratorio);
+  const handleEditar = (estudiante) => {
+    setEstudianteSeleccionado(estudiante);
     setMostrarModalEdicion(true);
+    console.log(estudiante)
   };
   const handleInputChange = (campo, valor) => {
-    setLaboratorioSeleccionado((prevLaboratorio) => ({
-      ...prevLaboratorio,
+    setEstudianteSeleccionado((prevEstudiante) => ({
+      ...prevEstudiante,
       [campo]: valor,
     }));
   };
 
   const handleSubmitEdicion = async (e) => {
     e.preventDefault();
-
-    delete laboratorioSeleccionado.created_at;
-    delete laboratorioSeleccionado.updated_at;
-
-    console.log(laboratorioSeleccionado)
+    console.log(estudianteSeleccionado.id)
     try {
-      const response = await fetch(`http://localhost:3000/rooms/${laboratorioSeleccionado.id}`, {
+      const response = await fetch(`http://localhost:3000/students/${estudianteSeleccionado.id}`, {
         method: "PUT", // Método para actualizar en lugar de eliminar
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(laboratorioSeleccionado),
+        body: JSON.stringify(estudianteSeleccionado),
       });
 
       if (!response.ok) {
         throw new Error('Fallo al conectar a la base de datos');
       }
-
-      // Aquí podrías añadir algún feedback al usuario si lo deseas
       setMostrarModalEdicion(false);
-      fetchGetLaboratorios();
+      fetchGetEstudiantes();
     } catch (error) {
       console.error('Error updating data:', error);
     }
@@ -78,19 +73,19 @@ const Laboratorios = () => {
   ////CONSULTA DE ELIMINACION PARA EL LABORATORIO
   const [mostrarAlerta, setMostrarAlerta] = useState(false);
 
-  const handleEliminar = (laboratorio) => {
+  const handleEliminar = (estudiante) => {
     setMostrarAlerta(true)
-    console.log(laboratorio);
+    console.log(estudiante);
   }
   const handleConfirmarEliminar = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/rooms/${id}`, {
+      const response = await fetch(`http://localhost:3000/students/${id}`, {
         method: "DELETE"
       });
       if (!response.ok) {
         throw new Error('Fallo al conectar a la base de datos');
       }
-      fetchGetLaboratorios();
+      fetchGetEstudiantes();
       setMostrarAlerta(false);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -107,28 +102,28 @@ const Laboratorios = () => {
       </h3>
       <div className="containerCRUD">
         <div className="container_tableLab">
-          <h1>Laboratorios registrados:</h1>
+          <h1>Estudiantes registrados:</h1>
 
           <ul className="container_list_AdminLab">
             <li className="container_list_li">
               <i>NOMBRE</i>
-              <i>TIPO DE LABORATORIO</i>
+              <i>CORO DE LABORATORIO</i>
               <text>CAPACIDAD</text>
               <button className="opciones">EDICION</button>
               <button className="opciones">ELIMINACION</button>
             </li>
-            {Object.keys(laboratorios).map((laboratorioId) => (
-              <li key={laboratorioId} className="container_list_li laboratorio">
-                <i>{laboratorios[laboratorioId].NOM_HAB}</i>
-                <i>{laboratorios[laboratorioId].TIP_HAB}</i>
-                <text>{laboratorios[laboratorioId].CAP_HAB}</text>
-                <button className="opciones" onClick={() => handleEditar(laboratorios[laboratorioId])}>Editar</button>
-                <button className="opciones" onClick={() => handleEliminar(laboratorios[laboratorioId])}>Eliminar</button>
+            {Object.keys(estudiantes).map((estudianteId) => (
+              <li key={estudianteId} className="container_list_li estudiante">
+                <i>{estudiantes[estudianteId].NOM_USE}</i>
+                <i>{estudiantes[estudianteId].APE_USE}</i>
+                <text>{estudiantes[estudianteId].COR_USE}</text>
+                <button className="opciones" onClick={() => handleEditar(estudiantes[estudianteId])}>Editar</button>
+                <button className="opciones" onClick={() => handleEliminar(estudiantes[estudianteId])}>Eliminar</button>
                 {mostrarAlerta && (
                   <div className="alerta-container">
                     <div className="alerta">
-                      <p>¿Estás seguro de que quieres eliminar este laboratorio?</p>
-                      <button onClick={() => handleConfirmarEliminar(laboratorios[laboratorioId].id)}>Confirmar</button>
+                      <p>¿Estás seguro de que quieres eliminar este estudiante?</p>
+                      <button onClick={() => handleConfirmarEliminar(estudiantes[estudianteId].id)}>Confirmar</button>
                       <button onClick={() => setMostrarAlerta(false)}>Cancelar</button>
                     </div>
                   </div>
@@ -137,32 +132,28 @@ const Laboratorios = () => {
             ))}
           </ul>
         </div>
-        {mostrarModalEdicion && laboratorioSeleccionado && (
+        {mostrarModalEdicion && estudianteSeleccionado && (
           <div className="modal-overlay">
             <div className="modal-content">
-              <h2>Editar Laboratorio</h2>
+              <h2>Editar Estudiante</h2>
               <form className="modal_content-formEdicion" onSubmit={handleSubmitEdicion}>
                 <label>Nombre:</label>
                 <input
                   type="text"
-                  value={laboratorioSeleccionado.NOM_HAB}
-                  onChange={(e) => handleInputChange("NOM_HAB", e.target.value)}
+                  value={estudianteSeleccionado.NOM_USE}
+                  onChange={(e) => handleInputChange("NOM_USE", e.target.value)}
                 />
-                <label>Tipo:</label>
-                <select
-                  value={laboratorioSeleccionado.TIP_HAB}
-                  onChange={(e) => handleInputChange("TIP_HAB", e.target.value)}
-                >
-                  <option value="Administracion">Administracion</option>
-                  <option value="Laboratorio">Laboratorio</option>
-                </select>
-                <label>Capacidad:</label>
+                <label>Apellido:</label>
                 <input
-                  type="number"
-                  value={laboratorioSeleccionado.CAP_HAB}
-                  min={0}
-                  max={60}
-                  onChange={(e) => handleInputChange("CAP_HAB", parseInt(e.target.value))}
+                  type="text"
+                  value={estudianteSeleccionado.APE_USE}
+                  onChange={(e) => handleInputChange("APE_USE", e.target.value)}
+                />
+                <label>Correo:</label>
+                <input
+                  type="text"
+                  value={estudianteSeleccionado.COR_USE}
+                  onChange={(e) => handleInputChange("COR_USE", e.target.value)}
                 />
                 <button type="submit">Guardar Cambios</button>
                 <button onClick={() => setMostrarModalEdicion(false)}>Cancelar</button>
@@ -175,4 +166,4 @@ const Laboratorios = () => {
   );
 }
 
-export default Laboratorios;
+export default Estudiantes;
