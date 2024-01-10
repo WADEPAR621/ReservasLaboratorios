@@ -1,0 +1,30 @@
+.nav{
+background-color: rgba(89,0,0,255);
+}
+.navbar_img {
+    height: 15vh;
+    padding: 5px;
+    right: 0;
+  }
+  .container-fluid{
+    background-color: rgba(89,0,0,255);
+  }
+  .navbar_text {
+    color: rgb(255, 255, 255);
+    width: 150vh;
+    line-height: 15px;
+    text-align: left;
+  }
+
+  .nav-item{
+    margin-bottom: 5%;
+  }
+  .nav-item .nav-link {
+    white-space: nowrap; 
+    overflow: hidden;   
+    text-overflow: ellipsis; 
+    margin-right: 150px;
+    width: 100%;
+    text-align: center;
+    border-right: 2px solid #ccc;
+}
