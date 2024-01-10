@@ -78,10 +78,7 @@ const Login = ({ usuarioLo, setUsuario }) => {
             validatestudent()
         }
     };
-    const handleContinueClick = () => {
-        history.push("/Sing_up");
-    };
-
+   
 
     return (
         <div className="principalLogin">
@@ -112,13 +109,13 @@ const Login = ({ usuarioLo, setUsuario }) => {
                     </label>
                 </div>
                 <button id="boton" className="boton" onClick={() => login()}>
+                    
                     INCIAR SESION
                 </button>
                 <br />
 
-
-                <button id="boton2" className="boton2" onClick={handleContinueClick}>
-                    Continue with Microsoft 365
+                <button id="boton2" className="boton2" >
+                <Link className="boton2" to='/ManualUsuario'>Manual de Usuario</Link>
                 </button>
 
 
