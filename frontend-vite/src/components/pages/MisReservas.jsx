@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
-
 import '../../styles/MisReservas.css';
 import NavBar from "../NavbarMenu";
+
 const MisReservas = () => {
     //CODIGO JAVASCRIPT
 
@@ -33,7 +33,7 @@ const MisReservas = () => {
                     NOM_HAB: roomData.NOM_HAB
                 };
             }));
-    
+
             setReservas(updatedReservas);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -46,7 +46,10 @@ const MisReservas = () => {
             <NavBar />
             <div className="containerEst">
                 <div className="container_imgEst">
-                    <h1>Perfil</h1>
+                    <br />
+                    
+                    <h2>Perfil</h2>
+                    <br />
                     <i>Pagina de la FISEI</i>
                     <i>Reserva Rapida</i>
                     <img className="imagenEst"
@@ -56,16 +59,21 @@ const MisReservas = () => {
                     </button>
                 </div>
                 <div className="container_table">
-                    <h1>     HORARIOS EN CURSO:</h1>
+                    <br />
+                    <h1>     RESERVACIONES EN CURSO:</h1>
+                    <br />
                     <div className="container_list">
                         {Object.keys(reservas).map((reservaId) => (
                             <div key={reservaId} className="reserva">
                                 <i>{reservas[reservaId].NOM_HAB}</i>
-                                reservas[reservaId].HOR_INI_RES;
-                                <text>{reservas[reservaId].HOR_INI_RES} - {reservas[reservaId].HOR_FIN_RES}</text>
+                                <text>
+                                    {new Date(reservas[reservaId].HOR_INI_RES).toLocaleTimeString()} -
+                                    {new Date(reservas[reservaId].HOR_FIN_RES).toLocaleTimeString()}
+                                </text>
                                 <i>{reservas[reservaId].EST_RES ? 'Aceptado' : 'En Revision'}</i>
                             </div>
                         ))}
+
                     </div>
                     <button className="VolverButton">
                         Volver al Mapa

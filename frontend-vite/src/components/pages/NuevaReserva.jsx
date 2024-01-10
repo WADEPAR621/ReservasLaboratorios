@@ -54,7 +54,6 @@ const NuevaReserva = () => {
     const [razonReserva, setRazonReserva] = useState('');
     const handleRazonReservaChange = (event) => {
         setRazonReserva(event.target.value);
-        console.log(razonReserva)
     };
 
     //CONSULTA A LA BASE DE DATOS DONDE TOMARA LAS HABITACIONES DISPONIBLES

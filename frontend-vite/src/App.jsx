@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/pages/Login';
-import SignUp from './components/pages/Sing_up';
 import SobreNosotros from './components/pages/SobreNosotros';
 import AdminRoutes from './AdminRoutes';
 import { useState, useEffect } from 'react';
 import StudentRoutes from './StudentRoutes';
 import Inicio from './components/pages/Inicio';
+import Laboratorios from './components/pages/Laboratorios';
+import Estudiantes from './components/pages/Estudiantes';
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -29,7 +30,7 @@ const initState = {
 }
 
 const App = () => {
-  
+
   const [usuarioLo, setUsuario] = useState(sessionStorage.getItem("Login") || initState);
   useEffect(() => {
     if (usuarioLo.isAuth && !sessionStorage.getItem("Login")) {
@@ -60,7 +61,10 @@ const App = () => {
               path={`/SobreNosotros`}
               element={<SobreNosotros />}
             />
-         
+            <Route
+              path={`/Estudiantes`}
+              element={<Estudiantes />}
+            />
             <Route
               path={`/Login`}
               element={<Login usuarioLo={usuarioLo} setUsuario={setUsuario} />}
@@ -69,11 +73,23 @@ const App = () => {
               path={`/Inicio`}
               element={<Inicio />}
             />
-            <Route
-              path={`/Sing_up`}
-              element={<SignUp/>}
+              <Route
+              path={`/MisReservas`}
+              element={<MisReservas />}
             />
 
+            <Route
+              path={`/MapaPisos`}
+              element={<MapaPisos/>}
+            />
+               <Route
+              path={`/NuevaReserva`}
+              element={<NuevaReserva/>}
+            />
+                 <Route
+              path={`/AdministrarPeticiones`}
+              element={<AdministrarPeticiones/>}
+            />
             <Route
               path={`/*`}
               element={<Navigate to={"/Inicio"} />}

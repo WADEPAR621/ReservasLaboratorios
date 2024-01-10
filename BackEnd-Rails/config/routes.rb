@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
   
+  resources :edificios, only: [:index, :show, :destroy]
+  resources :horas, only: [:index, :show, :destroy]
+  resources :horarios, only: [:index, :show, :destroy, :create]
   
 
-  resources :students, only: [:index, :show, :destroy, :create] 
+  resources :students, only: [:index, :show, :destroy, :create, :update] 
   resources :books, only: [:index, :show, :destroy, :create, :update] do
     collection do
       get 'by_user/:student_id', to: 'books#by_user', as: 'by_user'
@@ -19,7 +22,7 @@ Rails.application.routes.draw do
   resources :floors, only: [:index, :show, :destroy]
   resources :tecnicos, only: [:index, :show, :destroy, :create]
   
-  resources :rooms, only: [:index, :show, :destroy, :create] do
+  resources :rooms, only: [:index, :show, :destroy, :create, :update] do
     collection do
       get 'by_disponible', to: 'rooms#by_disponible'
       get 'by_floor/:floor_id', to: 'rooms#by_floor', as: 'by_floor'

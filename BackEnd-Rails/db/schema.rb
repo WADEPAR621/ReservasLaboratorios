@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_03_092628) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_08_030418) do
   create_table "books", force: :cascade do |t|
     t.integer "Student_id", null: false
     t.integer "Tecnico_id", null: false
@@ -27,10 +27,36 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_03_092628) do
     t.index ["Tecnico_id"], name: "index_books_on_Tecnico_id"
   end
 
+  create_table "edificios", force: :cascade do |t|
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "floors", force: :cascade do |t|
     t.string "NOM_PIS"
     t.string "DES_PIS"
     t.string "IMG_PIS"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "horarios", force: :cascade do |t|
+    t.integer "hora_id", null: false
+    t.string "Lunes"
+    t.string "Martes"
+    t.string "Miercoles"
+    t.string "Jueves"
+    t.string "Viernes"
+    t.integer "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hora_id"], name: "index_horarios_on_hora_id"
+    t.index ["room_id"], name: "index_horarios_on_room_id"
+  end
+
+  create_table "horas", force: :cascade do |t|
+    t.string "intervalo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,6 +69,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_03_092628) do
     t.boolean "DIS_HAB"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "Edificio_id"
+    t.index ["Edificio_id"], name: "index_rooms_on_Edificio_id"
     t.index ["Floor_id"], name: "index_rooms_on_Floor_id"
   end
 
@@ -82,5 +110,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_03_092628) do
   add_foreign_key "books", "Rooms"
   add_foreign_key "books", "Students"
   add_foreign_key "books", "Tecnicos"
+  add_foreign_key "horarios", "horas"
+  add_foreign_key "horarios", "rooms"
+  add_foreign_key "rooms", "Edificios"
   add_foreign_key "rooms", "Floors"
 end

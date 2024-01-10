@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom'
 import menuHamburguesa from '../images/menuHamburguesa.png';
-import '../styles/Navbar.css'
+import '../styles/NavbarMenu.css'
 const NavBar = () => {
     /*
         const containerIcons = document.getElementById("container__icons");
@@ -16,7 +16,7 @@ const NavBar = () => {
         setNavlinksVisible(!navlinksVisible);
     };
     return (
-        <nav className="navbar">
+        <nav className="navbarStudent">
 
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Escudo_de_la_Universidad_T%C3%A9cnica_de_Ambato.png"
                 className="navbar_img"></img>
