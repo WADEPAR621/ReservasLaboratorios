@@ -104,7 +104,8 @@ const AdministrarPeticiones = (administrador) => {
       <div className="containerCRUD">
         <div className="container_imgCRUD">
           <h1>Bienvenido</h1>
-          <h1>administrador</h1>
+          
+          <h2>administrador</h2>
           <i>¿Qué acciones desea realizar?</i>
           <i>Reserva Rápida</i>
           <button
@@ -128,7 +129,7 @@ const AdministrarPeticiones = (administrador) => {
         </div>
 
         <div className="container_table">
-          <h1>HORARIOS EN CURSO:</h1>
+          <h4>RESERVACIONES EN CURSO:</h4>
           <div className="container_list_Admin">
             {Object.keys(reservas).map((reservaId) => (
               <div key={reservaId} className="reserva">

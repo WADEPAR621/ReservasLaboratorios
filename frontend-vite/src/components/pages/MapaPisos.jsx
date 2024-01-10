@@ -75,7 +75,7 @@ const MapaPisos = () => {
                         <option value="2">PISO 2:</option>
                         <option value="3">PISO 3:</option>
                     </select>
-                    <h3>DESCRIPCION:</h3>
+                    <h3>DESCRIPCIÓN:</h3>
                     <p>{pisos?.DES_PIS}</p>
                     <h3>HABITACIONES EN EL PISO:</h3>
                     <div className="Habitaciones">

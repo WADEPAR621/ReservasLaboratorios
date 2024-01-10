@@ -135,7 +135,7 @@ const NuevaReserva = () => {
                     <img className="imagen" src="https://i.ibb.co/2jXXHq7/imagen-2023-12-29-123457328.png" />
                 </div>
                 <div className="containerNew_form">
-                    <h1>HABITACION:</h1>
+                    <h1>HABITACIÓN:</h1>
                     <select id="container_form_selectLab" value={selectedOption} onChange={handleSelectChange}>
                         <option value="DefaultRoom" disabled selected>Selecciona una opción</option>
                         {Object.keys(rooms).map((roomsId) => (
@@ -159,7 +159,7 @@ const NuevaReserva = () => {
                         <option value="18-19">18H00pm - 19H00pm</option>
                         <option value="19-20">19H00pm - 20H00pm</option>
                     </select>
-                    <h1>RAZON:</h1>
+                    <h1>RAZÓN:</h1>
                     <textarea
                         placeholder="Explique en breves palabras que desea hacer en esta reserva"
                         value={razonReserva}

@@ -60,10 +60,7 @@ const App = () => {
               path={`/SobreNosotros`}
               element={<SobreNosotros />}
             />
-            <Route
-              path={`/Sing_up`}
-              element={<SignUp />}
-            />
+         
             <Route
               path={`/Login`}
               element={<Login usuarioLo={usuarioLo} setUsuario={setUsuario} />}
@@ -71,6 +68,10 @@ const App = () => {
             <Route
               path={`/Inicio`}
               element={<Inicio />}
+            />
+            <Route
+              path={`/Sing_up`}
+              element={<SignUp/>}
             />
 
             <Route

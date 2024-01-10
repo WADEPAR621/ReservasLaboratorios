@@ -22,7 +22,7 @@ const NavBar = () => {
                 className="navbar_img"></img>
             <div className="navbar_text">
                 <h1>UTA</h1>
-                <h2>UNIVERSIDAD TECNICA DE AMBATO</h2>
+                <h1>UNIVERSIDAD TECNICA DE AMBATO</h1>
             </div>
 
             <div className="MENU_RESPONSIVE" id="container__icons" onClick={toggleNavLinks}>
