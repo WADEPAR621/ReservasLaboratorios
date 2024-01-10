@@ -45,11 +45,11 @@ class RoomsController < ApplicationController
 
   # PATCH/PUT /rooms/1 or /rooms/1.json
   def update
-      if @room.update(room_params)
-        render json:show, status: :ok, location: @room
-      else
-        render json: @room.errors, status: :unprocessable_entity
-      end
+    if @room.update(room_params)
+      render json: @room
+    else
+      render json: @room.errors, status: :unprocessable_entity
+    end
   end
 
   # DELETE /rooms/1 or /rooms/1.json
@@ -65,6 +65,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:Floor_id, :NOM_HAB, :TIP_HAB, :CAP_HAB, :DIS_HAB, :Edificio_id)
+      params.require(:room).permit(:id,:Floor_id, :NOM_HAB, :TIP_HAB, :CAP_HAB, :DIS_HAB, :Edificio_id)
     end
 end

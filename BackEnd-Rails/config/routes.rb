@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :horarios, only: [:index, :show, :destroy, :create]
   
 
-  resources :students, only: [:index, :show, :destroy, :create] 
+  resources :students, only: [:index, :show, :destroy, :create, :update] 
   resources :books, only: [:index, :show, :destroy, :create, :update] do
     collection do
       get 'by_user/:student_id', to: 'books#by_user', as: 'by_user'
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :floors, only: [:index, :show, :destroy]
   resources :tecnicos, only: [:index, :show, :destroy, :create]
   
-  resources :rooms, only: [:index, :show, :destroy, :create] do
+  resources :rooms, only: [:index, :show, :destroy, :create, :update] do
     collection do
       get 'by_disponible', to: 'rooms#by_disponible'
       get 'by_floor/:floor_id', to: 'rooms#by_floor', as: 'by_floor'
