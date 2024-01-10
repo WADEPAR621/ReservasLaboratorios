@@ -55,7 +55,7 @@ const MisReservas = () => {
                     <img className="imagenEst"
                         src="https://i.ibb.co/bv0RVMb/Captura-de-pantalla-2023-11-22-230109.png" />
                     <button className="CerrarSesion">
-                        Cerrar Sesion
+                        Cerrar Sesión
                     </button>
                 </div>
                 <div className="container_table">

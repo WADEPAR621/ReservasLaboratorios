@@ -18,7 +18,7 @@ const Navbar = () => {
                             <Link className="nav-link" to='https://servicios.uta.edu.ec/SistemaIntegrado/Cuenta/Login'>Sistema Integrado</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to='/Login'>Inicia Sesion</Link>
+                            <Link className="nav-link" to='/Login'>Inicia Sesión</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to='https://www.uta.edu.ec/v4.0/?page=4'>UTA Oficial</Link>
