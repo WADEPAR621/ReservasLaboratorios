@@ -49,6 +49,10 @@ const Laboratorios = () => {
   const handleSubmitEdicion = async (e) => {
     e.preventDefault();
 
+    delete laboratorioSeleccionado.created_at;
+    delete laboratorioSeleccionado.updated_at;
+
+    console.log(laboratorioSeleccionado)
     try {
       const response = await fetch(`http://localhost:3000/rooms/${laboratorioSeleccionado.id}`, {
         method: "PUT", // Método para actualizar en lugar de eliminar
@@ -63,7 +67,7 @@ const Laboratorios = () => {
       }
 
       // Aquí podrías añadir algún feedback al usuario si lo deseas
-      setMostrarFormularioEdicion(false);
+      setMostrarModalEdicion(false);
       fetchGetLaboratorios();
     } catch (error) {
       console.error('Error updating data:', error);

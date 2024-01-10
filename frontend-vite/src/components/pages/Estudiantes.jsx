@@ -15,7 +15,7 @@ const Estudiantes = () => {
   const [estudiantes, setEstudiantes] = useState([]);
   const fetchGetEstudiantes = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/rooms`, {
+      const response = await fetch(`http://localhost:3000/students`, {
         method: "GET"
       });
       if (!response.ok) {
@@ -38,6 +38,7 @@ const Estudiantes = () => {
   const handleEditar = (estudiante) => {
     setEstudianteSeleccionado(estudiante);
     setMostrarModalEdicion(true);
+    console.log(estudiante)
   };
   const handleInputChange = (campo, valor) => {
     setEstudianteSeleccionado((prevEstudiante) => ({
@@ -48,9 +49,9 @@ const Estudiantes = () => {
 
   const handleSubmitEdicion = async (e) => {
     e.preventDefault();
-
+    console.log(estudianteSeleccionado.id)
     try {
-      const response = await fetch(`http://localhost:3000/rooms/${estudianteSeleccionado.id}`, {
+      const response = await fetch(`http://localhost:3000/students/${estudianteSeleccionado.id}`, {
         method: "PUT", // Método para actualizar en lugar de eliminar
         headers: {
           'Content-Type': 'application/json',
@@ -61,9 +62,7 @@ const Estudiantes = () => {
       if (!response.ok) {
         throw new Error('Fallo al conectar a la base de datos');
       }
-
-      // Aquí podrías añadir algún feedback al usuario si lo deseas
-      setMostrarFormularioEdicion(false);
+      setMostrarModalEdicion(false);
       fetchGetEstudiantes();
     } catch (error) {
       console.error('Error updating data:', error);
@@ -80,7 +79,7 @@ const Estudiantes = () => {
   }
   const handleConfirmarEliminar = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/rooms/${id}`, {
+      const response = await fetch(`http://localhost:3000/students/${id}`, {
         method: "DELETE"
       });
       if (!response.ok) {
@@ -108,16 +107,16 @@ const Estudiantes = () => {
           <ul className="container_list_AdminLab">
             <li className="container_list_li">
               <i>NOMBRE</i>
-              <i>TIPO DE LABORATORIO</i>
+              <i>CORO DE LABORATORIO</i>
               <text>CAPACIDAD</text>
               <button className="opciones">EDICION</button>
               <button className="opciones">ELIMINACION</button>
             </li>
             {Object.keys(estudiantes).map((estudianteId) => (
               <li key={estudianteId} className="container_list_li estudiante">
-                <i>{estudiantes[estudianteId].NOM_HAB}</i>
-                <i>{estudiantes[estudianteId].TIP_HAB}</i>
-                <text>{estudiantes[estudianteId].CAP_HAB}</text>
+                <i>{estudiantes[estudianteId].NOM_USE}</i>
+                <i>{estudiantes[estudianteId].APE_USE}</i>
+                <text>{estudiantes[estudianteId].COR_USE}</text>
                 <button className="opciones" onClick={() => handleEditar(estudiantes[estudianteId])}>Editar</button>
                 <button className="opciones" onClick={() => handleEliminar(estudiantes[estudianteId])}>Eliminar</button>
                 {mostrarAlerta && (
@@ -141,24 +140,20 @@ const Estudiantes = () => {
                 <label>Nombre:</label>
                 <input
                   type="text"
-                  value={estudianteSeleccionado.NOM_HAB}
-                  onChange={(e) => handleInputChange("NOM_HAB", e.target.value)}
+                  value={estudianteSeleccionado.NOM_USE}
+                  onChange={(e) => handleInputChange("NOM_USE", e.target.value)}
                 />
-                <label>Tipo:</label>
-                <select
-                  value={estudianteSeleccionado.TIP_HAB}
-                  onChange={(e) => handleInputChange("TIP_HAB", e.target.value)}
-                >
-                  <option value="Administracion">Administracion</option>
-                  <option value="Estudiante">Estudiante</option>
-                </select>
-                <label>Capacidad:</label>
+                <label>Apellido:</label>
                 <input
-                  type="number"
-                  value={estudianteSeleccionado.CAP_HAB}
-                  min={0}
-                  max={60}
-                  onChange={(e) => handleInputChange("CAP_HAB", parseInt(e.target.value))}
+                  type="text"
+                  value={estudianteSeleccionado.APE_USE}
+                  onChange={(e) => handleInputChange("APE_USE", e.target.value)}
+                />
+                <label>Correo:</label>
+                <input
+                  type="text"
+                  value={estudianteSeleccionado.COR_USE}
+                  onChange={(e) => handleInputChange("COR_USE", e.target.value)}
                 />
                 <button type="submit">Guardar Cambios</button>
                 <button onClick={() => setMostrarModalEdicion(false)}>Cancelar</button>
