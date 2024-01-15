@@ -80,7 +80,7 @@ const Login = ({ usuarioLo, setUsuario }) => {
     };
     const handleContinueClick = () => {
         setUsuario({ ...usuarioLo, isAuth: true, rol: "students" });
-        navigate("/Admin")
+        navigate("/ManualUsuario")
     };
 
 
@@ -119,7 +119,7 @@ const Login = ({ usuarioLo, setUsuario }) => {
 
 
                 <button id="boton2" className="boton2" onClick={()=>handleContinueClick()}>
-                    Continue with Microsoft 365
+                    Manual de Usuario
                 </button>
 
 

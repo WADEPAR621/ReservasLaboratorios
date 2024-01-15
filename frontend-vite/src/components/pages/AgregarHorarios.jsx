@@ -9,10 +9,45 @@ const AgregarHorarios = () => {
   //USE EFFECT
   useEffect(() => {
     fetchGetLaboratorios();
+    fetchLaboratorios();
     handleLabChange
   }, [])
   //CONSULTAS GET A LA BASE DE DATOS
   ////CONSULTA DE RECOGER LAS RESERVAS DEL ESTUDIANTE
+  const fetchHorario = async (labId) => {
+    try {
+      const response = await fetch(`http://localhost:3000/rooms/${labId}/horario`);
+
+      if (response.ok) {
+        const data = await response.json();
+        setHorario(data);
+      } else {
+        throw new Error(`Error al obtener el horario del laboratorio: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const tareas = ["Repaso de examen", "Completar Proyecto", "Dormir"];
+
+  const fetchLaboratorios = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/rooms`, {
+        method: "GET"
+      });
+
+      if (!response.ok) {
+        throw new Error('Fallo al conectar a la base de datos');
+      }
+
+      const data = await response.json();
+      setLaboratorios(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   const [laboratorios, setLaboratorios] = useState([]);
   const fetchGetLaboratorios = async () => {
     try {
@@ -30,26 +65,12 @@ const AgregarHorarios = () => {
     }
   };
 
-  const handleLabChange = async (e) => {
-    const labId = e.target.value; // Obtener el ID del laboratorio seleccionado
-    setSelectedLab(labId); // Actualizar el laboratorio seleccionado
-  
-    // Obtener el horario del laboratorio seleccionado usando fetch
-    try {
-      const response = await fetch(`http://localhost:3000/rooms/${labId}/horario`);
-  
-      // Verificar si la respuesta es exitosa (código 200)
-      if (response.ok) {
-        const data = await response.json();
-        setHorario(data);
-      } else {
-        throw new Error(`Error al obtener el horario del laboratorio: ${response.statusText}`);
-      }
-    } catch (error) {
-      console.error(error); // Mostrar el error en la consola
-    }
+  const handleLabChange = (e) => {
+    const labId = e.target.value;
+    setSelectedLab(labId);
+    fetchHorario(labId);
   };
-  
+
   return (
     <div className="principal">
 
@@ -69,7 +90,7 @@ const AgregarHorarios = () => {
               </option>
             ))}
           </select>
-          <ul className="container_list_AdminLab">
+          {/* <ul className="container_list_AdminLab">
             <li className="container_list_li">
               <i>HORA</i>
               <i>LUNES</i>
@@ -87,13 +108,15 @@ const AgregarHorarios = () => {
                 <button className="opciones" onClick={() => handleEliminar(laboratorios[laboratorioId])}>Eliminar</button>
               </li>
             ))}
-          </ul>
+          </ul>*/}
+
           <table>
             <thead>
               <tr>
                 <th>Día</th>
                 <th>Hora de Inicio</th>
                 <th>Hora de Fin</th>
+                <th>Evento</th>
               </tr>
             </thead>
             <tbody>
@@ -102,6 +125,7 @@ const AgregarHorarios = () => {
                   <td>{item.dia}</td>
                   <td>{item.horaInicio}</td>
                   <td>{item.horaFin}</td>
+                  <td>{tareas[index % tareas.length]}</td>
                 </tr>
               ))}
             </tbody>

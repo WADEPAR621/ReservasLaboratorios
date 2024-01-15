@@ -9,6 +9,7 @@ import Inicio from './components/pages/Inicio';
 import Laboratorios from './components/pages/Laboratorios';
 import Estudiantes from './components/pages/Estudiantes';
 import AgregarHorarios from './components/pages/AgregarHorarios';
+import ManualUsuario from './components/pages/ManualUsuario'
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -61,6 +62,10 @@ const App = () => {
             <Route
               path={`/SobreNosotros`}
               element={<SobreNosotros />}
+            />
+            <Route
+              path={`/ManualUsuario`}
+              element={<ManualUsuario />}
             />
             <Route
               path={`/Agregar-Horario`}

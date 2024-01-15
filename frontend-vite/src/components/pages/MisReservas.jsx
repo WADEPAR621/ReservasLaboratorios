@@ -66,6 +66,7 @@ const MisReservas = () => {
                                     {new Date(reservas[reservaId].HOR_FIN_RES).toLocaleTimeString()}
                                 </text>
                                 <i>{reservas[reservaId].EST_RES ? 'Aceptado' : 'En Revision'}</i>
+                                <i>{reservas[reservaId].EST_TIM_RES}</i>
                             </div>
                         ))}
 
