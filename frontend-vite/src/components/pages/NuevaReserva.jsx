@@ -196,5 +196,4 @@ const NuevaReserva = () => {
         </div>
     );
 }
-
 export default NuevaReserva;

@@ -133,5 +133,4 @@ const AdministrarPeticiones = (administrador) => {
     </div>
   );
 }
-
 export default AdministrarPeticiones;
