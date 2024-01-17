@@ -29,8 +29,6 @@ const AgregarHorarios = () => {
     }
   };
 
-  const tareas = ["Repaso de examen", "Completar Proyecto", "Dormir"];
-
   const fetchLaboratorios = async () => {
     try {
       const response = await fetch(`http://localhost:3000/rooms`, {
@@ -125,7 +123,6 @@ const AgregarHorarios = () => {
                   <td>{item.dia}</td>
                   <td>{item.horaInicio}</td>
                   <td>{item.horaFin}</td>
-                  <td>{tareas[index % tareas.length]}</td>
                 </tr>
               ))}
             </tbody>
