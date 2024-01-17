@@ -117,7 +117,7 @@ const AdministrarPeticiones = (administrador) => {
         </div>
 
         <div className="container_table">
-          <h4>RESERVACIONES EN CURSO:</h4>
+          <h1>HORARIOS EN CURSO:</h1>
           <div className="container_list_Admin">
             {Object.keys(reservas).map((reservaId) => (
               <div key={reservaId} className="reserva">
@@ -133,5 +133,4 @@ const AdministrarPeticiones = (administrador) => {
     </div>
   );
 }
-
 export default AdministrarPeticiones;

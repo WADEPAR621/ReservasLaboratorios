@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Horario academicos</h1>
+
+<div id="horario_academicos">
+  <% @horario_academicos.each do |horario_academico| %>
+    <%= render horario_academico %>
+    <p>
+      <%= link_to "Show this horario academico", horario_academico %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New horario academico", new_horario_academico_path %>

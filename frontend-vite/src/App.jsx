@@ -8,6 +8,8 @@ import StudentRoutes from './StudentRoutes';
 import Inicio from './components/pages/Inicio';
 import Laboratorios from './components/pages/Laboratorios';
 import Estudiantes from './components/pages/Estudiantes';
+import AgregarHorarios from './components/pages/AgregarHorarios';
+import ManualUsuario from './components/pages/ManualUsuario'
 
 const ProtectedRoute = ({ element, ...props }) => {
   //CONSTANTES DE PARAMETROS
@@ -62,8 +64,12 @@ const App = () => {
               element={<SobreNosotros />}
             />
             <Route
-              path={`/Estudiantes`}
-              element={<Estudiantes />}
+              path={`/ManualUsuario`}
+              element={<ManualUsuario />}
+            />
+            <Route
+              path={`/Agregar-Horario`}
+              element={<AgregarHorarios />}
             />
             <Route
               path={`/Login`}
@@ -72,23 +78,6 @@ const App = () => {
             <Route
               path={`/Inicio`}
               element={<Inicio />}
-            />
-              <Route
-              path={`/MisReservas`}
-              element={<MisReservas />}
-            />
-
-            <Route
-              path={`/MapaPisos`}
-              element={<MapaPisos/>}
-            />
-               <Route
-              path={`/NuevaReserva`}
-              element={<NuevaReserva/>}
-            />
-                 <Route
-              path={`/AdministrarPeticiones`}
-              element={<AdministrarPeticiones/>}
             />
             <Route
               path={`/*`}
@@ -100,5 +89,4 @@ const App = () => {
     </Router>
   );
 };
-
 export default App;

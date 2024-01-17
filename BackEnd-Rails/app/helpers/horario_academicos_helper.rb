@@ -1,0 +1,2 @@
+module HorarioAcademicosHelper
+end

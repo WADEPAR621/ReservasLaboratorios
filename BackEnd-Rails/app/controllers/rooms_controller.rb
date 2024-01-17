@@ -52,6 +52,13 @@ class RoomsController < ApplicationController
     end
   end
 
+  # Método para obtener el horario de una sala específica
+  def horario
+    @room = Room.find(params[:id])
+    @horario = obtener_horario_del_laboratorio(@room)
+    render json: @horario
+  end
+  
   # DELETE /rooms/1 or /rooms/1.json
   def destroy
     @room.destroy!
@@ -63,6 +70,28 @@ class RoomsController < ApplicationController
       @room = Room.find(params[:id])
     end
 
+
+    def obtener_horario_del_laboratorio(room)
+      # Lógica para obtener el horario del laboratorio
+      # Puedes implementar esta lógica según tu modelo de datos
+      # y cómo estás almacenando el horario del laboratorio en la base de datos
+      # Debes devolver una estructura de datos que represente el horario
+  
+      # Por ejemplo, podrías tener una asociación en tu modelo Room
+      # que te permita obtener el horario, algo así:
+      # room.horario
+  
+      # Ajusta esta lógica según tus necesidades
+      # Este es solo un ejemplo ficticio
+      horario = [
+        { dia: 'Lunes', horaInicio: '08:00', horaFin: '10:00' },
+        { dia: 'Martes', horaInicio: '09:00', horaFin: '11:00' },
+        # ... Otros días y horas ...
+      ]
+  
+      horario
+    end
+    
     # Only allow a list of trusted parameters through.
     def room_params
       params.require(:room).permit(:id,:Floor_id, :NOM_HAB, :TIP_HAB, :CAP_HAB, :DIS_HAB, :Edificio_id)

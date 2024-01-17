@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_08_030418) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_10_152908) do
   create_table "books", force: :cascade do |t|
     t.integer "Student_id", null: false
     t.integer "Tecnico_id", null: false
@@ -27,6 +27,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_030418) do
     t.index ["Tecnico_id"], name: "index_books_on_Tecnico_id"
   end
 
+  create_table "dia_semanas", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "edificios", force: :cascade do |t|
     t.string "descripcion"
     t.datetime "created_at", null: false
@@ -39,6 +45,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_030418) do
     t.string "IMG_PIS"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "horario_academicos", force: :cascade do |t|
+    t.integer "Room_id", null: false
+    t.date "fecha_inicio"
+    t.date "fecha_fin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Room_id"], name: "index_horario_academicos_on_Room_id"
   end
 
   create_table "horarios", force: :cascade do |t|
@@ -59,6 +74,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_030418) do
     t.string "intervalo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "intervalo_horarios", force: :cascade do |t|
+    t.integer "horario_academico_id", null: false
+    t.integer "dia_semana_id", null: false
+    t.time "hora_inicio"
+    t.time "hora_fin"
+    t.text "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dia_semana_id"], name: "index_intervalo_horarios_on_dia_semana_id"
+    t.index ["horario_academico_id"], name: "index_intervalo_horarios_on_horario_academico_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -110,8 +137,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_030418) do
   add_foreign_key "books", "Rooms"
   add_foreign_key "books", "Students"
   add_foreign_key "books", "Tecnicos"
+  add_foreign_key "horario_academicos", "Rooms"
   add_foreign_key "horarios", "horas"
   add_foreign_key "horarios", "rooms"
+  add_foreign_key "intervalo_horarios", "dia_semanas"
+  add_foreign_key "intervalo_horarios", "horario_academicos"
   add_foreign_key "rooms", "Edificios"
   add_foreign_key "rooms", "Floors"
 end

@@ -46,22 +46,17 @@ const MisReservas = () => {
             <NavBar />
             <div className="containerEst">
                 <div className="container_imgEst">
-                    <br />
-                    
-                    <h2>Perfil</h2>
-                    <br />
+                    <h1>Perfil</h1>
                     <i>Pagina de la FISEI</i>
                     <i>Reserva Rapida</i>
                     <img className="imagenEst"
                         src="https://i.ibb.co/bv0RVMb/Captura-de-pantalla-2023-11-22-230109.png" />
                     <button className="CerrarSesion">
-                        Cerrar Sesión
+                        Cerrar Sesion
                     </button>
                 </div>
                 <div className="container_table">
-                    <br />
-                    <h1>     RESERVACIONES EN CURSO:</h1>
-                    <br />
+                    <h1>     HORARIOS EN CURSO:</h1>
                     <div className="container_list">
                         {Object.keys(reservas).map((reservaId) => (
                             <div key={reservaId} className="reserva">
@@ -71,6 +66,7 @@ const MisReservas = () => {
                                     {new Date(reservas[reservaId].HOR_FIN_RES).toLocaleTimeString()}
                                 </text>
                                 <i>{reservas[reservaId].EST_RES ? 'Aceptado' : 'En Revision'}</i>
+                                <i>{reservas[reservaId].EST_TIM_RES}</i>
                             </div>
                         ))}
 
@@ -83,5 +79,4 @@ const MisReservas = () => {
         </div>
     );
 }
-
 export default MisReservas;
