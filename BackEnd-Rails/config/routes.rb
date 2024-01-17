@@ -27,6 +27,9 @@ Rails.application.routes.draw do
       get 'by_disponible', to: 'rooms#by_disponible'
       get 'by_floor/:floor_id', to: 'rooms#by_floor', as: 'by_floor'
     end
+    member do
+      get 'horario'
+    end
   end
   # Defines the root path route ("/")
   # root "posts#index"

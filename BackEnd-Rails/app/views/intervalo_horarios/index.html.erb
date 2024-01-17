@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Intervalo horarios</h1>
+
+<div id="intervalo_horarios">
+  <% @intervalo_horarios.each do |intervalo_horario| %>
+    <%= render intervalo_horario %>
+    <p>
+      <%= link_to "Show this intervalo horario", intervalo_horario %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New intervalo horario", new_intervalo_horario_path %>

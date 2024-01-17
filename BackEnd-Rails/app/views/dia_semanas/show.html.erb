@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dia_semana %>
+
+<div>
+  <%= link_to "Edit this dia semana", edit_dia_semana_path(@dia_semana) %> |
+  <%= link_to "Back to dia semanas", dia_semanas_path %>
+
+  <%= button_to "Destroy this dia semana", @dia_semana, method: :delete %>
+</div>

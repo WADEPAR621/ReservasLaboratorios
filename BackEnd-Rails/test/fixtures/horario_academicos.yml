@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Room: one
+  fecha_inicio: 2024-01-10
+  fecha_fin: 2024-01-10
+
+two:
+  Room: two
+  fecha_inicio: 2024-01-10
+  fecha_fin: 2024-01-10

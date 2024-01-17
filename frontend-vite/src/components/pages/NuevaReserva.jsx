@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
-
 import '../../styles/NuevaReserva.css';
 import NavBar from "../NavbarMenu";
+
 const NuevaReserva = () => {
     //CODIGO JAVASCRIPT
     const validarCampos = () => {
@@ -27,29 +27,49 @@ const NuevaReserva = () => {
     //select horario
     const [selectedOptionTime, setSelectedOptionTime] = useState("DefaultTime");
     let today = new Date();
+    const [formattedHoraInicio, setFormattedHoraInicio] = useState(null);
+    const [formattedHoraFin, setFormattedHoraFin] = useState(null);
     let horaInicioDate = new Date();
     let horaFinDate = new Date();
+
     const handleSelectChangeTime = (event) => {
-        const selectedValue = event.target.value; // Obtener el valor seleccionado del evento
-        setSelectedOptionTime(selectedValue);  // Actualizar el estado con el valor seleccionado
-
-        // Verificar si el valor seleccionado no es "DefaultTime"
+        const selectedValue = event.target.value;
+        setSelectedOptionTime(selectedValue);
+    
         if (selectedValue !== "DefaultTime") {
-            const [inicio, fin] = selectedValue.split('-'); // Dividir el valor seleccionado usando el guion como delimitador
-            const horaInicio = Number(inicio.trim()); // Convertir a número y obtener la hora de inicio
-            const horaFin = Number(fin.trim()); // Convertir a número y obtener la hora de fin
-
-            // Crear objeto Date para la hora de inicio
-            horaInicioDate.setHours(horaInicio, 0, 0, 0);
-
-            // Crear objeto Date para la hora de fin
-            horaFinDate.setHours(horaFin, 0, 0, 0);
-
-            // Ahora, puedes usar horaInicioDate y horaFinDate como necesites
-            console.log("Hora de inicio (Date):", horaInicioDate);
-            console.log("Hora de fin (Date):", horaFinDate);
+            const [inicio, fin] = selectedValue.split('-');
+            const horaInicio = Number(inicio.trim());
+            const horaFin = Number(fin.trim());
+    
+            horaInicioDate.setHours(horaInicio, 0, 0);
+            horaFinDate.setHours(horaFin, 0, 0);
+    
+            horaInicioDate.setDate(horaInicioDate.getDate() + 1);
+            horaFinDate.setDate(horaFinDate.getDate() + 1);
+    
+            const formattedHoraInicioValue = formatDateTime(horaInicioDate);
+            const formattedHoraFinValue = formatDateTime(horaFinDate);
+    
+            setFormattedHoraInicio(formattedHoraInicioValue);
+            setFormattedHoraFin(formattedHoraFinValue);
+    
+            console.log("Hora de inicio formateada:", formattedHoraInicioValue);  
+            console.log("Hora de fin formateada:", formattedHoraFinValue);      
         }
     };
+    
+    const formatDateTime = (date) => {
+        const offset = -date.getTimezoneOffset();
+        const offsetHours = Math.floor(offset / 60);
+        const offsetMinutes = Math.abs(offset) % 60;
+    
+        const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+        const formattedTime = `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}.${String(date.getMilliseconds()).padStart(3, '0')}`;
+        const formattedOffset = `${offsetHours > 0 ? '-' : '+'}${String(Math.abs(offsetHours)).padStart(2, '0')}:${String(offsetMinutes).padStart(2, '0')}`;
+    
+        return `${formattedDate}T${formattedTime}${formattedOffset}`;
+    };    
+
     //OBTENER TEXTO/RAZON DE RESERVA
     const [razonReserva, setRazonReserva] = useState('');
     const handleRazonReservaChange = (event) => {
@@ -82,24 +102,26 @@ const NuevaReserva = () => {
             errorMessage.innerText = 'Parametros en Blanco no son permitidos';
             errorMessage.style.display = 'block';
 
-            setTimeout(() => {errorMessage.style.display = 'none';}, 2500);
+            setTimeout(() => { errorMessage.style.display = 'none'; }, 2500);
             return;
         }
         try {
             // Realiza la solicitud a la API para crear un nuevo libro (o reserva)
             const response = await fetch('http://localhost:3000/books', {
+
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     Student_id: 2,
-                    Tecnico_id: 2, // Reemplaza con el ID del técnico seleccionado
-                    Room_id: selectedOption, // Reemplaza con el ID de la habitación seleccionada
-                    RAZ_RES: razonReserva, // Reemplaza con el valor del cuadro de texto
-                    HOR_INI_RES: horaInicioDate, // Reemplaza con el valor seleccionado
-                    HOR_FIN_RES: horaFinDate, // Reemplaza con el valor seleccionado
-                    EST_RES: false, // Puedes establecer el estado según tu lógica
+                    Tecnico_id: 1,
+                    Room_id: selectedOption,
+                    RAZ_RES: razonReserva,
+                    HOR_INI_RES: formattedHoraInicio,
+                    HOR_FIN_RES: formattedHoraFin,
+                    EST_RES: false,
+                    EST_TIM_RES: ""
                 }),
             });
 
@@ -134,7 +156,7 @@ const NuevaReserva = () => {
                     <img className="imagen" src="https://i.ibb.co/2jXXHq7/imagen-2023-12-29-123457328.png" />
                 </div>
                 <div className="containerNew_form">
-                    <h1>HABITACIÓN:</h1>
+                    <h1>HABITACION:</h1>
                     <select id="container_form_selectLab" value={selectedOption} onChange={handleSelectChange}>
                         <option value="DefaultRoom" disabled selected>Selecciona una opción</option>
                         {Object.keys(rooms).map((roomsId) => (
@@ -158,7 +180,7 @@ const NuevaReserva = () => {
                         <option value="18-19">18H00pm - 19H00pm</option>
                         <option value="19-20">19H00pm - 20H00pm</option>
                     </select>
-                    <h1>RAZÓN:</h1>
+                    <h1>RAZON:</h1>
                     <textarea
                         placeholder="Explique en breves palabras que desea hacer en esta reserva"
                         value={razonReserva}
@@ -174,5 +196,4 @@ const NuevaReserva = () => {
         </div>
     );
 }
-
 export default NuevaReserva;
